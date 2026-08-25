@@ -1,0 +1,39 @@
+/* ================================================== */
+/* DECORATIVE LEAF STYLES                               */
+/* ================================================== */
+/* Extends .decorative-leaf from components.css.        */
+/* ================================================== */
+
+/* --- Position Variants --- */
+.decorative-leaf--top-left {
+  top: 0;
+  left: 0;
+}
+
+.decorative-leaf--top-right {
+  top: 0;
+  right: 0;
+}
+
+.decorative-leaf--bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.decorative-leaf--bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+/* --- Responsive Visibility --- */
+@media (max-width: 64rem) {
+  .decorative-leaf--hide-tablet {
+    display: none;
+  }
+}
+
+@media (max-width: 48rem) {
+  .decorative-leaf--hide-mobile {
+    display: none;
+  }
+}

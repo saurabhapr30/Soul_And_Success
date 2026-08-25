@@ -1,0 +1,3144 @@
+/* ================================================== */
+/* HOME PAGE - EXACT GEOMETRY (1920px reference)        */
+/* ================================================== */
+
+.home-page {
+  width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+.home-container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 5124px;
+}
+
+.home-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5124px;
+  background: #FBFAF8;
+  z-index: -1;
+}
+
+/* ================================================== */
+/* SECTION 1: HERO                                      */
+/* ================================================== */
+
+.home-hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 894px;
+}
+
+.home-hero__image-wrapper {
+  position: absolute;
+  width: 1305px;
+  height: 894px;
+  left: 250px;
+  top: 0;
+  overflow: hidden;
+}
+
+.home-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: darken;
+}
+
+.home-hero__signature-block {
+  position: absolute;
+  left: 80px;
+  top: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+.home-hero__signature {
+  width: 180px;
+  height: auto;
+  margin-bottom: 8px;
+  mix-blend-mode: darken;
+}
+
+.home-hero__signature-title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14px;
+  color: #333333;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.home-hero__signature-subtitle {
+  font-family: var(--font-display-secondary);
+  font-size: 11px;
+  line-height: 16px;
+  color: #888888;
+  margin: 4px 0 0 0;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* INFERRED COORDINATES FOR TEXT BLOCK */
+/* X: 360px (Aligning with Podcast Card left edge) */
+/* Y: 220px (Centered in upper area) */
+/* Width: 600px */
+.home-hero__text-block {
+  position: absolute;
+  width: 600px;
+  top: 220px;
+  left: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 10;
+}
+
+.home-hero__caption {
+  font-family: var(--font-nunito);
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #BC957B;
+  margin: 0;
+}
+
+.home-hero__title {
+  font-family: var(--font-display-primary);
+  font-size: 80px;
+  line-height: 92px;
+  color: #221811;
+  margin: 0;
+}
+
+.home-hero__subtitle {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #C39F87;
+  margin: 0;
+}
+
+.home-hero__description {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 24px;
+  color: #333333;
+  margin: 0;
+  max-width: 460px;
+}
+
+.home-hero__actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.home-hero__btn-primary {
+  width: 180px;
+  height: 54px;
+  background: #C39F87;
+  color: #FFFFFF;
+  font-family: var(--font-button);
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.home-hero__btn-secondary {
+  width: 180px;
+  height: 54px;
+  background: transparent;
+  color: #221811;
+  border: 1px solid #221811;
+  font-family: var(--font-button);
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.home-hero__signature--mobile,
+.home-hero__curve,
+.home-hero__divider {
+  display: none;
+}
+
+/* ================================================== */
+/* OVERLAPPING PODCAST CARD                             */
+/* ================================================== */
+
+
+
+/* ================================================== */
+/* SECTION 2: YOU'RE NOT ALONE                          */
+/* ================================================== */
+
+.home-section-2 {
+  position: absolute;
+  top: 894px;
+  left: 0;
+  width: 100%;
+  height: 513.5px;
+  background: #FFFFFF;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-section-2__container {
+  width: 1280px;
+  position: relative;
+  /* Centering content within the 1280px bound */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 
+  Podcast card is at top: 790px, height: 280px. 
+  It ends at Y = 1070px.
+  Section 2 starts at Y = 894px.
+  So Section 2's top 176px is overlapped by the podcast card!
+  Content in Section 2 must start below 1070px.
+*/
+
+.home-section-2__content {
+  position: absolute;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.home-section-2__title {
+  font-family: var(--font-display-primary);
+  font-size: 64px;
+  line-height: 1;
+  color: #221811;
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+.home-section-2__divider-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.home-section-2__divider-line {
+  width: 60px;
+  height: 1px;
+  background: #C39F87;
+}
+
+.home-section-2__divider-heart {
+  color: #C39F87;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.home-section-2__caption {
+  font-family: var(--font-nunito);
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #5F5652;
+  margin: 0;
+  font-weight: 500;
+}
+
+.home-section-2__grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 64px;
+  width: 100%;
+  max-width: 1232px;
+}
+
+.home-section-2__column {
+  flex: 1;
+  width: 205.33px;
+  max-width: 205.33px;
+  padding: 0 16px 0 17px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-right: 1px solid #DDD6CD;
+  box-sizing: border-box;
+}
+
+.home-section-2__column:last-child {
+  border-right: none;
+}
+
+.home-section-2__icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 11px;
+  color: #BC957B;
+}
+
+.home-section-2__item-title {
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 11px 0;
+  text-align: center;
+  letter-spacing: -0.36px;
+}
+
+.home-section-2__item-title--serif {
+  font-family: var(--font-display-editorial), 'Cinzel', serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
+  color: #221811;
+}
+
+.home-section-2__item-title--script {
+  font-family: var(--font-decorative), cursive;
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: 400;
+  color: #C39F87;
+}
+
+.home-section-2__item-desc {
+  font-family: var(--font-display-secondary), 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 19.5px;
+  color: #5E534A;
+  text-transform: uppercase;
+  margin: 0;
+  max-width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ================================================== */
+/* SECTION 3: MEET THE FOUNDER                        */
+/* ================================================== */
+
+.home-section-3 {
+  position: absolute;
+  top: 1407.5px;
+  left: 0;
+  width: 100%;
+  height: 908.5px;
+  background: #F9ECD7;
+  /* Section background is beige in Figma */
+  z-index: 4;
+}
+
+.home-section-inner-1920 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1920px;
+  height: 100%;
+  pointer-events: none;
+}
+
+.home-section-inner-1920>* {
+  pointer-events: auto;
+}
+
+.home-section-3__group {
+  position: absolute;
+  width: 1101px;
+  height: 813px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 95.5px;
+  /* 1503px - 1407.5px */
+  background: #FFFFFF;
+  border-radius: 60px;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  /* Ensure the portrait doesn't break the rounded corners */
+}
+
+.home-section-3__portrait {
+  position: absolute;
+  height: 813px;
+  /* Match card height */
+  width: auto;
+  /* Let it scale proportionally */
+  right: -80px;
+  /* Shifted slightly right to avoid overlapping the text */
+  bottom: 0;
+  /* Flush with bottom of card */
+  object-fit: contain;
+  object-position: right bottom;
+  mix-blend-mode: multiply;
+  /* Make the solid white background of the image transparent */
+  z-index: 1;
+}
+
+.home-section-3__label {
+  position: absolute;
+  left: 80px;
+  top: 100px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 29px;
+  text-transform: uppercase;
+  color: #C39F87;
+  letter-spacing: 2px;
+  z-index: 10;
+}
+
+.home-section-3__script {
+  position: absolute;
+  width: auto;
+  height: auto;
+  left: 80px;
+  top: 150px;
+  font-family: var(--font-signature);
+  font-size: 96px;
+  font-weight: 400;
+  line-height: 1;
+  color: #000000;
+  white-space: nowrap;
+  z-index: 10;
+  /* To overlay above portrait */
+}
+
+.home-section-3__subtitle {
+  position: absolute;
+  left: 80px;
+  top: 280px;
+  font-family: var(--font-display-editorial);
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 1.2;
+  color: #A6A6A6;
+  z-index: 10;
+}
+
+.home-section-3__bio {
+  position: absolute;
+  width: 450px;
+  height: auto;
+  left: 80px;
+  top: 360px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.8;
+  color: #333333;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.home-section-3__bio p {
+  margin: 0;
+}
+
+.home-section-3__bio-p1 {
+  font-weight: 600;
+  color: #000000;
+}
+
+.home-section-3__bio-p2,
+.home-section-3__bio-p3 {
+  font-weight: 400;
+}
+
+.home-section-3__cta {
+  position: absolute;
+  width: 180px;
+  height: 56px;
+  left: 80px;
+  top: 680px;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #C39F87;
+  border-radius: 0;
+  box-shadow: 6px 6px 0px rgba(212, 211, 211, 0.4);
+  border: none;
+  font-family: var(--font-button);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* ================================================== */
+/* SECTION 4: HOW I CAN SUPPORT YOU                  */
+/* ================================================== */
+
+.home-section-4 {
+  position: absolute;
+  top: 2360px;
+  height: 830px;
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+}
+
+.home-section-4__container {
+  width: 1280px;
+  max-width: 1280px;
+  height: 830px;
+  padding: 96px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  box-sizing: border-box;
+}
+
+.home-section-4__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-section-4__title {
+  width: auto;
+  /* Changed from 412px to allow the fallback font to fit symmetrically */
+  height: 48px;
+  font-family: 'Seranide Free Trial';
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: -0.72px;
+  color: #221811;
+  text-align: center;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.home-section-4__divider {
+  width: 1232px;
+  height: 28px;
+  padding: 8px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+.home-section-4__line {
+  width: 64px;
+  height: 1px;
+  background: #DDD6CD;
+}
+
+.home-section-4__diamond {
+  width: 12px;
+  height: 12px;
+  border: 0.75px solid #BC957B;
+  transform: rotate(45deg);
+  box-sizing: border-box;
+}
+
+.home-section-4__grid {
+  width: 1232px;
+  height: 506px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.home-section-4__card {
+  width: 395px;
+  height: 506px;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  border: 1px solid #DDD6CD;
+  box-shadow: 0px 4px 12.7px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-section-4__card-img-wrapper {
+  width: 393px;
+  height: 294.48px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-section-4__card-img-1 {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #B4D5FF;
+  object-position: bottom center;
+  padding: 4px 8px 0 8px;
+  transform: scale(1.06);
+  transform-origin: bottom center;
+  box-sizing: border-box;
+}
+
+.home-section-4__card-img-2 {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  padding: 6px 10px;
+  background: #FFEEDB;
+  transform: scale(1.14);
+  box-sizing: border-box;
+}
+
+.home-section-4__card-img-3 {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  padding: 6px 10px;
+  background: #F0E6DA;
+  transform: scale(1.14);
+  box-sizing: border-box;
+}
+
+.home-section-4__card-content {
+  width: 393px;
+  height: 203.5px;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.home-section-4__icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 12px;
+}
+
+.home-section-4__card-title {
+  font-family: var(--font-display-secondary);
+  font-weight: 700;
+  font-size: 20px;
+  color: #221811;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+  letter-spacing: 1px;
+}
+
+.home-section-4__card-desc {
+  font-family: var(--font-display-secondary);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #666666;
+  margin: 0;
+  flex: 1;
+}
+
+.home-section-4__cta {
+  width: 343px;
+  /* 393 - 24 - 24 = 345, I used 343px just to be safe but 345 is exact. Actually wait, 393 width. Card is 395 width with borders, but content is 393. padding is 24 on each side, so 393 - 48 = 345. */
+  width: 345px;
+  height: 48px;
+  background: #D1C2B5;
+  border-radius: 24px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: var(--font-button);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #221811;
+}
+
+.home-section-4__cta-chevron,
+.home-section-4__cta-arrow {
+  font-size: 16px;
+  color: #221811;
+}
+
+/* ================================================== */
+/* SECTION 5: PODCASTS & VIDEOS                       */
+/* ================================================== */
+
+.home-podcast-card {
+  position: absolute;
+  width: 1200px;
+  max-width: 1200px;
+  height: 280.2px;
+  left: calc(50% - 1200px/2);
+  top: 790px;
+  background: #FFFCF2;
+  box-shadow: 0px 4px 26px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 58px 90px;
+  gap: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.home-podcast-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 480px;
+}
+
+.home-podcast-card__label {
+  font-family: var(--font-nunito);
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 1.32px;
+  text-transform: uppercase;
+  color: #E98F70;
+}
+
+.home-podcast-card__title {
+  font-family: var(--font-display-primary);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 34px;
+  letter-spacing: -0.64px;
+  color: #211917;
+  margin: 0;
+}
+
+.home-podcast-card__desc {
+  font-family: var(--font-display-editorial);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.28px;
+  color: #5F5652;
+  margin: 0;
+}
+
+.home-podcast-card__btn {
+  background: #C39F87;
+  color: #FFF;
+  font-family: var(--font-button);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 14px 28px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  width: max-content;
+  margin-top: 12px;
+  transition: opacity 0.3s ease;
+}
+
+.home-podcast-card__btn:hover {
+  opacity: 0.9;
+}
+
+.home-podcast-card__socials {
+  display: flex;
+  gap: 16px;
+}
+
+.home-podcast-card__social {
+  width: 125px;
+  height: 130px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.home-podcast-card__icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 4px;
+}
+
+.home-podcast-card__social-name {
+  font-family: var(--font-nunito);
+  font-weight: 700;
+  font-size: 13px;
+  color: #211917;
+  line-height: 1;
+}
+
+.home-podcast-card__social-action {
+  font-family: var(--font-nunito);
+  font-weight: 400;
+  font-size: 9px;
+  color: #5F5652;
+  line-height: 1;
+}
+
+.home-podcast-card__social--spotify {
+  background: #E8F5E9;
+}
+
+.home-podcast-card__social--spotify img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.home-podcast-card__social--youtube {
+  background: #FFF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  color: #FF0000;
+}
+
+.home-podcast-card__social--youtube .home-podcast-card__icon-wrapper {
+  color: #FF0000;
+}
+
+.home-podcast-card__social--instagram {
+  background: linear-gradient(135deg, #FFEBE6 0%, #FFD6E8 50%, #EADDFF 100%);
+  color: #FFF;
+}
+
+.home-podcast-card__social--instagram .home-podcast-card__icon-wrapper {
+  color: #E1306C;
+}
+
+.home-podcast-card__social--facebook {
+  background: #E3F2FD;
+  color: #1877F2;
+}
+
+.home-podcast-card__social--facebook .home-podcast-card__icon-wrapper {
+  color: #1877F2;
+}
+
+/* ================================================== */
+/* SECTION 6: MY LATEST BLOGS / INSTAGRAM PREVIEW     */
+/* ================================================== */
+
+.home-section-blog {
+  position: absolute;
+  width: 1200px;
+  height: 553px;
+  left: calc(50% - 1200px / 2);
+  top: 3495px;
+  padding: 52px 90px;
+  background: #FFFFFF url('../assets/Blogs.webp') left bottom / 1800px 1200px no-repeat;
+  box-shadow: 0px 4px 12.9px rgba(0, 0, 0, 0.25);
+  border-radius: 32px;
+  box-sizing: border-box;
+}
+
+.home-section-blog__overlay {
+  position: absolute;
+  width: 299px;
+  height: 118px;
+  left: 54.86px;
+  top: 217px;
+  padding: 20px 24px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  box-shadow: 0px 4px 10.7px rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  z-index: 1;
+}
+
+.home-section-blog__follow {
+  position: absolute;
+  left: 55px;
+  bottom: 20px;
+  width: 240px;
+  height: 20px;
+  margin: 0;
+  font-family: var(--font-nunito);
+  font-size: 12px;
+  color: #5F5652;
+  z-index: 1;
+}
+
+.home-section-blog__title {
+  font-family: var(--font-display-editorial);
+  font-weight: 700;
+  font-size: 26px;
+  /* Adjusted to fit the box */
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0;
+}
+
+.home-section-blog__desc {
+  font-family: var(--font-body);
+  /* fallback for LovableLabs */
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  color: #5F5652;
+  margin: 0;
+}
+
+.home-section-blog__panel {
+  position: absolute;
+  width: 459px;
+  height: 438px;
+  left: 614px;
+  top: 37px;
+  background: #A28D79;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 40px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.home-section-blog__panel-title {
+  font-family: var(--font-display-special);
+  font-weight: 400;
+  font-size: 52px;
+  line-height: 52px;
+  text-align: center;
+  color: #FFFFFF;
+  margin: 0 0 24px 0;
+  width: 100%;
+}
+
+.home-section-blog__panel-desc {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #FFFFFF;
+  margin: 0;
+  width: 100%;
+  max-width: 340px;
+}
+
+.home-section-blog__read-more {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 40px;
+  padding: 12px 28px;
+  background: #FFFFFF;
+  color: #796657;
+  font-family: var(--font-button);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border-radius: 4px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+}
+
+.home-section-blog__socials {
+  /* Hiding the empty flex container placeholder for now, since Follow is absolutely positioned */
+  display: none;
+}
+
+.home-section-blog__arrow {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid #C39F87;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  z-index: 10;
+}
+
+.home-section-blog__arrow:hover {
+  background: #fff;
+  transform: scale(1.1);
+}
+
+.home-section-blog__arrow svg {
+  width: 22px;
+  height: 22px;
+  stroke: #C39F87;
+  stroke-width: 2.5;
+}
+
+.home-section-blog__arrow--left {
+  left: 588px;
+  top: 247px;
+}
+
+.home-section-blog__arrow--right {
+  left: 1046px;
+  top: 247px;
+}
+
+/* Category label */
+.home-section-blog__cat {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #C39F87;
+  margin-bottom: 12px;
+}
+
+/* Date */
+.home-section-blog__date {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 8px;
+  margin-bottom: 16px;
+  letter-spacing: 0.04em;
+}
+
+/* Dot indicators */
+.home-section-blog__dots {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7px;
+  z-index: 10;
+}
+
+.home-section-blog__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.home-section-blog__dot--active {
+  background: #C39F87;
+  transform: scale(1.3);
+}
+
+.home-section-blog__vector {
+  position: absolute;
+  width: 15.36px;
+  height: 25.9px;
+  background: #C39F87;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  /* Placeholder for vector position if provided later */
+}
+
+/* ================================================== */
+/* SECTION 7: YOUTUBE                                 */
+/* ================================================== */
+
+.home-youtube {
+  position: absolute;
+  top: 4048px;
+  left: calc(50% - 1920px / 2);
+  width: 1920px;
+  height: 368px;
+  /* Fills exactly the gap between Blogs and CTA */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.home-youtube__pills {
+  display: flex;
+  gap: 32px;
+}
+
+.home-youtube__pill {
+  width: 380px;
+  height: 190px;
+  border-radius: 9999px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.home-youtube__pill--purple {
+  background: #B25A96;
+}
+
+.home-youtube__pill--green {
+  background: #41A55F;
+}
+
+.home-youtube__pill--red {
+  background: #C63C3C;
+}
+
+.home-youtube__text {
+  font-family: var(--font-nunito);
+  font-weight: 300;
+  font-size: 38px;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.home-youtube__line {
+  width: 44px;
+  height: 2px;
+  background: #FFFFFF;
+}
+
+/* ================================================== */
+/* SECTION 8: JOURNEY CTA                             */
+/* ================================================== */
+
+/* ── Journey CTA Banner (Node 20:739) ─────────────────────────────────────── */
+.home-section-6 {
+  position: absolute;
+  left: calc(50% - 1232px / 2);
+  top: 4416px;
+  width: 1232px;
+  height: 218px;
+  padding: 48px 40px;
+  gap: 32px;
+  background: #F0E6DA;
+  box-shadow: 0px 4px 10.9px rgba(0, 0, 0, 0.14);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* LOGO image (image 3) */
+.home-section-6__logo {
+  width: 94px;
+  height: 84px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  flex-shrink: 0;
+}
+
+/* CENTER TEXT BLOCK (div.flex-1) */
+.home-section-6__text-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.home-section-6__title {
+  font-family: var(--font-display-editorial), 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 45px;
+  letter-spacing: -0.54px;
+  text-transform: uppercase;
+  color: #221811;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-section-6__desc {
+  font-family: var(--font-body), 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #5E534A;
+  margin: 0;
+}
+
+/* RIGHT CTA BLOCK (div.text-right) */
+.home-section-6__right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.home-section-6__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #C39F87;
+  color: #FDFAF4;
+  font-family: var(--font-button), 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 0;
+  box-shadow: 0px 4px 2.25px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s, transform 0.15s;
+}
+
+.home-section-6__cta-btn:hover {
+  background: #b38b72;
+  transform: translateY(-1px);
+}
+
+.home-section-6__cta-btn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.home-section-6__cta-sub {
+  font-family: var(--font-ui), 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #5E534A;
+  margin: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* DECORATIVE LEAF FLOURISH (Component 1) */
+.home-section-6__leaf {
+  position: absolute;
+  right: -24px;
+  bottom: 0;
+  width: 128px;
+  height: 128px;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ================================================== */
+/* SECTION 9: FOOTER                                  */
+/* ================================================== */
+
+.home-section-7 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 423px;
+  top: 4701px;
+  background: #36251D;
+  border-top: 1px solid #DDD6CD;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  box-sizing: border-box;
+  isolation: isolate;
+}
+
+/* ---------- TOP ROW: Brand + Link Columns ---------- */
+
+.home-section-7__top {
+  display: grid;
+  grid-template-columns: 440px 1fr 1fr 1fr;
+  width: 100%;
+  max-width: 1280px;
+  padding: 48px 40px 0;
+  box-sizing: border-box;
+  gap: 20px;
+}
+
+.home-section-7__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 340px;
+}
+
+.home-section-7__brand-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.home-section-7__logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.home-section-7__brand-title {
+  font-family: var(--font-display-primary);
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.home-section-7__brand-subtitle {
+  font-family: var(--font-nunito);
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 12px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #C39F87;
+  margin: 2px 0 0;
+}
+
+.home-section-7__brand-socials {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.home-section-7__brand-socials a {
+  color: #A28D79;
+  transition: color 0.2s ease;
+  display: flex;
+}
+
+.home-section-7__brand-socials a:hover {
+  color: #FFFFFF;
+}
+
+/* ---------- Link Columns ---------- */
+
+.home-section-7__links {
+  display: contents;
+}
+
+.home-section-7__link-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.home-section-7__link-heading {
+  font-family: var(--font-display-secondary);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+  margin: 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(221, 214, 205, 0.15);
+  max-width: 120px;
+}
+
+.home-section-7__link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.home-section-7__link-list li a {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: #C8BFB6;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.home-section-7__link-list li a:hover {
+  color: #FFFFFF;
+}
+
+/* ---------- MIDDLE ROW: Subscribe + Contact + WhatsApp ---------- */
+
+.home-section-7__middle {
+  display: grid;
+  grid-template-columns: 440px 1fr 1fr 1fr;
+  width: 100%;
+  max-width: 1280px;
+  padding: 28px 40px 0;
+  box-sizing: border-box;
+  gap: 20px;
+}
+
+.home-section-7__subscribe {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 340px;
+  flex: 0 0 auto;
+}
+
+.home-section-7__subscribe-heading {
+  font-family: var(--font-display-secondary);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.home-section-7__subscribe-desc {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #C8BFB6;
+  margin: 0;
+}
+
+.home-section-7__subscribe-form {
+  display: flex;
+  margin-top: 10px;
+  background: #FFFFFF;
+  border-radius: 6px;
+  padding: 4px;
+  width: 300px;
+}
+
+.home-section-7__subscribe-input {
+  flex: 1;
+  height: 36px;
+  padding: 0 12px;
+  background: transparent;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #333333;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.home-section-7__subscribe-input::placeholder {
+  color: #999999;
+}
+
+.home-section-7__subscribe-btn {
+  width: 44px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #A28D79;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.home-section-7__subscribe-btn:hover {
+  background: #8e7966;
+}
+
+/* ---------- Contact ---------- */
+
+.home-section-7__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  grid-column: 3 / 4;
+}
+
+.home-section-7__contact-heading {
+  font-family: var(--font-display-secondary);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+  margin: 0 0 6px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(221, 214, 205, 0.15);
+  max-width: 120px;
+}
+
+.home-section-7__contact-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #C8BFB6;
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* ---------- WhatsApp ---------- */
+
+.home-section-7__whatsapp {
+  display: flex;
+  align-items: flex-start;
+  grid-column: 4 / 5;
+}
+
+.home-section-7__whatsapp-icon {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.home-section-7__whatsapp-icon:hover {
+  transform: scale(1.08);
+}
+
+/* ---------- BOTTOM BAR ---------- */
+
+.home-section-7__bottom-bar {
+  width: 100%;
+  max-width: 1280px;
+  border-top: 1px solid rgba(221, 214, 205, 0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  margin-top: auto;
+  box-sizing: border-box;
+}
+
+.home-section-7__copyright,
+.home-section-7__legal span {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #999999;
+}
+
+.home-section-7__legal {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.home-section-7__separator {
+  margin: 0 4px;
+}
+
+
+/* ================================================== */
+/* RESPONSIVE ADAPTATION (Below 1440px)               */
+/* ================================================== */
+
+@media (max-width: 1439px) {
+  .home-container {
+    min-height: auto !important;
+  }
+
+  .home-bg {
+    height: 100% !important;
+  }
+
+  /* Reset top-level sections to document flow */
+  .home-hero,
+  .home-section-2,
+  .home-section-3,
+  .home-section-4,
+  .home-section-blog,
+  .home-section-6,
+  .home-section-7 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    padding-block: clamp(60px, 8vw, 120px);
+    overflow: hidden;
+    /* Prevent horizontal spill of absolute children */
+  }
+
+  /* ================================================== */
+  /* HERO SECTION (Art-Directed Mobile)                   */
+  /* ================================================== */
+  .home-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: clamp(100px, 12vw, 160px);
+    padding-inline: 24px;
+  }
+
+  .home-hero__text-block {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: 600px;
+    order: 1;
+    text-align: center;
+    z-index: 5;
+    margin-bottom: clamp(40px, 6vw, 80px);
+  }
+
+  .home-hero__image-wrapper {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: min(85vw, 480px) !important;
+    height: auto !important;
+    aspect-ratio: 4/5;
+    order: 2;
+    z-index: 2;
+  }
+
+  .home-hero__signature-block {
+    position: absolute !important;
+    top: 55% !important;
+    left: 5% !important;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+
+  .home-hero__title {
+    font-size: clamp(3.5rem, 8vw, 86px) !important;
+    line-height: 1.1 !important;
+  }
+
+  .home-hero__subtitle {
+    font-size: clamp(16px, 3vw, 22px) !important;
+  }
+
+  .home-hero__actions {
+    justify-content: center;
+  }
+
+  /* ================================================== */
+  /* SECTION 2: YOU'RE NOT ALONE                          */
+  /* ================================================== */
+  .home-section-2 {
+    display: flex;
+    justify-content: center;
+    padding-inline: 24px;
+  }
+
+  .home-section-2__container {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 800px;
+    height: auto !important;
+  }
+
+  .home-section-2__content {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .home-section-2__title {
+    font-size: clamp(2.5rem, 6vw, 64px) !important;
+    margin-inline: auto;
+  }
+
+  .home-section-2__grid {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: clamp(20px, 4vw, 40px);
+  }
+
+  .home-section-2__column {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-right: none !important;
+    padding: 0 8px !important;
+  }
+
+  .home-section-2__item-wrapper {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* ================================================== */
+  /* SECTION 3: FOUNDER                                   */
+  /* ================================================== */
+  .home-section-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 24px;
+  }
+
+  .home-section-inner-1920 {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 900px !important;
+    left: auto !important;
+    transform: none !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto !important;
+  }
+
+  .home-section-3__portrait {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: min(80vw, 400px) !important;
+    height: auto !important;
+    aspect-ratio: 3/4;
+    order: 1;
+    z-index: 2;
+    margin-bottom: 40px;
+  }
+
+  .home-section-3__label {
+    position: absolute !important;
+    top: 10% !important;
+    left: -5% !important;
+    z-index: 3;
+  }
+
+  .home-section-3__bio {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    padding: 0 !important;
+    order: 2;
+    z-index: 5;
+    text-align: center;
+  }
+
+  /* ================================================== */
+  /* SECTION 4: SUPPORT SERVICES                          */
+  /* ================================================== */
+  .home-section-4 {
+    display: flex;
+    justify-content: center;
+    padding-inline: 24px;
+  }
+
+  .home-section-4__container {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 1000px;
+    height: auto !important;
+  }
+
+  .home-section-4__header {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .home-section-4__title {
+    font-size: clamp(2.5rem, 6vw, 64px) !important;
+    margin-inline: auto;
+  }
+
+  .home-section-4__grid {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: clamp(20px, 4vw, 40px);
+  }
+
+  .home-section-4__card {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .home-section-4__card-img-wrapper {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1/1;
+  }
+
+  /* ================================================== */
+  /* SECTION BLOG & SOCIALS                               */
+  /* ================================================== */
+  .home-section-blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 24px;
+  }
+
+  .home-section-blog__panel {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 500px;
+    height: auto !important;
+    padding: clamp(30px, 6vw, 60px) 24px;
+    margin-top: -60px;
+    /* Intentional overlap */
+    z-index: 5;
+    background: #E8D5C4;
+    /* Ensure panel color is maintained */
+  }
+
+  /* Overlapping Image */
+  .home-section-blog__overlay {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: min(90vw, 600px) !important;
+    height: auto !important;
+    aspect-ratio: 16/9;
+    z-index: 2;
+  }
+
+  /* Social Pills (Youtube section) */
+  .home-youtube {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 800px;
+    height: auto !important;
+    margin-top: 80px;
+  }
+
+  .home-youtube__pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .home-youtube__pill {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+  }
+
+  /* SECTION 6: CTA BANNER */
+  .home-section-6 {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: calc(100% - 48px) !important;
+    max-width: 900px !important;
+    height: auto !important;
+    margin: 48px auto !important;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 36px 32px !important;
+  }
+
+  .home-section-6__logo {
+    width: 72px;
+    height: 64px;
+  }
+
+  .home-section-6__text-block {
+    width: 100%;
+  }
+
+  .home-section-6__title {
+    font-size: clamp(22px, 3.5vw, 30px) !important;
+    line-height: 1.25 !important;
+  }
+
+  .home-section-6__desc {
+    font-size: clamp(14px, 2vw, 18px) !important;
+    line-height: 1.4 !important;
+  }
+
+  .home-section-6__right {
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+
+/* ================================================== */
+/* MOBILE SPECIFIC TWEAKS (< 768px)                     */
+/* ================================================== */
+@media (max-width: 767px) {
+
+  .home-section-2__grid,
+  .home-section-4__grid {
+    grid-template-columns: 1fr !important;
+    max-width: 420px;
+    margin-inline: auto;
+  }
+
+  .home-section-4__card {
+    margin-bottom: 20px;
+  }
+
+  .home-hero__signature-block {
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+    top: 70% !important;
+  }
+
+  .home-section-blog__panel {
+    margin-top: -30px;
+  }
+}
+
+
+/* ================================================== */
+/* 1440px - 1919px SURGICAL ADAPTATION                */
+/* ================================================== */
+@media (min-width: 1440px) and (max-width: 1919px) {
+
+  /* Prevent the 1920px centering container from causing body overflow */
+  .home-section-inner-1920 {
+    width: 100%;
+    max-width: 1920px;
+  }
+
+  /* Safely clip the 1305px hero image that extends to 1555px */
+  .home-hero {
+    overflow-x: hidden;
+  }
+}
+
+/* ================================================== */
+/* RESPONSIVE ADAPTATION (Below 1440px)               */
+/* ================================================== */
+
+@media (max-width: 1439px) {
+  .home-container {
+    min-height: auto !important;
+  }
+
+  .home-bg {
+    height: 100% !important;
+  }
+
+  /* Release the hardcoded top positions so sections flow naturally. 
+     We do NOT use generic padding here. Each section gets its own tuning. */
+  .home-hero,
+  .home-section-2,
+  .home-section-3,
+  .home-section-4,
+  .home-section-blog,
+  .home-section-6,
+  .home-section-7 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* ================================================== */
+  /* HERO SECTION (Art-Directed Mobile)                   */
+  /* ================================================== */
+  .home-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: clamp(20px, 6vw, 60px) 0 40px 0;
+    gap: 0;
+    z-index: 1;
+    /* Establish stacking context */
+  }
+
+  .home-hero__image-wrapper {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: min(100% - 32px, 520px) !important;
+    margin-inline: auto;
+    height: auto !important;
+    aspect-ratio: auto;
+    order: 1;
+    z-index: 2;
+    margin-bottom: 0px;
+    padding-inline: 0;
+    box-sizing: border-box;
+  }
+
+  .home-hero__image {
+    object-fit: contain !important;
+    height: auto !important;
+    width: 100% !important;
+    display: block;
+  }
+
+  .home-hero__signature-block {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin-top: -24px;
+    /* Pull signature up slightly into the portrait */
+    margin-bottom: 40px;
+    /* Breathing space before next section */
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    order: 2;
+    z-index: 10;
+    padding-inline: 20px;
+    box-sizing: border-box;
+  }
+
+  .home-hero__signature--desktop {
+    display: none !important;
+  }
+
+  .home-hero__signature--mobile {
+    display: block !important;
+    font-family: var(--font-signature);
+    font-size: clamp(36px, 10vw, 56px);
+    font-weight: 400;
+    color: #000000;
+    margin: 0 0 8px 0;
+    line-height: 1;
+    white-space: nowrap;
+    /* CRITICAL: Prevent wrapping into two enormous lines */
+  }
+
+  .home-hero__curve {
+    display: block !important;
+    position: relative !important;
+    width: 100vw !important;
+    height: auto !important;
+    order: 3;
+    z-index: 2;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .home-hero__curve svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .home-hero__text-block {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: 600px;
+    order: 4;
+    text-align: center;
+    z-index: 5;
+    margin-bottom: 0;
+    padding-inline: 20px;
+    box-sizing: border-box;
+    margin-top: 24px;
+  }
+
+  .home-hero__title {
+    width: 100%;
+    font-size: clamp(28px, 8vw, 48px) !important;
+    padding: 0;
+    margin: 16px 0 0 0;
+    line-height: 1.15 !important;
+  }
+
+  .home-hero__divider {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin: 24px 0;
+  }
+
+  .home-hero__divider-line {
+    width: 64px;
+    height: 1px;
+    background: #DDD6CD;
+  }
+
+  .home-hero__divider-diamond {
+    width: 12px;
+    height: 12px;
+    border: 0.75px solid #BC957B;
+    transform: rotate(45deg);
+  }
+
+  .home-hero__subtitle {
+    font-size: clamp(12px, 3.2vw, 15px) !important;
+    letter-spacing: 0.8px;
+    margin: 0 auto 16px auto;
+  }
+
+  .home-hero__description {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 auto 32px auto;
+  }
+
+  .home-hero__actions {
+    justify-content: center;
+  }
+
+  /* ================================================== */
+  /* SECTION 2: YOU'RE NOT ALONE                          */
+  /* ================================================== */
+  .home-section-2 {
+    display: flex;
+    justify-content: center;
+    padding-block: clamp(60px, 10vw, 120px);
+    padding-inline: 24px;
+  }
+
+  .home-section-2__container {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 800px;
+    height: auto !important;
+  }
+
+  .home-section-2__content {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .home-section-2__title {
+    font-size: clamp(2.5rem, 6vw, 64px) !important;
+    margin-inline: auto;
+  }
+
+  .home-section-2__grid {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: clamp(20px, 4vw, 40px);
+  }
+
+  .home-section-2__item-wrapper {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* ================================================== */
+  /* SECTION 3: FOUNDER                                   */
+  /* ================================================== */
+  .home-section-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: clamp(20px, 6vw, 60px) 20px !important;
+    gap: 24px;
+  }
+
+  .home-section-inner-1920 {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 1000px !important;
+    left: auto !important;
+    transform: none !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto !important;
+  }
+
+  .home-section-3__portrait {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: min(80vw, 280px) !important;
+    height: auto !important;
+    border-radius: 16px;
+    order: 1;
+    z-index: 2;
+    margin-bottom: 0;
+  }
+
+  .home-section-3__label {
+    position: absolute !important;
+    top: 5% !important;
+    left: 0 !important;
+    z-index: 3;
+    /* Scale the decorative label */
+    transform: scale(0.8);
+    transform-origin: top left;
+  }
+
+  .home-section-3__bio {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    padding: 0 !important;
+    order: 2;
+    z-index: 5;
+    text-align: center;
+  }
+
+  /* ================================================== */
+  /* SECTION 4: SUPPORT SERVICES                          */
+  /* ================================================== */
+  .home-section-4 {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center;
+    padding-block: clamp(60px, 10vw, 120px);
+    padding-inline: 0 !important;
+    width: 100% !important;
+    overflow: hidden;
+  }
+
+  .home-section-4__container {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 1000px;
+    height: auto !important;
+    padding-inline: 20px;
+    box-sizing: border-box;
+  }
+
+  .home-section-4__header {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .home-section-4__title {
+    font-size: clamp(2rem, 5vw, 64px) !important;
+    margin-inline: auto;
+    white-space: normal !important;
+    height: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+    padding-inline: 10px;
+    box-sizing: border-box;
+  }
+
+  .home-section-4__divider {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-inline: auto;
+    margin-top: 16px;
+  }
+
+  .home-section-4__grid {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: clamp(20px, 4vw, 40px);
+  }
+
+  .home-section-4__card {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 380px !important;
+    margin-inline: auto !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-sizing: border-box !important;
+  }
+
+  .home-section-4__card-img-wrapper {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 393 / 294.48 !important;
+    box-sizing: border-box !important;
+  }
+
+  .home-section-4__card-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    padding: clamp(16px, 4vw, 24px) !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .home-section-4__card-title {
+    width: 100% !important;
+  }
+
+  .home-section-4__card-desc {
+    width: 100% !important;
+    margin: 0 0 16px 0 !important;
+  }
+
+  .home-section-4__cta {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 48px !important;
+    background: #D1C2B5 !important;
+    border-radius: 24px !important;
+    border: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 clamp(16px, 4vw, 24px) !important;
+    box-sizing: border-box !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+  }
+
+  /* ================================================== */
+  /* PODCAST CARDS                                        */
+  /* ================================================== */
+  .home-podcast-card {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: calc(100% - 40px) !important;
+    max-width: 390px !important;
+    margin-inline: auto !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column;
+    padding: 40px 20px !important;
+    text-align: center;
+    margin-top: clamp(40px, 8vw, 80px) !important;
+    box-sizing: border-box;
+  }
+
+  .home-podcast-card__text {
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .home-podcast-card__socials {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 420px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .home-podcast-card__social {
+    width: 100% !important;
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+    justify-items: start;
+    padding: 16px 24px !important;
+    border-radius: 14px !important;
+    gap: 4px 16px !important;
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  .home-podcast-card__icon-wrapper {
+    grid-row: 1 / 3;
+    margin: 0 !important;
+  }
+
+  /* ================================================== */
+  /* SECTION BLOG & SOCIALS                               */
+  /* ================================================== */
+  .home-section-blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: clamp(60px, 10vw, 120px);
+    padding-inline: 24px;
+  }
+
+  .home-section-blog__panel {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 600px;
+    height: auto !important;
+    padding: clamp(30px, 6vw, 60px) 24px;
+    margin-top: -60px;
+    /* Intentional editorial overlap */
+    z-index: 5;
+    background: #E8D5C4;
+    /* Ensure panel color is maintained */
+  }
+
+  /* Overlapping Image */
+  .home-section-blog__overlay {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: min(90vw, 800px) !important;
+    height: auto !important;
+    aspect-ratio: 16/9;
+    z-index: 2;
+  }
+
+  .home-section-blog__title {
+    font-size: clamp(20px, 4vw, 26px);
+  }
+
+  /* Social Pills (Youtube section) */
+  .home-youtube {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 900px;
+    height: auto !important;
+    margin-top: 80px;
+    padding-inline: 20px;
+  }
+
+  .home-youtube__pills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .home-youtube__pill--purple,
+  .home-youtube__pill--green {
+    display: none !important;
+  }
+
+  .home-youtube__pill--red {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 240px !important;
+    margin: 0 auto 20px !important;
+    padding: 14px 20px !important;
+    border-radius: 999px !important;
+    height: auto !important;
+  }
+
+  .home-youtube__pill--red .home-youtube__text {
+    font-size: clamp(16px, 4.5vw, 22px) !important;
+  }
+
+  /* SECTION 6: CTA BANNER (mobile) */
+  .home-section-6 {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: calc(100% - 32px) !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 32px auto !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+    padding: 28px 20px !important;
+  }
+
+  .home-section-6__logo {
+    width: 64px;
+    height: 58px;
+  }
+
+  .home-section-6__text-block {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .home-section-6__title {
+    font-size: clamp(18px, 5vw, 24px) !important;
+    line-height: 1.3 !important;
+  }
+
+  .home-section-6__desc {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+  }
+
+  .home-section-6__right {
+    align-items: flex-start;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .home-section-6__cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .home-section-6__cta-sub {
+    text-align: left;
+    width: 100%;
+  }
+
+  .home-section-6__leaf {
+    display: none;
+  }
+
+  /* ================================================== */
+  /* FOOTER                                               */
+  /* ================================================== */
+  .home-section-7 {
+    height: auto !important;
+    padding-bottom: 40px;
+  }
+
+  .home-section-7__top {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 40px;
+    padding: 40px 20px 0;
+  }
+
+  .home-section-7__brand {
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .home-section-7__brand-header {
+    flex-direction: column;
+  }
+
+  .home-section-7__brand-socials {
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .home-section-7__link-heading {
+    margin: 0 auto 8px auto;
+  }
+
+  .home-section-7__middle {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 40px;
+    padding: 20px 20px 0;
+  }
+
+  .home-section-7__subscribe {
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .home-section-7__contact {
+    align-items: center;
+    margin: 0 auto;
+    grid-column: 1 / -1;
+  }
+
+  .home-section-7__whatsapp {
+    justify-content: center;
+    grid-column: 1 / -1;
+    margin-top: 20px;
+  }
+
+  .home-section-7__bottom-bar {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
+}
+
+/* ================================================== */
+/* MOBILE SPECIFIC TWEAKS (< 768px)                     */
+/* ================================================== */
+@media (max-width: 767px) {
+
+  /* --- HERO SECTION MOBILE REDESIGN --- */
+  .home-hero {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-end !important;
+    justify-content: space-between !important;
+    padding-top: clamp(84px, 12vw, 100px) !important;
+    padding-bottom: 0 !important;
+    padding-inline: 16px !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    background: transparent !important;
+    z-index: 2 !important;
+  }
+
+  /* Left Column: Hero Portrait */
+  .home-hero__image-wrapper {
+    order: 1 !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    flex: 0 0 44% !important;
+    max-width: 44% !important;
+    height: clamp(200px, 48vw, 300px) !important;
+    aspect-ratio: auto !important;
+    margin: 0 !important;
+    z-index: 1 !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: flex-start !important;
+  }
+
+  .home-hero__image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: 10% bottom !important;
+    display: block !important;
+    mix-blend-mode: multiply !important;
+    transform: none !important;
+  }
+
+  /* Right Column: Text Content */
+  .home-hero__text-block {
+    order: 2 !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    flex: 1 1 56% !important;
+    max-width: 58% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    padding-bottom: clamp(14px, 3.5vw, 22px) !important;
+    gap: 6px !important;
+    margin: 0 !important;
+    z-index: 2 !important;
+  }
+
+  /* 1. Small Eyebrow */
+  .home-hero__caption {
+    font-family: var(--font-nunito, 'Nunito Sans', sans-serif) !important;
+    font-size: clamp(9.5px, 2.4vw, 12px) !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.15em !important;
+    text-transform: uppercase !important;
+    color: #BC957B !important;
+    font-weight: 600 !important;
+    margin: 0 0 2px 0 !important;
+    display: block !important;
+  }
+
+  /* 2. Large Editorial Headline */
+  .home-hero__title {
+    font-family: var(--font-display-primary) !important;
+    font-size: clamp(20px, 5.2vw, 30px) !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.01em !important;
+    color: #221811 !important;
+    text-transform: uppercase !important;
+    margin: 0 0 4px 0 !important;
+    max-width: none !important;
+    text-wrap: balance !important;
+    font-weight: 400 !important;
+    display: block !important;
+  }
+
+  /* 3. Divider */
+  .home-hero__divider {
+    display: none !important;
+  }
+
+  /* 4. Subtitle / Mantras */
+  .home-hero__subtitle {
+    font-family: var(--font-ui, 'Cinzel', serif) !important;
+    font-size: clamp(9px, 2.2vw, 10.5px) !important;
+    line-height: 1.35 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: #C39F87 !important;
+    font-weight: 600 !important;
+    margin: 0 0 4px 0 !important;
+    max-width: none !important;
+    display: block !important;
+  }
+
+  /* 5. Supporting Copy */
+  .home-hero__description {
+    display: none !important;
+  }
+
+  /* 6. CTA Buttons */
+  .home-hero__actions {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+    width: 100% !important;
+    margin: 4px 0 0 0 !important;
+    padding: 0 !important;
+    z-index: 5 !important;
+  }
+
+  .home-hero__btn-primary {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    padding: 0 12px !important;
+    height: 32px !important;
+    background: #C39F87 !important;
+    color: #FFFFFF !important;
+    font-family: var(--font-button) !important;
+    font-size: 9.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    border-radius: 2px !important;
+    border: none !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    box-shadow: 0 2px 8px rgba(195, 159, 135, 0.25) !important;
+  }
+
+  .home-hero__btn-secondary {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    padding: 0 10px !important;
+    height: 28px !important;
+    background: transparent !important;
+    color: #221811 !important;
+    border: 1px solid #221811 !important;
+    font-family: var(--font-button) !important;
+    font-size: 9px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.04em !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    border-radius: 2px !important;
+    white-space: nowrap !important;
+  }
+
+  /* 7. Signature Overlapping Block */
+  .home-hero__signature-block {
+    display: none !important;
+  }
+
+  /* Hide Curve on mobile */
+  .home-hero__curve {
+    display: none !important;
+  }
+
+  /* --- OTHER MOBILE TWEAKS --- */
+  .home-section-2__grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: clamp(24px, 6vw, 36px) clamp(12px, 4vw, 24px) !important;
+    max-width: 480px !important;
+    width: 100% !important;
+    margin-top: 36px !important;
+    margin-inline: auto !important;
+    padding-inline: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  .home-section-2__column {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-right: none !important;
+    padding: 0 4px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .home-section-4__grid {
+    grid-template-columns: 1fr !important;
+    max-width: 380px !important;
+    width: 100% !important;
+    margin-inline: auto !important;
+    gap: 24px !important;
+    padding-inline: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  .home-section-4__card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .home-section-4__card-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  .home-section-4__cta {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Podcast Card Socials: 2x2 Grid on Mobile */
+  .home-podcast-card {
+    width: calc(100% - 24px) !important;
+    max-width: 440px !important;
+    padding: 32px 14px !important;
+  }
+
+  .home-podcast-card__socials {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  .home-podcast-card__social {
+    width: 100% !important;
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: auto 1fr !important;
+    grid-template-rows: auto auto !important;
+    align-items: center !important;
+    justify-items: start !important;
+    padding: 12px 10px !important;
+    border-radius: 12px !important;
+    gap: 2px 8px !important;
+    text-align: left !important;
+    box-sizing: border-box !important;
+  }
+
+  .home-podcast-card__icon-wrapper {
+    grid-row: 1 / 3 !important;
+    width: 32px !important;
+    height: 32px !important;
+    margin: 0 !important;
+  }
+
+  .home-podcast-card__social--spotify img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .home-podcast-card__social-name {
+    font-size: clamp(12px, 3.4vw, 14px) !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+  }
+
+  .home-podcast-card__social-action {
+    font-size: clamp(9px, 2.5vw, 11px) !important;
+    line-height: 1.2 !important;
+  }
+
+  /* --- LATEST BLOGS SECTION MOBILE REDESIGN --- */
+  .home-section-blog {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: calc(100% - 24px) !important;
+    max-width: 480px !important;
+    height: auto !important;
+    min-height: auto !important;
+    margin: 40px auto !important;
+    padding: 24px 16px 36px 16px !important;
+    border-radius: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .home-section-blog__overlay {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    padding: 14px 16px !important;
+    background: rgba(255, 255, 255, 0.88) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border-radius: 12px !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 4px !important;
+    z-index: 2 !important;
+  }
+
+  .home-section-blog__title {
+    font-family: var(--font-display-editorial, 'Cinzel', serif) !important;
+    font-size: clamp(17px, 4.5vw, 21px) !important;
+    font-weight: 700 !important;
+    color: #221811 !important;
+    margin: 0 !important;
+    text-align: center !important;
+    letter-spacing: 0.05em !important;
+    line-height: 1.2 !important;
+  }
+
+  .home-section-blog__desc {
+    font-family: var(--font-body) !important;
+    font-size: 9.5px !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.08em !important;
+    color: #6E6259 !important;
+    margin: 0 !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+  }
+
+  .home-section-blog__panel {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    background: rgba(232, 213, 196, 0.94) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border-radius: 14px !important;
+    padding: 24px 18px 22px 18px !important;
+    margin-top: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08) !important;
+    z-index: 5 !important;
+  }
+
+  .home-section-blog__cat {
+    display: inline-block !important;
+    font-family: var(--font-body) !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.14em !important;
+    color: #8B6914 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .home-section-blog__panel-title {
+    font-family: var(--font-display-special, 'Aesthetic', serif) !important;
+    font-size: clamp(22px, 6vw, 30px) !important;
+    line-height: 1.25 !important;
+    color: #2C1810 !important;
+    margin: 0 0 10px 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .home-section-blog__panel-desc {
+    font-family: var(--font-body) !important;
+    font-size: 12.5px !important;
+    line-height: 1.55 !important;
+    color: #4A3B32 !important;
+    margin: 0 0 12px 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+    font-weight: 400 !important;
+  }
+
+  .home-section-blog__date {
+    font-family: var(--font-body) !important;
+    font-size: 11px !important;
+    color: #7A695E !important;
+    margin: 0 0 16px 0 !important;
+    letter-spacing: 0.04em !important;
+  }
+
+  .home-section-blog__read-more {
+    position: static !important;
+    transform: none !important;
+    margin-top: 4px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 9px 20px !important;
+    background: #FFFFFF !important;
+    color: #8B6914 !important;
+    font-family: var(--font-button) !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    border-radius: 4px !important;
+    text-decoration: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .home-section-blog__arrow {
+    display: none !important;
+  }
+
+  .home-section-blog__dots {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin-top: 16px !important;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 7px !important;
+    z-index: 10 !important;
+  }
+
+  .home-section-blog__dot {
+    width: 7px !important;
+    height: 7px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.45) !important;
+  }
+
+  .home-section-blog__dot--active {
+    background: #C39F87 !important;
+    transform: scale(1.25) !important;
+  }
+
+  .home-youtube__pills {
+    flex-direction: column;
+    align-items: center;
+  }
+}

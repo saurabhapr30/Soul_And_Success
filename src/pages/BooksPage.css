@@ -1,0 +1,832 @@
+/* ================================================== */
+/* BOOKS PAGE - EXACT GEOMETRY (1920px reference)       */
+/* ================================================== */
+
+.books-page {
+  width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+  background: #F9F9FE;
+}
+
+.books-container {
+  width: 1920px;
+  max-width: none;
+  margin: 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  background: #F9F9FE;
+  padding-bottom: 150px;
+}
+
+/* ================================================== */
+/* 1. HERO SECTION                                      */
+/* ================================================== */
+.books-page__hero {
+  position: relative;
+  margin-top: 110px;
+  width: 100%;
+  height: 900px;
+}
+
+.books-page__hero-title {
+  position: absolute;
+  width: auto;
+  white-space: nowrap;
+  height: 76px;
+  left: 456px;
+  top: 182px;
+  /* 292 - 110 = 182 */
+  font-family: 'Agatho';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 70px;
+  line-height: 76px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -1.08px;
+  text-transform: capitalize;
+  color: #000000;
+  z-index: 10;
+}
+
+.books-page__hero-subtitle {
+  position: absolute;
+  width: 444px;
+  height: 21px;
+  left: 456px;
+  top: 281px;
+  /* 391 - 110 = 281 */
+  font-family: 'Agatho';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  color: #5D5D5D;
+}
+
+.books-page__hero-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 10px;
+  position: absolute;
+  width: 154.04px;
+  height: 34.53px;
+  left: 459px;
+  top: 330px;
+  /* 440 - 110 = 330 */
+  background: #C39F87;
+  box-shadow: 0px 4px 10.7px rgba(0, 0, 0, 0.25);
+  font-family: 'Playfair Display', serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 11px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.books-page__hero-arrow {
+  position: absolute;
+  width: 44.01px;
+  height: 0px;
+  left: 392px;
+  top: 348px;
+  /* 458 - 110 = 348 */
+  border: 2px solid #BFBFBF;
+  transform: rotate(-1.3deg);
+}
+
+.books-page__hero-image {
+  position: absolute;
+  width: 700px;
+  height: 755px;
+  left: 1000px;
+  top: 135px;
+  /* 245 - 110 = 135 */
+  background-size: cover;
+  background-position: right;
+  ;
+}
+
+/* ================================================== */
+/* 2. QUOTE SECTION                                     */
+/* ================================================== */
+.books-page__quote-section {
+  position: relative;
+  width: 100%;
+  height: 578px;
+  margin-top: -49px;
+}
+
+.books-page__watermark {
+  position: absolute;
+  width: 417px;
+  height: 1471px;
+  left: calc(50% - 417px/2 - 484.5px);
+  top: 0px;
+  font-family: 'Bropella', 'Aesthetic', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1200px;
+  line-height: 70px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.72px;
+  text-transform: capitalize;
+  color: rgba(195, 159, 135, 0.1);
+  pointer-events: none;
+}
+
+.books-page__quote-mark {
+  position: absolute;
+  width: 650px;
+  height: 94px;
+  left: calc(50% - 650px/2);
+  top: 153px;
+  font-family: 'Bropella', 'Aesthetic', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: -0.72px;
+  text-transform: capitalize;
+  color: #C39F87;
+}
+
+.books-page__quote-text {
+  position: absolute;
+  width: 998px;
+  height: 273px;
+  left: calc(50% - 998px/2);
+  top: 232px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #000000;
+}
+
+.books-page__quote-signature {
+  position: absolute;
+  width: 289px;
+  height: 110px;
+  left: calc(50% - 289px/2 - 19.5px);
+  top: 468px;
+  font-family: 'Aesthetic';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 77px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #474747;
+}
+
+/* ================================================== */
+/* 3. SHOP COLLECTION                                   */
+/* ================================================== */
+.books-page__shop-section {
+  position: relative;
+  width: 100%;
+  height: 1505px;
+  margin-top: 110px;
+}
+
+.books-page__shop-title {
+  position: absolute;
+  width: 517px;
+  height: 110px;
+  left: calc(50% - 517px/2 + 0.5px);
+  top: 0px;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 77px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: #C39F87;
+}
+
+.books-page__shop-subtitle {
+  position: absolute;
+  width: 969px;
+  height: 96px;
+  left: calc(50% - 969px/2 + 0.5px);
+  top: 142px;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: -2px;
+  text-transform: capitalize;
+  color: #C39F87;
+}
+
+/* ================================================== */
+/* 4. PRODUCTS GRID                                     */
+/* ================================================== */
+
+.books-page__products-container {
+  position: absolute;
+  left: 401px;
+  top: 469px;
+  width: 1233px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 24px;
+}
+
+.books-page__product-card {
+  width: 395px;
+  height: 506px;
+  background: #FFFFFF;
+  border: 1px solid rgba(137, 106, 86, 0.4);
+  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.books-page__product-image-wrapper {
+  width: 395px;
+  height: 295px;
+  background: #B4D5FF;
+  position: relative;
+  overflow: hidden;
+}
+
+.books-page__product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.books-page__product-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px;
+  width: 395px;
+  height: 211px;
+}
+
+.books-page__product-icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 12px;
+}
+
+.books-page__product-title {
+  width: 201px;
+  font-family: var(--font-display-secondary);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  color: #444444;
+}
+
+.books-page__product-desc {
+  width: 337px;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  color: #444444;
+}
+
+.books-page__product-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+  width: 90px;
+  height: 14px;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  color: #BC957B;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================================================== */
+/* 5. TESTIMONIALS SECTION                              */
+/* ================================================== */
+
+.books-page__testimonials-section {
+  position: relative;
+  margin-top: 46px;
+  width: 1920px;
+  height: 987px;
+  background: linear-gradient(135deg, #FF4500 0%, #D42800 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.books-page__testimonials-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 987px;
+  background-size: cover;
+  background-position: center;
+  background-image: url('../assets/leaves.webp');
+  mix-blend-mode: overlay;
+  opacity: 0.3;
+}
+
+.books-page__testimonials-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1920px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.books-page__testimonials-title {
+  font-family: 'Fraunces', 'Agatho', serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 70px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.books-page__testimonials-subtitle {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 16px;
+  margin-bottom: 80px;
+}
+
+.books-page__testimonials-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 24px;
+}
+
+.books-page__testimonial-card {
+  width: 320px;
+  height: 400px;
+  background: #FFFFFF;
+  border-radius: 4px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.books-page__testimonial-avatar {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 24px;
+}
+
+.books-page__testimonial-name {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.books-page__testimonial-text {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #5E534A;
+  flex-grow: 1;
+}
+
+.books-page__testimonial-stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+  color: #FFC107;
+  font-size: 16px;
+}
+
+/* ================================================== */
+/* 6. NEWSLETTER SECTION                                */
+/* ================================================== */
+
+.books-page__newsletter-section {
+  position: relative;
+  margin-top: 313px;
+  width: 1920px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+.books-page__newsletter-left {
+  display: flex;
+  flex-direction: column;
+  width: 630px;
+}
+
+.books-page__newsletter-title {
+  width: 100%;
+  font-family: 'Aesthetic';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: -0.72px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.books-page__newsletter-desc {
+  width: 100%;
+  margin-top: 10px;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: -0.72px;
+  color: #896A56;
+}
+
+.books-page__newsletter-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 630px;
+  padding-top: 15px;
+  /* Adjust to vertically align with the text on the left */
+}
+
+.books-page__newsletter-input {
+  width: 100%;
+  height: 47px;
+  background: transparent;
+  border: 1px solid #896A56;
+  padding-left: 20px;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 275;
+  font-size: 18px;
+  color: #000000;
+  outline: none;
+}
+
+.books-page__newsletter-input::placeholder {
+  color: #000000;
+  text-transform: capitalize;
+}
+
+.books-page__newsletter-submit {
+  width: 168px;
+  height: 47px;
+  margin-top: 20px;
+  background: #C39F87;
+  border: 1px solid #896A56;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: -0.72px;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+/* Additional decorative lines from dump */
+.books-page__line-15,
+.books-page__line-16,
+.books-page__line-25 {
+  position: absolute;
+  height: 0px;
+  border: 0.7px solid #000000;
+}
+
+.books-page__line-15 {
+  width: 362px;
+  left: calc(50% - 362px/2 - 406px);
+  top: 1136px;
+}
+
+.books-page__line-16 {
+  width: 370px;
+  left: calc(50% - 370px/2 + 402px);
+  top: 1136px;
+}
+
+.books-page__line-25 {
+  width: 370px;
+  left: calc(50% - 370px/2);
+  top: 1759px;
+}
+
+
+/* ================================================== */
+/* RESPONSIVE ADAPTATION (Below 1440px)               */
+/* ================================================== */
+
+@media (max-width: 1439px) {
+  .books-page {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+  /* 1. HERO SECTION */
+  .books-page__hero {
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 24px;
+    padding-top: clamp(60px, 8vw, 120px);
+    padding-bottom: clamp(60px, 8vw, 100px);
+    margin-top: 0 !important;
+  }
+
+  .books-page__hero-title,
+  .books-page__hero-subtitle,
+  .books-page__hero-btn,
+  .books-page__hero-line {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: auto !important;
+    height: auto !important;
+    margin-bottom: 20px;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .books-page__hero-title {
+    font-size: clamp(2.5rem, 5vw, 60px) !important;
+    line-height: 1.2 !important;
+  }
+
+  .books-page__hero-subtitle {
+    font-size: clamp(14px, 2vw, 18px) !important;
+  }
+
+  .books-page__hero-img {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: min(90vw, 600px) !important;
+    height: auto !important;
+    aspect-ratio: 1/1;
+    margin-top: 40px;
+    background-position: center;
+  }
+
+  /* 2. QUOTE SECTION */
+  .books-page__quote-section {
+    position: relative;
+    height: auto !important;
+    margin-top: 0 !important;
+    padding-block: clamp(60px, 10vw, 120px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-inline: 24px;
+  }
+
+  .books-page__watermark {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    font-size: clamp(200px, 30vw, 400px) !important;
+    line-height: 1 !important;
+    opacity: 0.05;
+    z-index: 0;
+  }
+
+  .books-page__quote-text {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: 800px;
+    font-size: clamp(24px, 4vw, 42px) !important;
+    line-height: 1.4 !important;
+    z-index: 1;
+  }
+
+  .books-page__quote-signature {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    margin-top: 20px;
+    font-size: clamp(18px, 3vw, 24px) !important;
+    z-index: 1;
+  }
+
+  .books-page__quote-mark,
+  .books-page__line-15,
+  .books-page__line-16 {
+    display: none !important;
+    /* Hide complex absolute decor lines on mobile for cleaner flow */
+  }
+
+  /* 3. SHOP SECTION */
+  .books-page__shop-section {
+    position: relative !important;
+    height: auto !important;
+    margin-top: 0 !important;
+    padding-block: clamp(60px, 8vw, 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .books-page__shop-title,
+  .books-page__shop-subtitle,
+  .books-page__line-25 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    text-align: center;
+    height: auto !important;
+    margin-bottom: 20px;
+  }
+
+  .books-page__shop-title {
+    font-size: clamp(40px, 6vw, 68px) !important;
+  }
+
+  /* 4. PRODUCTS GRID */
+  .books-page__products-container {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: 1200px;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: clamp(20px, 4vw, 40px);
+    padding-inline: 24px;
+    box-sizing: border-box;
+    margin-top: 40px;
+  }
+
+  .books-page__product-card {
+    width: 100% !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* 5. TESTIMONIALS */
+  .books-page__testimonials-section {
+    height: auto !important;
+    margin-top: 0 !important;
+    padding-block: clamp(80px, 10vw, 140px);
+  }
+
+  .books-page__testimonials-bg {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .books-page__testimonials-title,
+  .books-page__testimonials-subtitle {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding-inline: 24px;
+  }
+
+  .books-page__testimonials-grid {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: 1000px !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 30px;
+    padding-inline: 24px;
+    box-sizing: border-box;
+    margin-inline: auto;
+    margin-top: 60px;
+  }
+
+  .books-page__testimonial-card {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+  }
+
+  /* 6. NEWSLETTER */
+  .books-page__newsletter-section {
+    height: auto !important;
+    margin-top: 0 !important;
+    padding-block: clamp(60px, 8vw, 120px);
+    flex-direction: column !important;
+    align-items: center;
+    gap: 40px;
+    padding-inline: 24px;
+    box-sizing: border-box;
+  }
+
+  .books-page__newsletter-left,
+  .books-page__newsletter-right {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: 600px;
+    text-align: center;
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .books-page__products-container,
+  .books-page__testimonials-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 420px;
+    margin-inline: auto;
+  }
+}

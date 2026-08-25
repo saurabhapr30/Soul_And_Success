@@ -1,0 +1,34 @@
+/* ================================================== */
+/* COURSE CARD STYLES                                   */
+/* ================================================== */
+
+.course-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.course-card__duration {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-supporting);
+  font-size: var(--text-caption);
+  color: var(--color-text-muted);
+}
+
+.course-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: var(--space-3);
+}
+
+.course-card__price {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+}

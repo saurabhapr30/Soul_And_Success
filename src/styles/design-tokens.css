@@ -1,0 +1,193 @@
+/* ================================================== */
+/* DESIGN TOKENS — Single Source of Truth               */
+/* ================================================== */
+/* All values derived from the SandS Design System.     */
+/* Never hardcode colors, spacing, or typography.       */
+/* Always reference these tokens via var(--token).      */
+/* ================================================== */
+
+:root {
+  /* ============================================== */
+  /* COLOR PALETTE                                  */
+  /* ============================================== */
+
+  /* --- Core Palette --- */
+  --color-deep-espresso: #2C1810;
+  --color-warm-brown: #5C3D2E;
+  --color-warm-ivory: #FAF6F1;
+  --color-soft-white: #FFFDF9;
+  --color-light-cream: #F5F0E8;
+  --color-muted-gold: #C4A35A;
+  --color-warm-bronze: #8B6914;
+  --color-dark-chocolate: #1A0F0A;
+  --color-warm-beige: #E0D5C7;
+  --color-muted-brown: #A68B6B;
+
+  /* --- Semantic Tokens --- */
+  --color-text-primary: var(--color-deep-espresso);
+  --color-text-secondary: var(--color-warm-brown);
+  --color-text-inverse: var(--color-soft-white);
+  --color-text-accent: var(--color-muted-gold);
+  --color-text-muted: var(--color-muted-brown);
+
+  --color-bg-primary: var(--color-warm-ivory);
+  --color-bg-section: var(--color-soft-white);
+  --color-bg-alternate: var(--color-light-cream);
+  --color-bg-footer: var(--color-dark-chocolate);
+  --color-bg-overlay: rgba(44, 24, 16, 0.5);
+
+  --color-accent: var(--color-muted-gold);
+  --color-accent-hover: #D4B36A;
+
+  --color-btn-primary: var(--color-warm-bronze);
+  --color-btn-primary-hover: #9C7A24;
+  --color-btn-primary-text: var(--color-soft-white);
+  --color-btn-outline-border: var(--color-warm-brown);
+  --color-btn-outline-text: var(--color-warm-brown);
+
+  --color-border: var(--color-warm-beige);
+  --color-border-light: #EDE7DD;
+  --color-decorative: var(--color-muted-brown);
+
+  /* ============================================== */
+  /* TYPOGRAPHY                                     */
+  /* ============================================== */
+
+  /* --- Font Families --- */
+  --font-display-primary: 'Aesthetic', 'Cormorant Garamond', serif;
+  --font-display-secondary: 'Agatho', 'Cormorant Garamond', serif;
+  --font-body: var(--font-body);
+  --font-supporting: var(--font-body);
+  --font-editorial: 'Agatho', 'Cormorant Garamond', serif;
+  --font-newsletter: var(--font-body);
+  --font-signature: 'Brother Signature', cursive;
+
+  /* --- Font Sizes --- */
+  --text-display-xxl: clamp(3.5rem, 5vw + 1rem, 6rem);
+  --text-display-xl: clamp(2.75rem, 4vw + 1rem, 4.5rem);
+  --text-h1: clamp(2.25rem, 3vw + 0.5rem, 3.5rem);
+  --text-h2: clamp(1.75rem, 2.5vw + 0.5rem, 2.5rem);
+  --text-h3: clamp(1.375rem, 1.5vw + 0.5rem, 1.75rem);
+  --text-h4: clamp(1.125rem, 1vw + 0.5rem, 1.375rem);
+  --text-body-lg: 1.125rem;
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-caption: 0.75rem;
+  --text-button: 0.875rem;
+  --text-nav: 0.875rem;
+  --text-footer: 0.8125rem;
+
+  /* --- Font Weights --- */
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* --- Line Heights --- */
+  --leading-tight: 1.1;
+  --leading-snug: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+  --leading-loose: 1.8;
+
+  /* --- Letter Spacing --- */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.1em;
+  --tracking-widest: 0.15em;
+  --tracking-uppercase: 0.12em;
+
+  /* ============================================== */
+  /* SPACING SCALE                                  */
+  /* ============================================== */
+
+  /* --- Small --- */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+
+  /* --- Medium --- */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-7: 2rem;      /* 32px */
+  --space-8: 2.5rem;    /* 40px */
+
+  /* --- Large --- */
+  --space-9: 3rem;      /* 48px */
+  --space-10: 4rem;     /* 64px */
+  --space-11: 5rem;     /* 80px */
+  --space-12: 6rem;     /* 96px */
+
+  /* --- Extra Large --- */
+  --space-13: 7.5rem;   /* 120px */
+  --space-14: 10rem;    /* 160px */
+
+  /* --- Semantic Spacing --- */
+  --content-padding: var(--space-6);          /* 24px */
+  --section-gap: var(--space-12);             /* 96px */
+  --section-gap-lg: var(--space-13);          /* 120px */
+  --component-gap: var(--space-8);            /* 40px */
+  --card-padding: var(--space-7);             /* 32px */
+  --card-padding-sm: var(--space-6);          /* 24px */
+
+  /* ============================================== */
+  /* LAYOUT                                         */
+  /* ============================================== */
+
+  --layout-max-width: 80rem;                  /* 1280px */
+  --layout-full-width: 120rem;                /* 1920px */
+  --layout-content-padding: var(--space-6);   /* 24px */
+  --layout-grid-columns: 12;
+  --layout-grid-gutter: var(--space-6);       /* 24px */
+
+  /* ============================================== */
+  /* BORDER RADIUS                                  */
+  /* ============================================== */
+
+  --radius-none: 0;
+  --radius-sm: 0.25rem;     /* 4px — buttons */
+  --radius-md: 0.5rem;      /* 8px */
+  --radius-lg: 1.25rem;     /* 20px — cards */
+  --radius-xl: 1.5rem;      /* 24px */
+  --radius-2xl: 1.875rem;   /* 30px — images */
+  --radius-full: 9999px;    /* pills */
+
+  /* ============================================== */
+  /* SHADOWS                                        */
+  /* ============================================== */
+
+  --shadow-none: none;
+  --shadow-xs: 0 1px 2px rgba(44, 24, 16, 0.04);
+  --shadow-sm: 0 2px 8px rgba(44, 24, 16, 0.06);
+  --shadow-md: 0 4px 16px rgba(44, 24, 16, 0.08);
+  --shadow-lg: 0 8px 32px rgba(44, 24, 16, 0.10);
+  --shadow-hover: 0 6px 20px rgba(44, 24, 16, 0.10);
+
+  /* ============================================== */
+  /* TRANSITIONS                                    */
+  /* ============================================== */
+
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+  --duration-slow: 500ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --transition-base: all var(--duration-base) var(--ease-out);
+  --transition-fast: all var(--duration-fast) var(--ease-out);
+
+  /* ============================================== */
+  /* Z-INDEX                                        */
+  /* ============================================== */
+
+  --z-behind: -1;
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-navbar: 300;
+  --z-overlay: 400;
+  --z-modal: 500;
+  --z-toast: 600;
+}

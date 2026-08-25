@@ -1,0 +1,50 @@
+/* ================================================== */
+/* SECTION HEADING STYLES                               */
+/* ================================================== */
+
+.section-heading {
+  margin-bottom: var(--component-gap);
+  max-width: 48rem;
+}
+
+.section-heading--center {
+  text-align: center;
+  margin-inline: auto;
+}
+
+.section-heading--left {
+  text-align: left;
+}
+
+.section-heading__caption {
+  display: block;
+  font-family: var(--font-supporting);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+
+.section-heading__title {
+  font-family: var(--font-display-secondary);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-snug);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.section-heading__subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  max-width: 40rem;
+}
+
+.section-heading--center .section-heading__subtitle {
+  margin-inline: auto;
+}

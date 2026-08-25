@@ -1,0 +1,8 @@
+/* ================================================== */
+/* SERVICE CARD STYLES                                  */
+/* ================================================== */
+
+.service-card .service-card__icon {
+  color: var(--color-accent);
+  margin-bottom: var(--space-2);
+}

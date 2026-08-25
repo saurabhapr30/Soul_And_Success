@@ -1,0 +1,38 @@
+/* ================================================== */
+/* SECTION CTA STYLES                                   */
+/* ================================================== */
+
+.section-cta {
+  padding-block: var(--section-gap);
+}
+
+.section-cta__container {
+  display: flex;
+  justify-content: center;
+}
+
+/* --- Background Variants --- */
+.section-cta--primary {
+  background-color: var(--color-bg-primary);
+}
+
+.section-cta--alternate {
+  background-color: var(--color-bg-alternate);
+}
+
+.section-cta--dark {
+  background-color: var(--color-bg-footer);
+}
+
+/* Dark background overrides */
+.section-cta--dark .cta__heading {
+  color: var(--color-text-inverse);
+}
+
+.section-cta--dark .cta__description {
+  color: rgba(255, 253, 249, 0.7);
+}
+
+.section-cta--dark .cta__caption {
+  color: var(--color-accent);
+}

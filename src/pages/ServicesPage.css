@@ -1,0 +1,462 @@
+.services-page {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  background: #FBFAF8;
+  overflow: hidden;
+  font-family: var(--font-body);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 110px;
+}
+
+/* ================================================== */
+/* HERO SECTION                                         */
+/* ================================================== */
+
+.services-page__hero {
+  width: 1920px;
+  height: 1147px;
+  position: relative;
+  z-index: 1;
+}
+
+.services-page__hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ================================================== */
+/* BANNER SECTION                                       */
+/* ================================================== */
+
+.services-page__banner {
+  width: 100%;
+  max-width: 1920px;
+  height: 253px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.services-page__banner-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+.services-page__banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 2;
+}
+
+.services-page__banner-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+  justify-content: center;
+  padding-inline: 24px;
+  box-sizing: border-box;
+}
+
+.services-page__banner-line {
+  width: 313px;
+  max-width: 25vw;
+  height: 0;
+  border-top: 2px solid #FFFFFF;
+}
+
+.services-page__banner-title {
+  color: #FFF;
+  text-align: center;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #FFF;
+  font-family: 'Iansui', var(--font-display-primary);
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: -0.72px;
+  text-transform: capitalize;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+/* ================================================== */
+/* SERVICES CONTENT AREA                                */
+/* ================================================== */
+
+.services-page__content {
+  position: relative;
+  width: 100%;
+  max-width: 1232px;
+  margin: 80px auto 160px;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+
+
+/* Decorative leaf floating on the top right */
+.services-page__leaf-decoration {
+  position: absolute;
+  top: -40px;
+  right: -120px;
+  width: 200px;
+  height: 200px;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.9;
+  display: block;
+}
+
+/* ---------- Cards Grid ---------- */
+
+.services-page__cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  height: 506px;
+  position: relative;
+  margin-top: 260px
+}
+
+/* ---------- Service Card Geometry ---------- */
+
+.services-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  width: 395px;
+  height: 506px;
+  background: #FFFFFF;
+  border: 1px solid #DDD6CD;
+  box-shadow: 0px 4px 12.7px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Image Wrapper */
+.services-card__image-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 294.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-card__image-wrapper--blue {
+  background: #B4D5FF;
+}
+
+.services-card__image-wrapper--beige {
+  background: #FFEEDB;
+}
+
+.services-card__image-wrapper--grey {
+  background: #D4C8C3;
+}
+
+.services-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* For Ebook and Merch, Figma shows absolute positioned rounded images inside the wrapper */
+.services-card__image--ebook {
+  position: absolute;
+  width: 347px;
+  height: 257px;
+  left: calc(50% - 347px/2);
+  top: calc(50% - 257px/2 + 19.25px);
+  border-radius: 19px;
+  object-fit: cover;
+}
+
+.services-card__image--merch {
+  position: absolute;
+  width: 338px;
+  height: 236px;
+  left: 29px;
+  top: 51px;
+  border-radius: 27px;
+  object-fit: cover;
+}
+
+/* Content */
+.services-card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  width: 100%;
+  height: 203.5px;
+  box-sizing: border-box;
+}
+
+.services-card__icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-card__title {
+  font-family: Cinzel-Bold, serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #221811;
+  margin: 12px 0 0 0;
+  width: 100%;
+}
+
+.services-card__desc {
+  font-family: var(--font-display-secondary);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 23px;
+  color: #5E534A;
+  margin: 6.8px 0 0 0;
+  width: 100%;
+}
+
+/* Button Container inside the card */
+.services-card__btn-wrapper {
+  margin-top: auto;
+  margin-bottom: 25px;
+  align-self: center;
+}
+
+/* Button */
+.services-card__btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 20px;
+  width: 239px;
+  height: 48px;
+  background: #D7C7BD;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: background 0.2s ease;
+  position: relative;
+}
+
+.services-card__btn:hover {
+  background: #C4B8AD;
+}
+
+.services-card__btn-text {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 12px;
+  text-transform: uppercase;
+  color: #000000;
+  display: flex;
+  align-items: center;
+}
+
+.services-card__btn-icon {
+  position: absolute;
+  right: 20px;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ================================================== */
+/* RESPONSIVE ADAPTATION (Below 1440px)               */
+/* ================================================== */
+
+@media (max-width: 1439px) {
+  .services-page {
+    width: 100%;
+    min-width: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Retain starry hero but allow background positioning to tune */
+  .services-page__hero {
+    width: 100%;
+    height: clamp(300px, 40vw, 500px);
+    position: relative;
+  }
+
+  .services-page__hero-img {
+    object-position: center bottom;
+  }
+
+  /* Banner section */
+  .services-page__banner {
+    position: relative;
+    width: 100%;
+    height: clamp(200px, 20vw, 300px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .services-page__banner-content {
+    width: 100%;
+    max-width: 1000px;
+    padding-inline: 24px;
+    box-sizing: border-box;
+  }
+
+  .services-page__banner-title {
+    font-size: clamp(32px, 6vw, 68px);
+    white-space: nowrap;
+    text-align: center;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: auto !important;
+    height: auto !important;
+    border: none !important;
+  }
+
+  /* Ensure lines don't break width */
+  .services-page__banner-line {
+    width: min(100px, 15vw);
+  }
+
+  /* Relocate absolute full-page lines to not overflow or break flow */
+  .services-page__bg-line-top,
+  .services-page__bg-line-bottom {
+    display: none;
+    /* Often break mobile, best to hide unless they can be contained */
+  }
+
+  /* Decorative Leaf */
+  .services-page__leaf-decoration {
+    top: -55px !important;
+    right: 15px !important;
+    width: clamp(100px, 16vw, 150px) !important;
+    height: auto !important;
+    opacity: 0.9 !important;
+    z-index: 10 !important;
+    display: block !important;
+  }
+
+  /* Content area */
+  .services-page__content {
+    position: relative;
+    padding-block: clamp(40px, 8vw, 80px);
+    padding-inline: 24px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 1;
+    height: auto;
+  }
+
+  .services-page__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(20px, 4vw, 40px);
+    height: auto;
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .services-card {
+    width: 100%;
+    /* Fill grid cell */
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .services-page {
+    padding-top: 96px;
+  }
+
+  .services-page__hero {
+    height: 260px;
+  }
+
+  .services-page__banner {
+    height: 140px;
+  }
+
+  .services-page__banner-title {
+    font-size: clamp(28px, 8vw, 48px);
+    -webkit-text-stroke-width: 1px;
+  }
+
+  .services-page__content {
+    padding-inline: 16px;
+    padding-block: 40px 60px;
+    margin-bottom: 0;
+  }
+
+  .services-page__cards {
+    grid-template-columns: 1fr;
+    max-width: 395px;
+    width: 100%;
+    margin-inline: auto;
+    height: auto;
+    margin-top: 0;
+    gap: 32px;
+  }
+
+  .services-card {
+    width: 100%;
+    max-width: 395px;
+    height: auto;
+    min-height: 480px;
+    margin: 0 auto;
+  }
+}

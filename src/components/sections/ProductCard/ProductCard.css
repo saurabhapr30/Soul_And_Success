@@ -1,0 +1,14 @@
+/* ================================================== */
+/* PRODUCT CARD STYLES                                  */
+/* ================================================== */
+
+.product-card__price {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.product-card__category {
+  align-self: flex-start;
+}

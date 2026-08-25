@@ -1,0 +1,99 @@
+/* ================================================== */
+/* CARD STYLES                                          */
+/* ================================================== */
+/* Extends the base .card rules from components.css.    */
+/* Provides structural variants and sub-component       */
+/* styles for the compound Card component.              */
+/* ================================================== */
+
+/* --- Variants --- */
+.card--default {
+  display: flex;
+  flex-direction: column;
+}
+
+.card--horizontal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.card--hoverable {
+  cursor: default;
+}
+
+.card--linked {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* --- Image --- */
+.card__image-wrapper {
+  overflow: hidden;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.card--horizontal .card__image-wrapper {
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  height: 100%;
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.card--hoverable:hover .card__image {
+  transform: scale(1.03);
+}
+
+/* --- Body --- */
+.card__body {
+  padding: var(--card-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* --- Caption --- */
+.card__caption {
+  display: block;
+  font-family: var(--font-supporting);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-accent);
+}
+
+/* --- Title --- */
+.card__title {
+  font-family: var(--font-display-secondary);
+  font-size: var(--text-h4);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-snug);
+  color: var(--color-text-primary);
+}
+
+/* --- Description --- */
+.card__description {
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+}
+
+/* --- Responsive --- */
+@media (max-width: 48rem) {
+  .card--horizontal {
+    grid-template-columns: 1fr;
+  }
+
+  .card--horizontal .card__image-wrapper {
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+}

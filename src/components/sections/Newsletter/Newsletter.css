@@ -1,0 +1,50 @@
+/* ================================================== */
+/* NEWSLETTER STYLES                                    */
+/* ================================================== */
+
+.newsletter {
+  padding-block: var(--section-gap);
+  background-color: var(--color-bg-alternate);
+}
+
+.newsletter__container {
+  max-width: 40rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.newsletter__form {
+  display: flex;
+  gap: var(--space-4);
+  max-width: 32rem;
+  margin-inline: auto;
+  margin-top: var(--space-6);
+}
+
+.newsletter__form .input-group {
+  flex: 1;
+}
+
+.newsletter__form .input-group__field {
+  height: 100%;
+}
+
+.newsletter__success {
+  margin-top: var(--space-6);
+  padding: var(--space-6);
+  background-color: var(--color-bg-section);
+  border-radius: var(--radius-lg);
+}
+
+.newsletter__success-text {
+  font-family: var(--font-newsletter);
+  font-size: var(--text-body);
+  color: var(--color-text-secondary);
+}
+
+/* --- Responsive --- */
+@media (max-width: 48rem) {
+  .newsletter__form {
+    flex-direction: column;
+  }
+}

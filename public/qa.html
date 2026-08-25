@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Automated QA Runner</title>
+  <style>
+    body { font-family: sans-serif; background: #f0f0f0; }
+    #results { white-space: pre-wrap; background: white; padding: 20px; margin-top: 20px; border: 1px solid #ccc; max-height: 80vh; overflow-y: auto; }
+    iframe { border: 2px solid red; background: white; margin-top: 20px; transition: width 0.3s; }
+  </style>
+</head>
+<body>
+  <h1>Automated QA Runner</h1>
+  <button onclick="startQA()">Start QA</button>
+  <div id="results">Waiting to start...</div>
+  
+  <!-- We will resize this iframe to test viewports -->
+  <iframe id="test-frame" src="about:blank"></iframe>
+
+  <script>
+    const viewports = [
+      { w: 1920, h: 1080 },
+      { w: 1440, h: 900 },
+      { w: 1024, h: 1366 },
+      { w: 768, h: 1024 },
+      { w: 430, h: 932 },
+      { w: 390, h: 844 },
+      { w: 375, h: 812 },
+      { w: 360, h: 800 }
+    ];
+
+    const routes = [
+      '/',
+      '/about',
+      '/services',
+      '/courses',
+      '/books',
+      '/resources',
+      '/blog',
+      '/shop',
+      '/contact'
+      // Leaving out dynamic slugs and auth routes for this basic pass, will add them after verifying.
+    ];
+
+    const resultsDiv = document.getElementById('results');
+    const iframe = document.getElementById('test-frame');
+    let logOutput = "";
+
+    function log(msg) {
+      console.log(msg);
+      logOutput += msg + "\n";
+      resultsDiv.innerText = logOutput;
+    }
+
+    async function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function startQA() {
+      log("Starting QA Pass...");
+      
+      // Expand routes dynamically
+      const fullRoutes = [
+        ...routes,
+        '/blog/unveiling-lifes-secrets',
+        '/shop/product/healing-journey-journal', // Guessing a slug, if fails will report
+        '/shop/cart',
+        '/shop/checkout',
+        '/login',
+        '/register'
+      ];
+
+      for (const route of fullRoutes) {
+        log(`\n==================================================`);
+        log(`Testing Route: ${route}`);
+        
+        // Load the route
+        iframe.src = route;
+        
+        // Wait for network/React to mount
+        await new Promise(resolve => {
+          iframe.onload = () => resolve();
+        });
+        
+        // Give React a bit more time to hydrate and render absolute elements
+        await sleep(1500);
+
+        for (const vp of viewports) {
+          iframe.style.width = vp.w + 'px';
+          iframe.style.height = vp.h + 'px';
+          
+          // Wait for resize to take effect and layout to reflow
+          await sleep(500);
+
+          try {
+            const doc = iframe.contentDocument;
+            const win = iframe.contentWindow;
+            
+            if (!doc) {
+              log(`  [${vp.w}px] FAIL - Cannot access iframe document`);
+              continue;
+            }
+
+            // Scroll width check
+            const scrollW = Math.max(doc.documentElement.scrollWidth, doc.body.scrollWidth);
+            const clientW = win.innerWidth; // The iframe's inner width
+
+            if (scrollW > clientW) {
+              log(`  [${vp.w}px] FAIL - Horizontal Overflow detected! (ScrollW: ${scrollW}, ClientW: ${clientW})`);
+              
+              // Find offending elements
+              const allElements = doc.querySelectorAll('*');
+              let offenders = [];
+              for (const el of allElements) {
+                const rect = el.getBoundingClientRect();
+                if (rect.right > clientW && rect.width > 0) {
+                  // Only report significant overflow
+                  if (rect.right - clientW > 2) {
+                     offenders.push(`${el.tagName.toLowerCase()}${el.className ? '.' + el.className.split(' ').join('.') : ''}`);
+                  }
+                }
+              }
+              if (offenders.length > 0) {
+                // Deduplicate and get top level offenders
+                const uniqueOffenders = [...new Set(offenders)].slice(0, 3);
+                log(`    -> Offending elements: ${uniqueOffenders.join(', ')}`);
+              }
+            } else {
+              log(`  [${vp.w}px] PASS`);
+            }
+          } catch (err) {
+             log(`  [${vp.w}px] ERROR - ${err.message}`);
+          }
+        }
+      }
+      log("\nQA Pass Complete.");
+    }
+  </script>
+</body>
+</html>

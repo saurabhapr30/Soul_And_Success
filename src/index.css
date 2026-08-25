@@ -1,0 +1,105 @@
+/* ================================================== */
+/* TAILWIND CSS v4 — Entry Point                        */
+/* ================================================== */
+/* CSS-first configuration for Tailwind v4.             */
+/* Design tokens are extended into the Tailwind theme.  */
+/* ================================================== */
+/* --- Google Fonts (must precede all other rules) --- */
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito:wght@400;700;800;900&family=Poppins:wght@400;500;600;700&family=Bebas+Neue&family=Cinzel:wght@400;700&family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+@import "tailwindcss";
+
+/* ================================================== */
+/* THEME EXTENSIONS                                     */
+/* ================================================== */
+
+@theme {
+  /* --- Colors --- */
+  --color-deep-espresso: #2C1810;
+  --color-warm-brown: #5C3D2E;
+  --color-warm-ivory: #FAF6F1;
+  --color-soft-white: #FFFDF9;
+  --color-light-cream: #F5F0E8;
+  --color-muted-gold: #C4A35A;
+  --color-warm-bronze: #8B6914;
+  --color-dark-chocolate: #1A0F0A;
+  --color-warm-beige: #E0D5C7;
+  --color-muted-brown: #A68B6B;
+
+  /* --- Font Families --- */
+  --font-aesthetic: 'Aesthetic', serif;
+  --font-agatho: 'Agatho', serif;
+  --font-cinzel: 'Cinzel', serif;
+  --font-madegra: 'Madegra DEMO', serif;
+  --font-brother-signature: 'Brother Signature', cursive;
+  --font-bropella: 'Bropella', cursive;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-karla: 'Karla', sans-serif;
+  --font-nunito: 'Nunito', sans-serif;
+
+  --font-display-primary: var(--font-aesthetic);
+  --font-display-editorial: var(--font-agatho);
+  --font-display-secondary: var(--font-cinzel);
+  --font-display-special: var(--font-madegra);
+  --font-signature: var(--font-brother-signature);
+  --font-decorative: var(--font-bropella);
+  --font-body: var(--font-montserrat);
+  --font-ui: var(--font-poppins);
+  --font-button: var(--font-karla);
+
+  /* --- Font Sizes --- */
+  --text-display-xxl: clamp(3.5rem, 5vw + 1rem, 6rem);
+  --text-display-xl: clamp(2.75rem, 4vw + 1rem, 4.5rem);
+  --text-h1: clamp(2.25rem, 3vw + 0.5rem, 3.5rem);
+  --text-h2: clamp(1.75rem, 2.5vw + 0.5rem, 2.5rem);
+  --text-h3: clamp(1.375rem, 1.5vw + 0.5rem, 1.75rem);
+  --text-h4: clamp(1.125rem, 1vw + 0.5rem, 1.375rem);
+
+  /* --- Spacing Scale --- */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-7: 2rem;
+  --spacing-8: 2.5rem;
+  --spacing-9: 3rem;
+  --spacing-10: 4rem;
+  --spacing-11: 5rem;
+  --spacing-12: 6rem;
+  --spacing-13: 7.5rem;
+  --spacing-14: 10rem;
+
+  /* --- Border Radius --- */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 1.875rem;
+
+  /* --- Shadows --- */
+  --shadow-xs: 0 1px 2px rgba(44, 24, 16, 0.04);
+  --shadow-sm: 0 2px 8px rgba(44, 24, 16, 0.06);
+  --shadow-md: 0 4px 16px rgba(44, 24, 16, 0.08);
+  --shadow-lg: 0 8px 32px rgba(44, 24, 16, 0.10);
+
+  /* --- Breakpoints --- */
+  --breakpoint-sm: 24.375rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 90rem;
+  --breakpoint-2xl: 100rem;
+}
+
+/* ================================================== */
+/* DESIGN SYSTEM IMPORTS                                */
+/* ================================================== */
+
+@import "./styles/design-tokens.css";
+@import "./styles/typography.css";
+@import "./styles/base.css";
+@import "./styles/layout.css";
+@import "./styles/components.css";
+@import "./styles/animations.css";

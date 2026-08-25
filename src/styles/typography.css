@@ -1,0 +1,292 @@
+/* ================================================== */
+/* TYPOGRAPHY SYSTEM                                    */
+/* ================================================== */
+/* Maps design system hierarchy to reusable classes.    */
+/* Custom fonts (Aesthetic, Madegra DEMO, Agatho) need  */
+/* @font-face declarations with hosted files.           */
+/* Google Fonts are imported in index.css.              */
+/* ================================================== */
+
+/* --- Custom Font Faces --- */
+/* Aesthetic */
+@font-face {
+  font-family: 'Aesthetic';
+  src: url('/fonts/AestheticRegular-8M5dM.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Agatho */
+@font-face {
+  font-family: 'Agatho';
+  src: url('/fonts/Agatho_ Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Agatho';
+  src: url('/fonts/Agatho_Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Agatho';
+  src: url('/fonts/Agatho_ Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Agatho';
+  src: url('/fonts/Agatho_ Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Brother Signature */
+@font-face {
+  font-family: 'Brother Signature';
+  src: url('/fonts/BrotherSignature-7BWnK.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Cinzel */
+@font-face {
+  font-family: 'Cinzel';
+  src: url('/fonts/Cinzel-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cinzel';
+  src: url('/fonts/Cinzel-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cinzel';
+  src: url('/fonts/Cinzel-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Cinzel Decorative */
+@font-face {
+  font-family: 'Cinzel Decorative';
+  src: url('/fonts/CinzelDecorative-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cinzel Decorative';
+  src: url('/fonts/CinzelDecorative-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cinzel Decorative';
+  src: url('/fonts/CinzelDecorative-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Silver Garden */
+@font-face {
+  font-family: 'Silver Garden';
+  src: url('/fonts/Silver Garden.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Silver Garden';
+  src: url('/fonts/Silver Garden Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Silver Garden';
+  src: url('/fonts/Silver Garden Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Silver Garden';
+  src: url('/fonts/Silver Garden Bold Italic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Bropella */
+@font-face {
+  font-family: 'Bropella';
+  src: url('/fonts/Bropella.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Seranide Free Trial */
+@font-face {
+  font-family: 'Seranide Free Trial';
+  src: url('/fonts/Seranide Free Trial.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Madegra DEMO */
+@font-face {
+  font-family: 'Madegra DEMO';
+  src: url('/fonts/Madegra-DEMO.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ================================================== */
+/* TYPE CLASSES                                         */
+/* ================================================== */
+
+.text-display-xxl {
+  font-family: var(--font-display-primary);
+  font-size: var(--text-display-xxl);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary);
+}
+
+.text-display-xl {
+  font-family: var(--font-display-primary);
+  font-size: var(--text-display-xl);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary);
+}
+
+.text-h1 {
+  font-family: var(--font-display-secondary);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary);
+}
+
+.text-h2 {
+  font-family: var(--font-display-secondary);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-normal);
+  color: var(--color-text-primary);
+}
+
+.text-h3 {
+  font-family: var(--font-display-secondary);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-normal);
+  color: var(--color-text-primary);
+}
+
+.text-h4 {
+  font-family: var(--font-body);
+  font-size: var(--text-h4);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+  color: var(--color-text-primary);
+}
+
+.text-body-lg {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-normal);
+  color: var(--color-text-secondary);
+}
+
+.text-body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-normal);
+  color: var(--color-text-secondary);
+}
+
+.text-small {
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+  color: var(--color-text-secondary);
+}
+
+.text-caption {
+  font-family: var(--font-supporting);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+.text-editorial {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+
+.text-newsletter {
+  font-family: var(--font-newsletter);
+  color: var(--color-text-secondary);
+}
+
+/* --- Utility Modifiers --- */
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-uppercase);
+}
+
+.text-accent {
+  color: var(--color-text-accent);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-inverse {
+  color: var(--color-text-inverse);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-balance {
+  text-wrap: balance;
+}

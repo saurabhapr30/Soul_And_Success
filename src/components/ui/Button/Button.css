@@ -1,0 +1,107 @@
+/* ================================================== */
+/* BUTTON STYLES                                        */
+/* ================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-uppercase);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-base);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* --- Sizes --- */
+.btn--sm {
+  padding: var(--space-2) var(--space-5);
+  font-size: var(--text-caption);
+}
+
+.btn--md {
+  padding: var(--space-3) var(--space-7);
+  font-size: var(--text-button);
+}
+
+.btn--lg {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--text-body);
+}
+
+/* --- Primary --- */
+.btn--primary {
+  background-color: var(--color-btn-primary);
+  color: var(--color-btn-primary-text);
+  border: 1px solid transparent;
+}
+
+.btn--primary:hover {
+  background-color: var(--color-btn-primary-hover);
+  transform: scale(1.02);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--primary:active {
+  transform: scale(0.98);
+}
+
+/* --- Secondary (Outline) --- */
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-btn-outline-text);
+  border: 1px solid var(--color-btn-outline-border);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-btn-outline-border);
+  color: var(--color-btn-primary-text);
+  transform: scale(1.02);
+}
+
+.btn--secondary:active {
+  transform: scale(0.98);
+}
+
+/* --- Text --- */
+.btn--text {
+  background: none;
+  color: var(--color-btn-outline-text);
+  border: none;
+  padding-inline: 0;
+  text-decoration: none;
+  position: relative;
+}
+
+.btn--text::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-accent);
+  transition: width var(--duration-base) var(--ease-out);
+}
+
+.btn--text:hover::after {
+  width: 100%;
+}
+
+/* --- Disabled --- */
+.btn--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* --- Focus --- */
+.btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}

@@ -1,0 +1,29 @@
+/* ================================================== */
+/* BOOK CARD STYLES                                     */
+/* ================================================== */
+
+.book-card .book-card__cover {
+  aspect-ratio: 3 / 4;
+}
+
+.book-card__author {
+  font-family: var(--font-editorial);
+  font-size: var(--text-small);
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
+.book-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: var(--space-3);
+}
+
+.book-card__price {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+}

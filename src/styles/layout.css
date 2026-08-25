@@ -1,0 +1,258 @@
+/* ================================================== */
+/* LAYOUT UTILITIES                                     */
+/* ================================================== */
+/* Reusable layout classes referenced across pages.     */
+/* ================================================== */
+
+/* --- Container --- */
+.container {
+  width: 100%;
+  max-width: var(--layout-max-width);
+  margin-inline: auto;
+  padding-inline: var(--layout-content-padding);
+}
+
+@media (max-width: 1439px) {
+  .container {
+    width: min(100% - 48px, 1280px);
+    max-width: none;
+    padding-inline: 0;
+  }
+}
+
+@media (max-width: 1023px) {
+  .container {
+    width: calc(100% - 40px);
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: calc(100% - 32px);
+  }
+}
+
+@media (max-width: 479px) {
+  .container {
+    width: calc(100% - 24px);
+  }
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 48rem; /* 768px */
+  margin-inline: auto;
+  padding-inline: var(--layout-content-padding);
+}
+
+.container-wide {
+  width: 100%;
+  max-width: var(--layout-full-width);
+  margin-inline: auto;
+  padding-inline: var(--layout-content-padding);
+}
+
+/* --- Grid --- */
+.grid {
+  display: grid;
+  gap: var(--layout-grid-gutter);
+}
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--layout-grid-gutter);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--layout-grid-gutter);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--layout-grid-gutter);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--layout-grid-gutter);
+}
+
+/* --- Flex Utilities --- */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-start {
+  display: flex;
+  align-items: flex-start;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.gap-sm {
+  gap: var(--space-4);
+}
+
+.gap-md {
+  gap: var(--space-6);
+}
+
+.gap-lg {
+  gap: var(--space-8);
+}
+
+.gap-xl {
+  gap: var(--space-10);
+}
+
+/* --- Section Spacing --- */
+.section {
+  padding-block: var(--section-gap);
+}
+
+.section-lg {
+  padding-block: var(--section-gap-lg);
+}
+
+/* --- Section Backgrounds --- */
+.bg-primary {
+  background-color: var(--color-bg-primary);
+}
+
+.bg-section {
+  background-color: var(--color-bg-section);
+}
+
+.bg-alternate {
+  background-color: var(--color-bg-alternate);
+}
+
+.bg-footer {
+  background-color: var(--color-bg-footer);
+}
+
+/* --- Spacer Utility --- */
+.spacer-sm {
+  height: var(--space-8);
+}
+
+.spacer-md {
+  height: var(--space-10);
+}
+
+.spacer-lg {
+  height: var(--space-12);
+}
+
+.spacer-xl {
+  height: var(--space-13);
+}
+
+/* --- Width Utilities --- */
+.w-full {
+  width: 100%;
+}
+
+.mx-auto {
+  margin-inline: auto;
+}
+
+/* --- Visibility --- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ================================================== */
+/* RESPONSIVE BREAKPOINTS                               */
+/* ================================================== */
+
+/* Tablet: 1024px */
+@media (max-width: 64rem) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section {
+    padding-block: var(--space-11);
+  }
+}
+
+/* Mobile: 768px */
+@media (max-width: 48rem) {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-12 {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding-block: var(--space-10);
+  }
+
+  .container {
+    padding-inline: var(--space-4);
+  }
+}
+
+/* Small Mobile: 390px */
+@media (max-width: 24.375rem) {
+  .container {
+    padding-inline: var(--space-3);
+  }
+
+  .section {
+    padding-block: var(--space-9);
+  }
+}

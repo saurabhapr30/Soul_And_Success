@@ -1,0 +1,55 @@
+{
+  "name": "sands-backend",
+  "version": "1.0.0",
+  "description": "Backend for Soul and Success",
+  "main": "dist/server.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "optimize-images": "tsx scripts/optimize-assets.ts",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:seed": "tsx prisma/seed.ts"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.14.0",
+    "@types/sharp": "^0.32.0",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.2.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.2.0",
+    "nodemailer": "^6.9.13",
+    "razorpay": "^2.9.8",
+    "sharp": "^0.35.3",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^30.0.0",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/multer": "^2.2.0",
+    "@types/node": "^20.12.12",
+    "@types/nodemailer": "^6.4.15",
+    "@types/supertest": "^7.2.1",
+    "jest": "^30.4.2",
+    "prisma": "^5.14.0",
+    "supertest": "^7.2.2",
+    "ts-jest": "^29.4.12",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.11.0",
+    "typescript": "^5.4.5"
+  }
+}

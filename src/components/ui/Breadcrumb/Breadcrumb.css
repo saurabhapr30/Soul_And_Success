@@ -1,0 +1,43 @@
+/* ================================================== */
+/* BREADCRUMB STYLES                                    */
+/* ================================================== */
+
+.breadcrumb {
+  padding-block: var(--space-4);
+}
+
+.breadcrumb__list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.breadcrumb__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.breadcrumb__separator {
+  color: var(--color-border);
+  font-size: var(--text-small);
+}
+
+.breadcrumb__link {
+  font-family: var(--font-supporting);
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+  transition: var(--transition-fast);
+}
+
+.breadcrumb__link:hover {
+  color: var(--color-accent);
+}
+
+.breadcrumb__current {
+  font-family: var(--font-supporting);
+  font-size: var(--text-small);
+  color: var(--color-text-primary);
+  font-weight: var(--weight-medium);
+}

@@ -1,0 +1,101 @@
+.admin-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  background: transparent;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.admin-nav-item:hover {
+  color: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.05);
+}
+
+.admin-nav-item.active {
+  color: #fff;
+  background: linear-gradient(135deg, rgba(226,125,96,0.25), rgba(212,169,106,0.15));
+  border: 1px solid rgba(226,125,96,0.3);
+  box-shadow: 0 4px 12px rgba(226,125,96,0.1);
+}
+
+.admin-nav-item.active .nav-icon {
+  color: #E27D60;
+}
+
+
+.admin-logout-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: transparent;
+  color: rgba(255,255,255,0.4);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-logout-btn:hover {
+  color: #E27D60;
+  border-color: rgba(226,125,96,0.3);
+  background: rgba(226,125,96,0.05);
+}
+
+.admin-mobile-close {
+  display: none;
+}
+
+.admin-mobile-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .admin-luxury-sidebar {
+    transform: translateX(-100%);
+  }
+  .admin-luxury-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+  .admin-main-wrapper {
+    margin-left: 0 !important;
+  }
+  .admin-mobile-toggle {
+    display: block !important;
+  }
+  .admin-mobile-close {
+    display: block !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .admin-main-wrapper {
+    margin-left: 16rem !important;
+  }
+}
+
+/* ── Dark-theme select options ─────────────────────────────────────────────── */
+/* Browsers render <option> elements outside the page's CSS cascade,
+   so we must explicitly set background/color on the elements themselves. */
+select option,
+select optgroup {
+  background: #1a1612;
+  color: #fff;
+}
+
