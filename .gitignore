@@ -7,10 +7,32 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Dependencies
+node_modules/
+server/node_modules/
+
+# Production build files
+dist/
+dist-ssr/
+build/
+server/dist/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+server/.env
+server/.env.*
+
+# Uploads & Media
+server/uploads/
+uploads/
+
+# Prisma
+server/prisma/*.db
+server/prisma/*.db-journal
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +44,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Testing & Coverage
+coverage/
+.nyc_output/
+
+# Temporary / Scratch Files
+verify_cloudflare.cjs
+test_admin_api.cjs
