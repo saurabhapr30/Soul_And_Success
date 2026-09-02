@@ -85,7 +85,7 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Middle Row: Subscribe + Contact + WhatsApp */}
+      {/* Middle Row: - Subscribe + Contact + WhatsApp */}
       <div className="site-footer__middle">
         <div className="site-footer__subscribe">
           <h3 className="site-footer__subscribe-heading">Stay Connected</h3>
