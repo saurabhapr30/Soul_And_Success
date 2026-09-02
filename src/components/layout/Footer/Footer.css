@@ -248,10 +248,11 @@
 }
 
 .site-footer__whatsapp-icon {
+  display: block;
   width: 72px;
   height: 72px;
+  flex: 0 0 auto;
   object-fit: contain;
-  border-radius: 50%;
   transition: transform 0.2s ease;
 }
 
