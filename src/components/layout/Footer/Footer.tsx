@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from '@/components/ui';
 import logoImg from '@/assets/logo.jpg';
-import whatsappIcon from '@/assets/Whatsapp.png';
+import whatsappIcon from '@/assets/whatsapp.png';
 import { newsletterService } from '@/services/newsletterService';
 import './Footer.css';
 
