@@ -98,7 +98,7 @@ const limiter = rateLimit({
 });
 app.use('/api', limiter);
 
-// Serve uploads folder with caching headers and intelligent variant fallback
+// Serve uploads folder with  caching headers and intelligent variant fallback
 app.use('/uploads/optimized', (req: Request, res: Response, next: NextFunction) => {
   const optimizedDir = path.join(process.cwd(), 'uploads', 'optimized');
   const uploadsDir = path.join(process.cwd(), 'uploads');

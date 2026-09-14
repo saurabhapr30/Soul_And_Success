@@ -14,7 +14,7 @@ import serviceCoaching from '../assets/Life-Coaching.webp';
 import serviceEbook from '../assets/Ebook.webp';
 import serviceProducts from '../assets/Merchandise.webp';
 import blogFeatured from '@/assets/blog-featured.webp';
-import whatsappIcon from '@/assets/Whatsapp.png';
+import whatsappIcon from '@/assets/whatsapp.png';
 import logoImg from '@/assets/logo.webp';
 import leafSvg from '@/assets/leaf.svg';
 

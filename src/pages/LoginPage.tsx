@@ -4,8 +4,8 @@ import { SEOHead } from '@/components/ui';
 import { authService } from '@/services/authService';
 
 export function LoginPage() {
-  const [email, setEmail] = useState('admin@soulandsuccess.com');
-  const [password, setPassword] = useState('adminpassword');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
   
@@ -45,7 +45,7 @@ export function LoginPage() {
                 value={email} 
                 onChange={(e) => setEmail(e.target.value)} 
                 required
-                placeholder="admin@soulandsuccess.com"
+                placeholder="you@example.com"
                 style={{ width: '100%', padding: '12px', border: '1px solid #ccc', borderRadius: '4px', boxSizing: 'border-box' }}
               />
             </div>

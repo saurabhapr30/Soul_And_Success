@@ -1551,10 +1551,11 @@
 }
 
 .home-section-7__whatsapp-icon {
+  display: block;
   width: 72px;
   height: 72px;
+  flex: 0 0 auto;
   object-fit: contain;
-  border-radius: 50%;
   transition: transform 0.2s ease;
 }
 
@@ -2280,6 +2281,82 @@
     z-index: 5;
     text-align: center;
   }
+
+  /* --------------------------------------------------- */
+  /* The founder card itself was never taken out of the   */
+  /* 1920px absolute canvas: it stayed position:absolute  */
+  /* at a fixed 1101px wide. That left its ancestors with */
+  /* no in-flow children, so .home-section-3 collapsed to */
+  /* its padding and the overflow:hidden above clipped    */
+  /* the whole card away. Put it back in normal flow.     */
+  /* --------------------------------------------------- */
+  .home-section-3__group {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 560px;
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    padding: 36px 24px 40px;
+    border-radius: 28px;
+    overflow: visible;
+  }
+
+  .home-section-3__portrait {
+    order: 1;
+    margin-bottom: 8px !important;
+    /* Source is a 3:2 landscape studio shot with the subject in the
+       right third; contain would letterbox it into mostly backdrop. */
+    object-fit: cover !important;
+    object-position: 90% center !important;
+  }
+
+  .home-section-3__label {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    order: 2;
+  }
+
+  .home-section-3__script {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    order: 3;
+    width: 100%;
+    font-size: clamp(40px, 12vw, 72px);
+    line-height: 1.05;
+    white-space: normal;
+  }
+
+  .home-section-3__subtitle {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    order: 4;
+    width: 100%;
+    font-size: clamp(20px, 5.5vw, 30px);
+  }
+
+  .home-section-3__bio {
+    order: 5;
+  }
+
+  .home-section-3__cta {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    order: 6;
+    margin-top: 8px;
+  }
+
 
   /* ================================================== */
   /* SECTION 4: SUPPORT SERVICES                          */

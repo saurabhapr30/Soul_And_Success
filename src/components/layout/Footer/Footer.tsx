@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from '@/components/ui';
 import logoImg from '@/assets/logo.jpg';
-import whatsappIcon from '@/assets/Whatsapp.png';
+import whatsappIcon from '@/assets/whatsapp.png';
 import { newsletterService } from '@/services/newsletterService';
 import './Footer.css';
 
@@ -85,7 +85,7 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Middle Row: Subscribe + Contact + WhatsApp */}
+      {/* Middle Row: - Subscribe + Contact + WhatsApp */}
       <div className="site-footer__middle">
         <div className="site-footer__subscribe">
           <h3 className="site-footer__subscribe-heading">Stay Connected</h3>
