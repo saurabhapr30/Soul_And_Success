@@ -68,6 +68,15 @@ export function ServicesPage() {
             </svg>
           </div>
 
+          {/* Divider above cards */}
+          <div className="services-page__divider" aria-hidden="true">
+            <div className="services-page__divider-line" />
+            <svg className="services-page__divider-diamond" width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 12C7 12 1 8 1 4C1 2.34315 2.34315 1 4 1C5.30622 1 6.41746 1.83481 6.85424 3C6.94079 3.22694 7.05921 3.22694 7.14576 3C7.58254 1.83481 8.69378 1 10 1C11.6569 1 13 2.34315 13 4C13 8 7 12 7 12Z" fill="none" stroke="#C4B0A4" strokeWidth="1.2" strokeLinejoin="round"/>
+            </svg>
+            <div className="services-page__divider-line" />
+          </div>
+
           <div className="services-page__cards">
             {/* Card 1: Life Coaching */}
             <div className="services-card">
