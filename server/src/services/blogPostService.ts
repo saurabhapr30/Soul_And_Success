@@ -2,12 +2,28 @@ import { prisma } from '../config/database';
 import { NotFoundError } from '../utils/errors';
 
 export const getAllBlogPosts = async (query: any) => {
+  const where: any = {};
+  if (query?.status) {
+    where.status = query.status;
+  }
+  if (query?.category) {
+    where.category = { slug: query.category };
+  }
+  if (query?.search) {
+    where.OR = [
+      { title: { contains: query.search, mode: 'insensitive' } },
+      { excerpt: { contains: query.search, mode: 'insensitive' } },
+    ];
+  }
   return await prisma.blogPost.findMany({
+    where,
     include: {
       category: true,
       author: true,
       tags: true
-    }
+    },
+    orderBy: { createdAt: 'desc' },
+    ...(query?.limit ? { take: Number(query.limit) } : {})
   });
 };
 
@@ -131,6 +147,7 @@ export const createBlogPost = async (data: any) => {
     ...coreData,
     categoryId,
     authorId,
+    ...(coreData.status === 'PUBLISHED' && !coreData.publishedAt ? { publishedAt: new Date() } : {}),
     ...(tagsInput && { tags: tagsInput }),
     ...(seoTitle !== undefined && { seoTitle }),
     ...(seoDescription !== undefined && { seoDescription }),
@@ -169,6 +186,7 @@ export const updateBlogPost = async (id: string, data: any) => {
 
   const updateData = {
     ...rest,
+    ...(rest.status === 'PUBLISHED' ? { publishedAt: new Date() } : {}),
     ...(categoryId && { categoryId }),
     ...(tagsInput && { tags: tagsInput }),
     ...(seoTitle !== undefined && { seoTitle }),

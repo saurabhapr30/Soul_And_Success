@@ -51,8 +51,8 @@ export const resolveSrcSet = (url?: string | null): string | undefined => {
   const dotIdx = filename.lastIndexOf('.');
   let baseName = dotIdx !== -1 ? filename.substring(0, dotIdx) : filename;
 
-  // If filename already has a width suffix like image-800, strip it to get base
-  baseName = baseName.replace(/-\d+$/, '');
+  // If filename already has a width suffix like image-800, strip only that width suffix
+  baseName = baseName.replace(/-(?:400|800|1200|1600|1920)$/, '');
 
   const widths = [400, 800, 1200, 1600];
   const srcSetEntries = widths.map(

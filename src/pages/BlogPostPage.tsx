@@ -79,7 +79,7 @@ export function BlogPostPage() {
                   {post.category.name}
                 </span>
               )}
-              <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.85rem' }}>
+              <span style={{ color: 'var(--color-text-muted)', fontSize: '0.85rem' }}>
                 {new Date(post.publishedAt || post.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
               </span>
             </div>
@@ -87,7 +87,7 @@ export function BlogPostPage() {
             <h1 className="text-display-lg" style={{ marginBottom: 'var(--space-4)', lineHeight: 1.2 }}>{post.title}</h1>
             
             {post.excerpt && (
-              <p className="text-body-lg" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.25rem', lineHeight: 1.6 }}>
+              <p className="text-body-lg" style={{ color: 'var(--color-text-secondary)', fontSize: '1.25rem', lineHeight: 1.6 }}>
                 {post.excerpt}
               </p>
             )}
@@ -104,7 +104,7 @@ export function BlogPostPage() {
             style={{ 
               lineHeight: 1.8, 
               fontSize: '1.1rem', 
-              color: 'rgba(255,255,255,0.85)',
+              color: 'var(--color-text-primary)',
               display: 'flex',
               flexDirection: 'column',
               gap: '1.5rem'
@@ -126,10 +126,10 @@ export function BlogPostPage() {
           )}
 
           {post.tags && post.tags.length > 0 && (
-            <div style={{ marginTop: 'var(--space-10)', paddingTop: 'var(--space-8)', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+            <div style={{ marginTop: 'var(--space-10)', paddingTop: 'var(--space-8)', borderTop: '1px solid var(--color-border)' }}>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
                 {post.tags.map((tag: any) => (
-                  <span key={tag.id} style={{ background: 'rgba(255,255,255,0.05)', padding: '0.4rem 1rem', borderRadius: '100px', fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)' }}>
+                  <span key={tag.id} style={{ background: 'rgba(44, 24, 16, 0.05)', padding: '0.4rem 1rem', borderRadius: '100px', fontSize: '0.85rem', color: 'var(--color-text-secondary)' }}>
                     #{tag.name}
                   </span>
                 ))}

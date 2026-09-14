@@ -30,15 +30,19 @@ async function seed() {
 
   const order = await prisma.order.create({
     data: {
+      orderNumber: `SMOKE-${Date.now()}`,
       userId: user.id,
+      subtotal: 99.99,
       total: 99.99,
       paymentStatus: 'PAID',
+      shippingAddressSnapshot: {},
+      billingAddressSnapshot: {},
       items: {
         create: {
           sku: `COURSE-${course.id}`,
           quantity: 1,
-          price: 99.99,
-          itemType: 'course',
+          unitPrice: 99.99,
+          total: 99.99,
           productName: course.title,
         }
       }

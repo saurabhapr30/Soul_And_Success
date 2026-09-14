@@ -150,6 +150,11 @@ model Product {
   isFeatured        Boolean  @default(false)
   ratingAverage     Float    @default(0)
   reviewCount       Int      @default(0)
+  
+  bestOffers         String[] @default([])
+  termsAndConditions String[] @default([])
+  productDetails     String[] @default([])
+  
   createdAt         DateTime @default(now())
   updatedAt         DateTime @updatedAt
 
@@ -380,6 +385,11 @@ model Course {
   instructorId     String?  // References User but left optional here for simplicity if needed
   isPublished      Boolean  @default(false)
   isFeatured       Boolean  @default(false)
+  
+  bestOffers         String[] @default([])
+  termsAndConditions String[] @default([])
+  productDetails     String[] @default([])
+  
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
   categoryId       String?
@@ -465,6 +475,11 @@ model Book {
   featured       Boolean  @default(false)
   categoryId     String?
   downloadLink   String?
+  
+  bestOffers         String[] @default([])
+  termsAndConditions String[] @default([])
+  productDetails     String[] @default([])
+  
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
   

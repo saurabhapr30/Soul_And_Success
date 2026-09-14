@@ -88,8 +88,8 @@ app.use(
   })
 );
 
-app.use(express.json({ limit: '10kb' }));
-app.use(express.urlencoded({ extended: true, limit: '10kb' }));
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 const limiter = rateLimit({
   max: 100,
@@ -100,26 +100,66 @@ app.use('/api', limiter);
 
 // Serve uploads folder with caching headers and intelligent variant fallback
 app.use('/uploads/optimized', (req: Request, res: Response, next: NextFunction) => {
-  const filePath = path.join(process.cwd(), 'uploads', 'optimized', req.path);
+  const optimizedDir = path.join(process.cwd(), 'uploads', 'optimized');
+  const uploadsDir = path.join(process.cwd(), 'uploads');
+  const filePath = path.join(optimizedDir, req.path);
+
+  // 1. Direct file match
   if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
     res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
     return res.sendFile(filePath);
   }
 
-  // If a specific variant like name-1600.webp was requested but doesn't exist, fallback to master name.webp
   const parsed = path.parse(req.path);
-  const baseName = parsed.name.replace(/-\d+$/, '');
-  const masterWebpPath = path.join(process.cwd(), 'uploads', 'optimized', `${baseName}.webp`);
+  const widthMatch = parsed.name.match(/-(?:400|800|1200|1600|1920)$/);
+  const baseName = widthMatch ? parsed.name.replace(/-(?:400|800|1200|1600|1920)$/, '') : parsed.name;
+
+  // 2. Master WebP file: ${baseName}.webp
+  const masterWebpPath = path.join(optimizedDir, `${baseName}.webp`);
   if (fs.existsSync(masterWebpPath) && fs.statSync(masterWebpPath).isFile()) {
     res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
     return res.sendFile(masterWebpPath);
   }
 
-  // Fallback to original uploaded file if any exists
-  const uploadsDir = path.join(process.cwd(), 'uploads');
+  // 3. Intelligent prefix search in optimized directory (handles truncated or legacy URLs)
+  if (fs.existsSync(optimizedDir)) {
+    const optFiles = fs.readdirSync(optimizedDir);
+    const prefix = parsed.name.replace(/-\d+$/, '');
+    const widthSuffix = widthMatch ? widthMatch[0] : '';
+
+    if (widthSuffix) {
+      const variantMatch = optFiles.find(
+        (f) => f.startsWith(`${prefix}-`) && f.endsWith(`${widthSuffix}.webp`)
+      );
+      if (variantMatch) {
+        const variantPath = path.join(optimizedDir, variantMatch);
+        if (fs.statSync(variantPath).isFile()) {
+          res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+          return res.sendFile(variantPath);
+        }
+      }
+    }
+
+    const masterMatch = optFiles.find(
+      (f) => (f.startsWith(`${prefix}-`) || f.startsWith(`${baseName}-`)) && !f.match(/-(?:400|800|1200|1600|1920)\.webp$/) && f.endsWith('.webp')
+    ) || optFiles.find((f) => f.startsWith(prefix) && f.endsWith('.webp'));
+
+    if (masterMatch) {
+      const matchedPath = path.join(optimizedDir, masterMatch);
+      if (fs.statSync(matchedPath).isFile()) {
+        res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        return res.sendFile(matchedPath);
+      }
+    }
+  }
+
+  // 4. Fallback to original uploaded file if any exists
   if (fs.existsSync(uploadsDir)) {
     const files = fs.readdirSync(uploadsDir);
-    const originalFile = files.find((f) => path.parse(f).name === baseName);
+    const prefix = parsed.name.replace(/-\d+$/, '');
+    const originalFile = files.find(
+      (f) => path.parse(f).name === baseName || path.parse(f).name.startsWith(`${prefix}-`) || path.parse(f).name.startsWith(prefix)
+    );
     if (originalFile) {
       const origPath = path.join(uploadsDir, originalFile);
       if (fs.statSync(origPath).isFile()) {

@@ -25,10 +25,12 @@ export function BlogPage() {
       try {
         setLoading(true);
         const [postsRes, categoriesRes] = await Promise.all([
-           blogService.getPosts(),
+           blogService.getPosts({ status: 'PUBLISHED' }),
            blogService.getCategories()
         ]);
-        setPosts(postsRes.data || []);
+        const allPosts = postsRes.data || postsRes || [];
+        const publishedPosts = Array.isArray(allPosts) ? allPosts.filter((p: any) => !p.status || p.status === 'PUBLISHED') : [];
+        setPosts(publishedPosts);
         
         if (categoriesRes.data && categoriesRes.data.length > 0) {
             setCategories(categoriesRes.data.map((c: any) => c.name));
@@ -55,6 +57,8 @@ export function BlogPage() {
 
   // Filter posts based on category and search
   const filteredPosts = posts.filter(post => {
+    const isPublished = !post.status || post.status === 'PUBLISHED';
+    if (!isPublished) return false;
     const matchesCategory = activeCategory === 'All' || post.category?.name === activeCategory;
     const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
                           (post.excerpt && post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()));

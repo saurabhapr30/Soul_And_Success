@@ -27,7 +27,7 @@ export function BlogEditorModal({ onClose, onSuccess, existingPost }: BlogEditor
   const [categories, setCategories] = useState<any[]>(
     BLOG_CATEGORIES.map(name => ({ id: name, name }))
   );
-  
+
   const [formData, setFormData] = useState({
     title: existingPost?.title || '',
     slug: existingPost?.slug || '',
@@ -61,7 +61,7 @@ export function BlogEditorModal({ onClose, onSuccess, existingPost }: BlogEditor
       try {
         const res = await api.get('/blog/categories');
         const apiCats = res.data?.data || (Array.isArray(res.data) ? res.data : []);
-        
+
         // Merge API categories with specified blog categories so all 8 are always available
         const merged = BLOG_CATEGORIES.map(name => {
           const found = apiCats.find((c: any) => c.name?.toLowerCase() === name.toLowerCase());
@@ -87,12 +87,12 @@ export function BlogEditorModal({ onClose, onSuccess, existingPost }: BlogEditor
   const handleTextChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    
+
     // Auto-generate slug from title if empty or unchanged from generated
     if (name === 'title' && !existingPost) {
-      setFormData((prev) => ({ 
-        ...prev, 
-        slug: value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '') 
+      setFormData((prev) => ({
+        ...prev,
+        slug: value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')
       }));
     }
   };
@@ -107,7 +107,7 @@ export function BlogEditorModal({ onClose, onSuccess, existingPost }: BlogEditor
   const handleFeaturedImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
-    
+
     try {
       setIsUploading(true);
       const url = await uploadFile(file);
@@ -123,7 +123,7 @@ export function BlogEditorModal({ onClose, onSuccess, existingPost }: BlogEditor
   const handleGalleryUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (!files || files.length === 0) return;
-    
+
     try {
       setIsUploading(true);
       const urls: string[] = [];
@@ -171,7 +171,7 @@ export function BlogEditorModal({ onClose, onSuccess, existingPost }: BlogEditor
       container: [
         [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
         ['bold', 'italic', 'underline', 'strike'],
-        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }],
         [{ 'align': [] }],
         ['blockquote', 'code-block'],
         ['link', 'image'],
@@ -189,6 +189,7 @@ export function BlogEditorModal({ onClose, onSuccess, existingPost }: BlogEditor
     if (!formData.slug.trim()) newErrors.slug = 'Slug is required';
     if (!formData.excerpt.trim()) newErrors.excerpt = 'Excerpt is required';
     if (!formData.content.trim()) newErrors.content = 'Content is required';
+    else if (formData.content.length > 50000) newErrors.content = 'Content must not exceed 50,000 characters';
     if (!formData.categoryId) newErrors.categoryId = 'Category is required';
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -196,7 +197,7 @@ export function BlogEditorModal({ onClose, onSuccess, existingPost }: BlogEditor
 
   const handleSubmit = async (status: string) => {
     if (!validate()) return;
-    
+
     try {
       setIsSaving(true);
       const payload = {
@@ -211,13 +212,13 @@ export function BlogEditorModal({ onClose, onSuccess, existingPost }: BlogEditor
       } else {
         await api.post('/blog', payload);
       }
-      
+
       if (status === 'PUBLISHED') {
         alert('Your article has been published.');
       } else {
         alert('Your draft has been saved.');
       }
-      
+
       onSuccess();
     } catch (err: any) {
       console.error('Failed to save blog', err);
@@ -232,7 +233,7 @@ export function BlogEditorModal({ onClose, onSuccess, existingPost }: BlogEditor
       e.preventDefault();
       const val = type === 'tag' ? tagInput.trim() : seoKeywordInput.trim();
       if (!val) return;
-      
+
       if (type === 'tag' && !tags.includes(val)) {
         setTags([...tags, val]);
         setTagInput('');
@@ -271,14 +272,14 @@ export function BlogEditorModal({ onClose, onSuccess, existingPost }: BlogEditor
             <div>
               <div className="form-group">
                 <label className="form-label">Title *</label>
-                <input 
-                  type="text" 
-                  name="title" 
-                  value={formData.title} 
-                  onChange={handleTextChange} 
-                  className="form-input" 
-                  placeholder="Enter an engaging title for your blog..." 
-                  maxLength={150} 
+                <input
+                  type="text"
+                  name="title"
+                  value={formData.title}
+                  onChange={handleTextChange}
+                  className="form-input"
+                  placeholder="Enter an engaging title for your blog..."
+                  maxLength={150}
                 />
                 <div className="input-footer">
                   {errors.title && <span className="error-message">{errors.title}</span>}
@@ -288,13 +289,13 @@ export function BlogEditorModal({ onClose, onSuccess, existingPost }: BlogEditor
 
               <div className="form-group">
                 <label className="form-label">Excerpt *</label>
-                <textarea 
-                  name="excerpt" 
-                  value={formData.excerpt} 
-                  onChange={handleTextChange} 
-                  className="form-textarea" 
-                  placeholder="Write a short excerpt (summary) for your article..." 
-                  maxLength={250} 
+                <textarea
+                  name="excerpt"
+                  value={formData.excerpt}
+                  onChange={handleTextChange}
+                  className="form-textarea"
+                  placeholder="Write a short excerpt (summary) for your article..."
+                  maxLength={250}
                 />
                 <div className="input-footer">
                   {errors.excerpt && <span className="error-message">{errors.excerpt}</span>}
@@ -310,7 +311,7 @@ export function BlogEditorModal({ onClose, onSuccess, existingPost }: BlogEditor
                     <option value="PUBLISHED">Published</option>
                   </select>
                 </div>
-                
+
                 <div className="form-group">
                   <label className="form-label">Tags</label>
                   <div className="tags-container">
@@ -319,13 +320,13 @@ export function BlogEditorModal({ onClose, onSuccess, existingPost }: BlogEditor
                         {t} <button type="button" onClick={() => removeArrayItem('tag', i)}><X size={12} /></button>
                       </span>
                     ))}
-                    <input 
-                      type="text" 
-                      value={tagInput} 
-                      onChange={e => setTagInput(e.target.value)} 
-                      onKeyDown={e => handleKeyDown(e, 'tag')} 
-                      className="tag-input" 
-                      placeholder="Add tags and press Enter..." 
+                    <input
+                      type="text"
+                      value={tagInput}
+                      onChange={e => setTagInput(e.target.value)}
+                      onKeyDown={e => handleKeyDown(e, 'tag')}
+                      className="tag-input"
+                      placeholder="Add tags and press Enter..."
                     />
                   </div>
                 </div>
@@ -337,13 +338,13 @@ export function BlogEditorModal({ onClose, onSuccess, existingPost }: BlogEditor
               <div className="form-group">
                 <label className="form-label">Slug *</label>
                 <div style={{ position: 'relative' }}>
-                  <input 
-                    type="text" 
-                    name="slug" 
-                    value={formData.slug} 
-                    onChange={handleTextChange} 
-                    className="form-input" 
-                    placeholder="enter-slug-here" 
+                  <input
+                    type="text"
+                    name="slug"
+                    value={formData.slug}
+                    onChange={handleTextChange}
+                    className="form-input"
+                    placeholder="enter-slug-here"
                     style={{ paddingRight: '2.5rem', width: '100%' }}
                   />
                   <Edit3 size={16} color="rgba(255,255,255,0.4)" style={{ position: 'absolute', right: '1rem', top: '50%', transform: 'translateY(-50%)' }} />
@@ -382,7 +383,7 @@ export function BlogEditorModal({ onClose, onSuccess, existingPost }: BlogEditor
                   <label className="upload-dropzone" style={{ height: '180px' }}>
                     <UploadCloud className="upload-icon" />
                     <div className="upload-text"><strong>Click to upload</strong> or drag and drop</div>
-                    <div className="upload-subtext">JPG, PNG, WebP (Max 5MB)<br/>Recommended: 1200 x 630px</div>
+                    <div className="upload-subtext">JPG, PNG, WebP (Max 5MB)<br />Recommended: 1200 x 630px</div>
                     <input type="file" accept="image/*" style={{ display: 'none' }} onChange={handleFeaturedImageUpload} />
                   </label>
                 )}
@@ -394,14 +395,17 @@ export function BlogEditorModal({ onClose, onSuccess, existingPost }: BlogEditor
           {/* Content Editor */}
           <div className="editor-section">
             <h3 className="editor-section-title">Content *</h3>
-            <ReactQuill 
+            <ReactQuill
               ref={quillRef}
-              theme="snow" 
-              value={formData.content} 
-              onChange={(val) => setFormData(prev => ({ ...prev, content: val }))} 
+              theme="snow"
+              value={formData.content}
+              onChange={(val) => setFormData(prev => ({ ...prev, content: val }))}
               modules={modules}
             />
-            {errors.content && <span className="error-message">{errors.content}</span>}
+            <div className="input-footer">
+              {errors.content && <span className="error-message">{errors.content}</span>}
+              <span>{formData.content.length}/50000</span>
+            </div>
           </div>
 
           <div className="editor-two-column">
@@ -411,10 +415,10 @@ export function BlogEditorModal({ onClose, onSuccess, existingPost }: BlogEditor
               <label className="upload-dropzone">
                 <ImageIcon className="upload-icon" />
                 <div className="upload-text"><strong>Upload multiple images</strong></div>
-                <div className="upload-subtext">or drag and drop files here<br/>JPG, PNG, WebP (Max 5MB each)</div>
+                <div className="upload-subtext">or drag and drop files here<br />JPG, PNG, WebP (Max 5MB each)</div>
                 <input type="file" accept="image/*" multiple style={{ display: 'none' }} onChange={handleGalleryUpload} />
               </label>
-              
+
               {formData.galleryImages.length > 0 && (
                 <div className="gallery-grid">
                   {formData.galleryImages.map((url: string, i: number) => (
@@ -447,26 +451,26 @@ export function BlogEditorModal({ onClose, onSuccess, existingPost }: BlogEditor
 
           {/* SEO Settings */}
           <div className="editor-section">
-            <div 
+            <div
               style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}
               onClick={() => setShowSeoSettings(!showSeoSettings)}
             >
               <h3 className="editor-section-title" style={{ marginBottom: 0, border: 'none' }}>SEO Settings</h3>
               <ChevronDown size={18} style={{ transform: showSeoSettings ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
             </div>
-            
+
             {showSeoSettings && (
               <div className="editor-two-column" style={{ marginTop: '1rem' }}>
                 <div className="form-group">
                   <label className="form-label">SEO Title</label>
-                  <input 
-                    type="text" 
-                    name="seoTitle" 
-                    value={formData.seoTitle} 
-                    onChange={handleTextChange} 
-                    className="form-input" 
-                    placeholder="Enter SEO Title" 
-                    maxLength={60} 
+                  <input
+                    type="text"
+                    name="seoTitle"
+                    value={formData.seoTitle}
+                    onChange={handleTextChange}
+                    className="form-input"
+                    placeholder="Enter SEO Title"
+                    maxLength={60}
                   />
                   <div className="input-footer"><span>{formData.seoTitle.length}/60</span></div>
                 </div>
@@ -479,39 +483,39 @@ export function BlogEditorModal({ onClose, onSuccess, existingPost }: BlogEditor
                         {k} <button type="button" onClick={() => removeArrayItem('seoKeyword', i)}><X size={12} /></button>
                       </span>
                     ))}
-                    <input 
-                      type="text" 
-                      value={seoKeywordInput} 
-                      onChange={e => setSeoKeywordInput(e.target.value)} 
-                      onKeyDown={e => handleKeyDown(e, 'seoKeyword')} 
-                      className="tag-input" 
-                      placeholder="Add keywords..." 
+                    <input
+                      type="text"
+                      value={seoKeywordInput}
+                      onChange={e => setSeoKeywordInput(e.target.value)}
+                      onKeyDown={e => handleKeyDown(e, 'seoKeyword')}
+                      className="tag-input"
+                      placeholder="Add keywords..."
                     />
                   </div>
                 </div>
 
                 <div className="form-group" style={{ gridColumn: '1 / -1' }}>
                   <label className="form-label">SEO Description</label>
-                  <textarea 
-                    name="seoDescription" 
-                    value={formData.seoDescription} 
-                    onChange={handleTextChange} 
-                    className="form-textarea" 
-                    placeholder="Enter SEO Description" 
-                    maxLength={160} 
+                  <textarea
+                    name="seoDescription"
+                    value={formData.seoDescription}
+                    onChange={handleTextChange}
+                    className="form-textarea"
+                    placeholder="Enter SEO Description"
+                    maxLength={160}
                   />
                   <div className="input-footer"><span>{formData.seoDescription.length}/160</span></div>
                 </div>
 
                 <div className="form-group" style={{ gridColumn: '1 / -1' }}>
                   <label className="form-label">Canonical URL</label>
-                  <input 
-                    type="text" 
-                    name="canonicalUrl" 
-                    value={formData.canonicalUrl} 
-                    onChange={handleTextChange} 
-                    className="form-input" 
-                    placeholder="https://example.com/canonical-url" 
+                  <input
+                    type="text"
+                    name="canonicalUrl"
+                    value={formData.canonicalUrl}
+                    onChange={handleTextChange}
+                    className="form-input"
+                    placeholder="https://example.com/canonical-url"
                   />
                 </div>
               </div>

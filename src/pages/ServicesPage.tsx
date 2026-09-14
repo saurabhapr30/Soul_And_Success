@@ -7,7 +7,7 @@ import skyImage from '@/assets/services.webp';
 import bannerLeaves from '@/assets/services-banner-leaves.webp';
 
 import lifeCoachingImg from '@/assets/Life-Coaching.webp';
-import ebookImg from '@/assets/Ebook.webp';
+import ebookImg from '@/assets/service-card-ebook.webp';
 import merchImg from '@/assets/Merchandise.webp';
 
 import './ServicesPage.css';
@@ -35,7 +35,7 @@ export function ServicesPage() {
         <section className="services-page__banner">
           <OptimizedImage src={bannerLeaves} alt="Botanical leaves background" className="services-page__banner-bg" loading="lazy" />
           <div className="services-page__banner-overlay"></div>
-          
+
           <div className="services-page__banner-content">
             <div className="services-page__banner-line"></div>
             <h1 className="services-page__banner-title">My Services</h1>
@@ -72,7 +72,7 @@ export function ServicesPage() {
             {/* Card 1: Life Coaching */}
             <div className="services-card">
               <div className="services-card__image-wrapper services-card__image-wrapper--blue">
-                <OptimizedImage src={lifeCoachingImg} alt="Life Coaching" className="services-card__image" loading="lazy" />
+                <OptimizedImage src={lifeCoachingImg} alt="Life Coaching" className="services-card__image services-card__image--coaching" loading="lazy" />
               </div>
               <div className="services-card__content">
                 <div className="services-card__icon">
@@ -87,23 +87,24 @@ export function ServicesPage() {
                 </div>
                 <h3 className="services-card__title" style={{ textTransform: 'uppercase' }}>Life Coaching</h3>
                 <p className="services-card__desc">Programs to help you Heal, Clarify and Create the Life you Desire.</p>
-              </div>
-              <div className="services-card__btn-wrapper">
-                <Link to="/courses" className="services-card__btn">
-                  <span className="services-card__btn-text">WORK WITH ME</span>
-                  <div className="services-card__btn-icon">
-                    <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 1L5 5L1 9" stroke="#000000" strokeWidth="1.17"/>
-                    </svg>
-                  </div>
-                </Link>
+                <div className="services-card__btn-wrapper">
+                  <span className="services-card__btn-chevron" aria-hidden="true">&gt;</span>
+                  <Link to="/courses" className="services-card__btn">
+                    <span className="services-card__btn-text">WORK WITH ME</span>
+                    <span className="services-card__btn-icon">
+                      <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5H13M9 1L13 5L9 9" stroke="#000000" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </span>
+                  </Link>
+                </div>
               </div>
             </div>
 
             {/* Card 2: E-Books */}
             <div className="services-card">
               <div className="services-card__image-wrapper services-card__image-wrapper--beige">
-                <OptimizedImage src={ebookImg} alt="E-Books" className="services-card__image" loading="lazy" />
+                <OptimizedImage src={ebookImg} alt="E-Books" className="services-card__image services-card__image--ebook-card" loading="lazy" />
               </div>
               <div className="services-card__content">
                 <div className="services-card__icon">
@@ -114,23 +115,24 @@ export function ServicesPage() {
                 </div>
                 <h3 className="services-card__title" style={{ textTransform: 'uppercase' }}>E-Books</h3>
                 <p className="services-card__desc">Simple Guides and Workbooks for your Personal Growth.</p>
-              </div>
-              <div className="services-card__btn-wrapper">
-                <Link to="/books" className="services-card__btn">
-                  <span className="services-card__btn-text">BUY NOW</span>
-                  <div className="services-card__btn-icon">
-                    <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 1L5 5L1 9" stroke="#000000" strokeWidth="1.17"/>
-                    </svg>
-                  </div>
-                </Link>
+                <div className="services-card__btn-wrapper">
+                  <span className="services-card__btn-chevron" aria-hidden="true">&gt;</span>
+                  <Link to="/books" className="services-card__btn">
+                    <span className="services-card__btn-text">BUY NOW</span>
+                    <span className="services-card__btn-icon">
+                      <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5H13M9 1L13 5L9 9" stroke="#000000" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </span>
+                  </Link>
+                </div>
               </div>
             </div>
 
             {/* Card 3: Merchandise */}
             <div className="services-card">
               <div className="services-card__image-wrapper services-card__image-wrapper--grey">
-                <OptimizedImage src={merchImg} alt="Merchandise" className="services-card__image" loading="lazy" />
+                <OptimizedImage src={merchImg} alt="Merchandise" className="services-card__image services-card__image--merch-card" loading="lazy" />
               </div>
               <div className="services-card__content">
                 <div className="services-card__icon">
@@ -142,19 +144,20 @@ export function ServicesPage() {
                 </div>
                 <h3 className="services-card__title" style={{ textTransform: 'uppercase' }}>Merchandise</h3>
                 <p className="services-card__desc">Meaningful Reminders to Inspire your Daily Journey.</p>
-              </div>
-              <div className="services-card__btn-wrapper">
-                <Link to="/shop" className="services-card__btn">
-                  <span className="services-card__btn-text">SHOP NOW</span>
-                  <div className="services-card__btn-icon">
-                    <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 1L5 5L1 9" stroke="#000000" strokeWidth="1.17"/>
-                    </svg>
-                  </div>
-                </Link>
+                <div className="services-card__btn-wrapper">
+                  <span className="services-card__btn-chevron" aria-hidden="true">&gt;</span>
+                  <Link to="/shop" className="services-card__btn">
+                    <span className="services-card__btn-text">SHOP NOW</span>
+                    <span className="services-card__btn-icon">
+                      <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5H13M9 1L13 5L9 9" stroke="#000000" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </span>
+                  </Link>
+                </div>
               </div>
             </div>
-            
+
           </div>
         </section>
       </div>
