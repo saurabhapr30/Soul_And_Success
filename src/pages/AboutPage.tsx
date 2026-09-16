@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import './AboutPage.css';
-import { SEOHead } from '@/components/ui';
+import { SEOHead, Divider } from '@/components/ui';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import heroPortrait from '@/assets/standing.webp';
 import introPortrait from '@/assets/standing.webp';
 import leavesBg from '@/assets/aboutpage.webp';
 import sunflowerImg from '@/assets/sunflower.webp';
-import cert1 from '@/assets/c10c4670cec388d76e39915f5c2c5be405c9a1f1.webp';
-import cert2 from '@/assets/ec32dcf401f07d2768855691dea06044c8171c3b.webp';
+import cert1 from '@/assets/c10c4670cec388d76e39915f5c2c5be405c9a1f1 (1).webp';
+import cert2 from '@/assets/ec32dcf401f07d2768855691dea06044c8171c3b (1).webp';
 import signatureImg from '@/assets/signature.png';
 import logoIcon from '@/assets/logo.webp';
 import leafSvg from '@/assets/leaf.svg';
@@ -26,11 +26,13 @@ export function AboutPage() {
           <div className="about-hero__container">
             <div className="about-hero__content">
               <img src={signatureImg} alt="Jawedan Sehar Signature" className="about-hero__signature" />
+              <div className="about-hero__line" aria-hidden="true" />
               <h2 className="about-hero__title">Certified Life Coach</h2>
               <p className="about-hero__subtitle">YOUR ACCOUNTABILITY COACH</p>
             </div>
             <div className="about-hero__image-wrapper">
               <OptimizedImage src={heroPortrait} alt="Jawedan Sehar" className="about-hero__image" priority={true} decoding="async" />
+              <div className="about-hero__image-overlay" aria-hidden="true" />
             </div>
           </div>
         </section>
@@ -38,10 +40,24 @@ export function AboutPage() {
         {/* CERTIFICATION STRIP */}
         <section className="about-certifications">
           <div className="about-certifications__track">
-            <OptimizedImage src={cert1} alt="Certification" className="about-certifications__card" loading="lazy" />
-            <OptimizedImage src={cert2} alt="Certification" className="about-certifications__card" loading="lazy" />
-            <OptimizedImage src={cert1} alt="Certification" className="about-certifications__card" loading="lazy" />
-            <OptimizedImage src={cert2} alt="Certification" className="about-certifications__card" loading="lazy" />
+            <div className="about-certifications__wrapper">
+              <OptimizedImage src={cert1} alt="Certification" className="about-certifications__card" loading="lazy" />
+            </div>
+            <div className="about-certifications__wrapper">
+              <OptimizedImage src={cert2} alt="Certification" className="about-certifications__card about-certifications__card--carolina" loading="lazy" />
+            </div>
+            <div className="about-certifications__wrapper">
+              <OptimizedImage src={cert1} alt="Certification" className="about-certifications__card" loading="lazy" />
+            </div>
+            <div className="about-certifications__wrapper">
+              <OptimizedImage src={cert2} alt="Certification" className="about-certifications__card about-certifications__card--carolina" loading="lazy" />
+            </div>
+            <div className="about-certifications__wrapper" aria-hidden="true">
+              <OptimizedImage src={cert1} alt="Certification" className="about-certifications__card" loading="lazy" />
+            </div>
+            <div className="about-certifications__wrapper" aria-hidden="true">
+              <OptimizedImage src={cert2} alt="Certification" className="about-certifications__card about-certifications__card--carolina" loading="lazy" />
+            </div>
           </div>
         </section>
 
@@ -55,10 +71,9 @@ export function AboutPage() {
               <h2 className="about-founder__heading">Hey Iam Jawedan</h2>
               <div className="about-founder__text">
                 <p>I am a Certified Life Coach, Law of Attraction Expert, NLP Practitioner and Ho'oponopono & EFT Healer. I help you transform your life with clarity, compassion and purpose.</p>
-                <p>With years of leadership experience in the IT industry, I combine practical thinking with emotional healing to help you create lasting transformation. My approach is simple yet powerful to help you heal, grow and manifest the life you truly deserve.</p>
+                <p>With years of leadership experience in the IT industry, I combine practical thinking with emotional healing to help you create lasting transformation.</p>
+                <p>My approach is simple yet powerful to help you heal, grow and manifest the life you truly deserve.</p>
                 <p>You are capable of more than you think.</p>
-                <p>Always with love,</p>
-                <img src={signatureImg} alt="Jawedan Sehar Signature" className="about-founder__signature" />
               </div>
             </div>
             <div className="about-founder__image-wrapper">
@@ -67,6 +82,8 @@ export function AboutPage() {
             </div>
           </div>
         </section>
+
+        <Divider />
 
         {/* MY MISSION SECTION */}
         <section className="about-mission">
@@ -125,7 +142,9 @@ export function AboutPage() {
             <div className="about-quote__content">
               <span className="about-quote__marks">“</span>
               <p className="about-quote__text">
-                Welcome to Soul And Success. Let's begin your journey toward healing, growth, and lasting transformation together.
+                Welcome To Soul And Success. Let's Begin<br />
+                Your Journey Toward Healing, Growth, And<br />
+                Lasting Transformation Together.
               </p>
             </div>
           </div>
@@ -152,8 +171,8 @@ export function AboutPage() {
                 <Link to="/courses" className="about-cta__cta-btn">
                   <span>CHOOSE YOUR PROGRAM</span>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M3.33337 8H12.6667" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M8 3.33334L12.6667 8.00001L8 12.6667" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M3.33337 8H12.6667" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M8 3.33334L12.6667 8.00001L8 12.6667" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </Link>
                 <p className="about-cta__cta-sub">Begin your transformation today.</p>

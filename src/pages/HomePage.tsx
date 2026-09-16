@@ -53,14 +53,15 @@ export function HomePage() {
                 decoding="async"
               />
             </div>
-            
+
             <div className="home-hero__signature-block">
               <img src={signatureImg} alt="Jawedan Sehar Signature" className="home-hero__signature home-hero__signature--desktop" />
               <h2 className="home-hero__signature home-hero__signature--mobile">Jawedan Sehar</h2>
+              <div className="home-hero__signature-line"></div>
               <p className="home-hero__signature-title">Certified Life Coach</p>
               <p className="home-hero__signature-subtitle">YOUR ACCOUNTABILITY COACH</p>
             </div>
-            
+
             <div className="home-hero__curve" aria-hidden="true">
               <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
                 <path d="M0,120 C480,0 960,0 1440,120 L1440,120 L0,120 Z" fill="#FBFAF8"></path>
@@ -70,9 +71,9 @@ export function HomePage() {
             <div className="home-hero__text-block">
               <span className="home-hero__caption">SOUL AND SUCCESS</span>
               <h1 className="home-hero__title">
-                FIND YOUR<br />INNER COMPASS
+                Find Your<br />Inner CompAss
               </h1>
-              
+
               <div className="home-hero__divider">
                 <div className="home-hero__divider-line"></div>
                 <div className="home-hero__divider-diamond"></div>
@@ -102,7 +103,7 @@ export function HomePage() {
         <div className="home-section-2">
           <div className="home-section-2__container">
             <div className="home-section-2__content">
-              <h2 className="home-section-2__title">YOU'RE NOT ALONE</h2>
+              <h2 className="home-section-2__title">You're Not Alone</h2>
               <div className="home-section-2__divider-row">
                 <div className="home-section-2__divider-line" />
                 <span className="home-section-2__divider-heart">♡</span>
@@ -230,11 +231,15 @@ export function HomePage() {
               <h2 className="home-section-4__title">How I Can Support You</h2>
               <div className="home-section-4__divider">
                 <div className="home-section-4__line"></div>
-                <div className="home-section-4__diamond"></div>
+                <div className="home-section-4__heart">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#BC957B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                </div>
                 <div className="home-section-4__line"></div>
               </div>
             </div>
-            
+
             <div className="home-section-4__grid">
               {/* Card 1: Life Coaching */}
               <div className="home-section-4__card">
@@ -242,16 +247,21 @@ export function HomePage() {
                   <OptimizedImage src={serviceCoaching} alt="Life Coaching" className="home-section-4__card-img-1" loading="lazy" />
                 </div>
                 <div className="home-section-4__card-content">
-                  <svg className="home-section-4__icon" viewBox="0 0 24 24" fill="none" stroke="#BC957B" strokeWidth="1.3">
-                    <path d="M12 22C12 22 4 16 4 10C4 6 7 3 12 3C17 3 20 6 20 10C20 16 12 22 12 22Z" />
-                    <circle cx="12" cy="10" r="3" />
+                  <svg className="home-section-4__icon" viewBox="0 0 24 24" fill="none" stroke="#C0997F" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M8 21h8" />
+                    <path d="M12 21v-7" />
+                    <path d="M12 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3" />
+                    <path d="M12 14a3 3 0 0 0 3-3 3 3 0 0 0-3-3" />
+                    <path d="M12 8a3 3 0 0 1-3-3 3 3 0 0 1 6 0 3 3 0 0 1-3 3" />
                   </svg>
                   <h3 className="home-section-4__card-title">LIFE COACHING</h3>
                   <p className="home-section-4__card-desc">Programs to help you Heal, Clarify and Create the Life you Desire.</p>
                   <Link to="/services" className="home-section-4__cta">
                     <span className="home-section-4__cta-chevron">&gt;</span>
-                    <span className="home-section-4__cta-text">WORK WITH ME</span>
-                    <span className="home-section-4__cta-arrow">→</span>
+                    <span className="home-section-4__cta-pill">
+                      <span className="home-section-4__cta-text">WORK WITH ME</span>
+                      <span className="home-section-4__cta-arrow">➔</span>
+                    </span>
                   </Link>
                 </div>
               </div>
@@ -262,16 +272,18 @@ export function HomePage() {
                   <OptimizedImage src={serviceEbook} alt="E-Book" className="home-section-4__card-img-2" loading="lazy" />
                 </div>
                 <div className="home-section-4__card-content">
-                  <svg className="home-section-4__icon" viewBox="0 0 24 24" fill="none" stroke="#BC957B" strokeWidth="1.3">
-                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                  <svg className="home-section-4__icon" viewBox="0 0 24 24" fill="none" stroke="#C0997F" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
                   </svg>
-                  <h3 className="home-section-4__card-title">E-BOOK</h3>
+                  <h3 className="home-section-4__card-title">E-BOOKS</h3>
                   <p className="home-section-4__card-desc">Simple yet powerful E-Books for your Personal Growth.</p>
                   <Link to="/books" className="home-section-4__cta">
                     <span className="home-section-4__cta-chevron">&gt;</span>
-                    <span className="home-section-4__cta-text">BUY NOW</span>
-                    <span className="home-section-4__cta-arrow">→</span>
+                    <span className="home-section-4__cta-pill">
+                      <span className="home-section-4__cta-text">BUY NOW</span>
+                      <span className="home-section-4__cta-arrow">➔</span>
+                    </span>
                   </Link>
                 </div>
               </div>
@@ -282,23 +294,24 @@ export function HomePage() {
                   <OptimizedImage src={serviceProducts} alt="Merchandise" className="home-section-4__card-img-3" loading="lazy" />
                 </div>
                 <div className="home-section-4__card-content">
-                  <svg className="home-section-4__icon" viewBox="0 0 24 24" fill="none" stroke="#BC957B" strokeWidth="1.3">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-                    <line x1="3" y1="6" x2="21" y2="6" />
-                    <path d="M16 10a4 4 0 0 1-8 0" />
+                  <svg className="home-section-4__icon" viewBox="0 0 24 24" fill="none" stroke="#C0997F" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="4" y="7" width="16" height="15" rx="2" ry="2" />
+                    <path d="M8 7V4a4 4 0 0 1 8 0v3" />
                   </svg>
                   <h3 className="home-section-4__card-title">MERCHANDISE</h3>
                   <p className="home-section-4__card-desc">Meaningful Reminders to Inspire your Daily Journey.</p>
                   <Link to="/shop" className="home-section-4__cta">
                     <span className="home-section-4__cta-chevron">&gt;</span>
-                    <span className="home-section-4__cta-text">SHOP NOW</span>
-                    <span className="home-section-4__cta-arrow">→</span>
+                    <span className="home-section-4__cta-pill">
+                      <span className="home-section-4__cta-text">SHOP NOW</span>
+                      <span className="home-section-4__cta-arrow">➔</span>
+                    </span>
                   </Link>
                 </div>
               </div>
             </div>
           </div>
-          
+
           {/* Podcasts & Videos (Child of Section 4) */}
           <div className="home-podcast-card">
             <div className="home-podcast-card__text">
@@ -380,8 +393,8 @@ export function HomePage() {
             <Link to="/courses" className="home-section-6__cta-btn">
               <span>CHOOSE YOUR PROGRAM</span>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M3.33337 8H12.6667" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M8 3.33334L12.6667 8.00001L8 12.6667" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M3.33337 8H12.6667" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M8 3.33334L12.6667 8.00001L8 12.6667" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>
             <p className="home-section-6__cta-sub">Begin your transformation today.</p>
@@ -393,112 +406,112 @@ export function HomePage() {
 
 
 
-          {/* FOOTER */}
-          <footer className="home-section-7">
-            {/* Top Row: Brand + Link Columns */}
-            <div className="home-section-7__top">
-              <div className="home-section-7__brand">
-                <div className="home-section-7__brand-header">
-                  <img src={logoImg} alt="Soul And Success" className="home-section-7__logo" />
-                  <div>
-                    <h2 className="home-section-7__brand-title">SOUL AND SUCCESS</h2>
-                    <p className="home-section-7__brand-subtitle">FIND YOUR INNER COMPASS</p>
-                  </div>
-                </div>
-                <div className="home-section-7__brand-socials">
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                    <Icon name="instagram" size="sm" decorative />
-                  </a>
-                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                    <Icon name="facebook" size="sm" decorative />
-                  </a>
-                  <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                    <Icon name="youtube" size="sm" decorative />
-                  </a>
-                  <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" aria-label="Spotify" style={{ color: '#1DB954' }}>
-                    <Icon name="spotify" size="sm" decorative />
-                  </a>
+        {/* FOOTER */}
+        <footer className="home-section-7">
+          {/* Top Row: Brand + Link Columns */}
+          <div className="home-section-7__top">
+            <div className="home-section-7__brand">
+              <div className="home-section-7__brand-header">
+                <img src={logoImg} alt="Soul And Success" className="home-section-7__logo" />
+                <div>
+                  <h2 className="home-section-7__brand-title">SOUL AND SUCCESS</h2>
+                  <p className="home-section-7__brand-subtitle">FIND YOUR INNER COMPASS</p>
                 </div>
               </div>
-
-              <div className="home-section-7__links">
-                <div className="home-section-7__link-col">
-                  <h3 className="home-section-7__link-heading">Quick Links</h3>
-                  <ul className="home-section-7__link-list">
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/services">Services</Link></li>
-                    <li><Link to="/blog">Resources</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
-                  </ul>
-                </div>
-                <div className="home-section-7__link-col">
-                  <h3 className="home-section-7__link-heading">Services</h3>
-                  <ul className="home-section-7__link-list">
-                    <li><Link to="/services">Life Coaching</Link></li>
-                    <li><Link to="/services">NLP Coaching</Link></li>
-                    <li><Link to="/services">Healing Sessions</Link></li>
-                    <li><Link to="/services">Law Of Attraction Mastery</Link></li>
-                  </ul>
-                </div>
-                <div className="home-section-7__link-col">
-                  <h3 className="home-section-7__link-heading">Resources</h3>
-                  <ul className="home-section-7__link-list">
-                    <li><Link to="/books">E-Books</Link></li>
-                    <li><Link to="/blog">Free Blogs</Link></li>
-                    <li><Link to="/shop">Merchandise</Link></li>
-                  </ul>
-                </div>
+              <div className="home-section-7__brand-socials">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <Icon name="instagram" size="sm" decorative />
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <Icon name="facebook" size="sm" decorative />
+                </a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                  <Icon name="youtube" size="sm" decorative />
+                </a>
+                <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" aria-label="Spotify" style={{ color: '#1DB954' }}>
+                  <Icon name="spotify" size="sm" decorative />
+                </a>
               </div>
             </div>
 
-            {/* Middle Row: Subscribe + Contact + WhatsApp */}
-            <div className="home-section-7__middle">
-              <div className="home-section-7__subscribe">
-                <h3 className="home-section-7__subscribe-heading">Stay Connected</h3>
-                <p className="home-section-7__subscribe-desc">Get tips and inspiration straight to your inbox.</p>
-                <div className="home-section-7__subscribe-form">
-                  <input type="email" placeholder="Your email address" className="home-section-7__subscribe-input" />
-                  <button className="home-section-7__subscribe-btn" aria-label="Subscribe">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14m-7-7 7 7-7 7" />
-                    </svg>
-                  </button>
-                </div>
+            <div className="home-section-7__links">
+              <div className="home-section-7__link-col">
+                <h3 className="home-section-7__link-heading">Quick Links</h3>
+                <ul className="home-section-7__link-list">
+                  <li><Link to="/about">About</Link></li>
+                  <li><Link to="/services">Services</Link></li>
+                  <li><Link to="/blog">Resources</Link></li>
+                  <li><Link to="/contact">Contact</Link></li>
+                </ul>
               </div>
-
-              <div className="home-section-7__contact">
-                <h3 className="home-section-7__contact-heading">Contact Us</h3>
-                <div className="home-section-7__contact-row">
-                  <Icon name="mail" size="sm" decorative />
-                  <span>jaw.sehar@gmail.com</span>
-                </div>
-                <div className="home-section-7__contact-row">
-                  <Icon name="map-pin" size="sm" decorative />
-                  <span>India</span>
-                </div>
+              <div className="home-section-7__link-col">
+                <h3 className="home-section-7__link-heading">Services</h3>
+                <ul className="home-section-7__link-list">
+                  <li><Link to="/services">Life Coaching</Link></li>
+                  <li><Link to="/services">NLP Coaching</Link></li>
+                  <li><Link to="/services">Healing Sessions</Link></li>
+                  <li><Link to="/services">Law Of Attraction Mastery</Link></li>
+                </ul>
               </div>
-
-              <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="home-section-7__whatsapp">
-                <img src={whatsappIcon} alt="WhatsApp" className="home-section-7__whatsapp-icon" />
-              </a>
-            </div>
-
-            {/* Bottom Bar */}
-            <div className="home-section-7__bottom-bar">
-              <div className="home-section-7__copyright">
-                © 2026 Soul And Success. All rights reserved.
-              </div>
-              <div className="home-section-7__legal">
-                <span>Privacy Policy</span>
-                <span className="home-section-7__separator">|</span>
-                <span>Terms &amp; Conditions</span>
+              <div className="home-section-7__link-col">
+                <h3 className="home-section-7__link-heading">Resources</h3>
+                <ul className="home-section-7__link-list">
+                  <li><Link to="/books">E-Books</Link></li>
+                  <li><Link to="/blog">Free Blogs</Link></li>
+                  <li><Link to="/shop">Merchandise</Link></li>
+                </ul>
               </div>
             </div>
-          </footer>
-        </div>
-      </>
-    );
-  }
+          </div>
+
+          {/* Middle Row: Subscribe + Contact + WhatsApp */}
+          <div className="home-section-7__middle">
+            <div className="home-section-7__subscribe">
+              <h3 className="home-section-7__subscribe-heading">Stay Connected</h3>
+              <p className="home-section-7__subscribe-desc">Get tips and inspiration straight to your inbox.</p>
+              <div className="home-section-7__subscribe-form">
+                <input type="email" placeholder="Your email address" className="home-section-7__subscribe-input" />
+                <button className="home-section-7__subscribe-btn" aria-label="Subscribe">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div className="home-section-7__contact">
+              <h3 className="home-section-7__contact-heading">Contact Us</h3>
+              <div className="home-section-7__contact-row">
+                <Icon name="mail" size="sm" decorative />
+                <span>jaw.sehar@gmail.com</span>
+              </div>
+              <div className="home-section-7__contact-row">
+                <Icon name="map-pin" size="sm" decorative />
+                <span>India</span>
+              </div>
+            </div>
+
+            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="home-section-7__whatsapp">
+              <img src={whatsappIcon} alt="WhatsApp" className="home-section-7__whatsapp-icon" />
+            </a>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="home-section-7__bottom-bar">
+            <div className="home-section-7__copyright">
+              © 2026 Soul And Success. All rights reserved.
+            </div>
+            <div className="home-section-7__legal">
+              <span>Privacy Policy</span>
+              <span className="home-section-7__separator">|</span>
+              <span>Terms &amp; Conditions</span>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </>
+  );
+}
 
 /* ================================================== */
 /* PAIN POINTS — "You're Not Alone"                     */
@@ -572,11 +585,11 @@ export function HomeIntro() {
               My goal is to help you create a life filled with purpose, peace,
               and meaningful connections.
             </p>
-            <img 
-              src={signatureImg} 
-              alt="Jawedan Seher Signature" 
-              className="home-intro__signature" 
-              style={{ maxWidth: '12rem', marginTop: 'var(--space-2)', marginBottom: 'var(--space-6)' }} 
+            <img
+              src={signatureImg}
+              alt="Jawedan Seher Signature"
+              className="home-intro__signature"
+              style={{ maxWidth: '12rem', marginTop: 'var(--space-2)', marginBottom: 'var(--space-6)' }}
             />
             <Button variant="primary" href="/about">
               Read More
@@ -728,7 +741,7 @@ function HomeBlogSlider() {
         const data = r.data?.data ?? r.data;
         if (Array.isArray(data)) setPosts(data);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   if (!posts.length) return null;
@@ -743,7 +756,7 @@ function HomeBlogSlider() {
     : '';
 
   return (
-    <section className="home-section-blog" style={imgSrc ? { backgroundImage: `url(${imgSrc})`, backgroundSize: 'cover', backgroundPosition: 'center' } : undefined}>
+    <section className="home-section-blog">
       {/* Left label overlay */}
       <div className="home-section-blog__overlay">
         <h3 className="home-section-blog__title">MY LATEST BLOGS</h3>

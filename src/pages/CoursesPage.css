@@ -18,7 +18,7 @@
   align-items: center;
   width: 100%;
   height: 980px;
-  background-color: #F8F8F8;
+  background-color: #F9F9FE;
   padding-left: 260px;
   /* Exact offset from left in 1920px */
 }
@@ -51,25 +51,34 @@
 .courses-hero-cta {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 }
 
 .cta-arrow {
-  color: #000000;
-  font-size: 24px;
+  color: #BDBDBD;
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1;
 }
 
 .courses-btn-primary {
-  background-color: #BC957B;
+  background-color: #C39F87;
   color: #FFFFFF;
-  font-family: 'Playfair Display', serif;
-  /* fallback to Cinzel or similar if missing, wait: Playfair_Display is in Figma output */
-  font-weight: 700;
-  font-size: 16px;
-  padding: 15px 40px;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 12px 36px;
   border: none;
   cursor: pointer;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(195, 159, 135, 0.4);
+  transition: all 0.3s ease;
+}
+
+.courses-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(195, 159, 135, 0.6);
 }
 
 .courses-hero-image-wrapper {
@@ -84,6 +93,7 @@
   width: auto;
   object-fit: contain;
   object-position: bottom;
+  mix-blend-mode: multiply;
 }
 
 .courses-hero-scroll-indicator {
@@ -116,18 +126,18 @@
 
 .quote-marks {
   position: absolute;
-  font-family: 'Playfair Display', 'Georgia', serif;
-  font-size: 1000px;
+  font-family: 'Bropella', 'Georgia', serif;
+  font-size: 1200px;
   color: #F8F5F2;
   /* Very pale beige from Figma */
-  line-height: 0.6;
+  line-height: 0.7;
   z-index: -1;
   user-select: none;
 }
 
 .quote-left {
-  top: -50px;
-  left: -100px;
+  top: 170px;
+  left: -290px;
 }
 
 
@@ -135,13 +145,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 100px;
   margin-bottom: 40px;
   width: 100%;
 }
 
 .quote-line {
-  width: 320px;
+  width: 220px;
   height: 1px;
   background-color: #CBAE9A;
   /* Match Figma exact line color */
@@ -160,7 +170,7 @@
   font-family: 'Bebas Neue', sans-serif;
   font-size: 64px;
   font-weight: 400;
-  line-height: 1.1;
+  line-height: 75px;
   color: #000000;
   text-transform: uppercase;
   margin: 0 0 30px 0;
@@ -173,11 +183,24 @@
   margin: 0;
 }
 
+.quote-signature-dash {
+  font-family: 'Karla', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
 /* --- COLLECTION SECTION --- */
 .courses-collection {
   width: 100%;
+  background-color: #FFFFFF;
+}
+
+.collection-body {
+  background-color: #F8F9FA;
   padding: 60px 320px 150px;
-  background-color: #FAFAFA;
+  width: 100%;
 }
 
 .collection-header {
@@ -185,21 +208,26 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 80px;
+  padding-top: 60px;
+  padding-bottom: 130px;
   position: relative;
 }
 
 .collection-eyebrow {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 6px;
   color: #C39F87;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 77px;
+  /* 320.833% */
+  letter-spacing: 10px;
   text-transform: uppercase;
 }
 
 .collection-divider {
-  width: 100px;
+  width: 400px;
   height: 1px;
   background-color: #79716B;
   /* Greyish brown line from Figma */
@@ -208,25 +236,29 @@
 }
 
 .collection-heading {
-  font-family: 'Karla', sans-serif;
-  font-weight: 700;
-  font-size: 44px;
-  letter-spacing: -1.5px;
   color: #C39F87;
-  margin: 0;
-  white-space: nowrap;
+  width: 1000px;
+  text-align: center;
+  font-family: 'Montserrat';
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 70px;
+  /* 145.833% */
+  letter-spacing: -2px;
+  text-transform: capitalize;
   /* Prevent wrapping to match Figma */
 }
 
 .collection-leaf {
   position: absolute;
-  left: 50%;
+  left: 55%;
   margin-left: 420px;
-  top: 80px;
+  top: 160px;
   z-index: 0;
   pointer-events: none;
-  width: 92px;
-  height: 102px;
+  width: 179px;
+  height: 189px;
 }
 
 .collection-grid {
@@ -492,57 +524,92 @@
 /* --- NEWSLETTER SECTION --- */
 .courses-newsletter {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  padding: 80px 150px;
+  background-color: #F9FBFC;
+  /* match image background */
+}
+
+.newsletter-content {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px 320px;
-  background-color: #FFFFFF;
+  width: 100%;
   text-align: center;
+  flex: 1;
 }
 
 .newsletter-heading {
-  font-family: 'Aesthetic', serif;
+  color: #000;
+  text-align: center;
+  font-family: 'Aesthetic';
   font-size: 48px;
+  font-style: normal;
   font-weight: 400;
-  color: #000000;
-  margin: 0 0 20px 0;
-  letter-spacing: -0.72px;
+  line-height: 70px;
+  /* 145.833% */
+  letter-spacing: var(--letter-spacing--0_72, -0.72px);
+  text-transform: capitalize;
+  white-space: nowrap;
 }
 
 .newsletter-desc {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
   color: #896A56;
-  line-height: 1.6;
-  margin: 0 0 40px 0;
+  text-align: center;
+  font-family: 'Montserrat';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  /* 166.667% */
+  letter-spacing: var(--letter-spacing--0_72, -0.72px);
+  text-transform: capitalize;
 }
 
 .newsletter-form {
   display: flex;
-  align-items: stretch;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  gap: 25px;
   width: 100%;
-  max-width: 600px;
-  height: 50px;
+  max-width: 500px;
 }
 
 .newsletter-input {
-  flex-grow: 1;
-  border: 1px solid #DDDDDD;
+  width: 100%;
+  height: 45px;
+  border: 1px solid #C39F87;
   padding: 0 20px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 18px;
-  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000000;
+  background-color: transparent;
   outline: none;
 }
 
+.newsletter-input::placeholder {
+  color: #79716B;
+}
+
 .newsletter-btn {
-  background-color: #C39F87;
+  background-color: #CBAE9A;
   color: #FFFFFF;
   border: none;
-  padding: 0 40px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
+  padding: 10px 60px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
   cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.newsletter-btn:hover {
+  opacity: 0.9;
 }
 
 /* ================================================== */
@@ -558,7 +625,7 @@
     right: 50px;
   }
 
-  .courses-collection {
+  .collection-body {
     padding: 100px 120px 150px;
   }
 
@@ -604,9 +671,13 @@
     display: none;
   }
 
-  .courses-collection,
   .courses-testimonials,
   .courses-newsletter {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .collection-body {
     padding-left: 60px;
     padding-right: 60px;
   }
@@ -783,9 +854,13 @@
     grid-template-columns: 1fr;
   }
 
-  .courses-collection,
   .courses-testimonials,
   .courses-newsletter {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .collection-body {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -902,5 +977,7 @@
     width: 100%;
   }
 }
-.card-cta-link { text-decoration: none; }
 
+.card-cta-link {
+  text-decoration: none;
+}

@@ -11,10 +11,10 @@ import personImage from '../assets/hero-portrait-actual.webp';
 
 const IconFlower = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 12V22" stroke="#CBAE9A" strokeWidth="1.5" strokeLinecap="round"/>
-    <circle cx="12" cy="7" r="3" stroke="#CBAE9A" strokeWidth="1.5"/>
-    <circle cx="7" cy="11" r="3" stroke="#CBAE9A" strokeWidth="1.5"/>
-    <circle cx="17" cy="11" r="3" stroke="#CBAE9A" strokeWidth="1.5"/>
+    <path d="M12 12V22" stroke="#CBAE9A" strokeWidth="1.5" strokeLinecap="round" />
+    <circle cx="12" cy="7" r="3" stroke="#CBAE9A" strokeWidth="1.5" />
+    <circle cx="7" cy="11" r="3" stroke="#CBAE9A" strokeWidth="1.5" />
+    <circle cx="17" cy="11" r="3" stroke="#CBAE9A" strokeWidth="1.5" />
   </svg>
 );
 
@@ -27,7 +27,7 @@ export function CoursesPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Fetch courses
     const fetchCourses = async () => {
       try {
@@ -54,7 +54,7 @@ export function CoursesPage() {
     { name: "Sara and Allan", quote: "Diam tristique feu senectus sed egestas egestas fringilla. At risus viverra integer adipiscing at in tellus mass.", image: personImage },
     { name: "Ingrid G.", quote: "Morbi tristique feu senectus sed egestas egestas fringilla. At risus viverra integer adipiscing at in tellus sed.", image: personImage },
     { name: "Anna H.", quote: "Vitae tristique feu senectus sed egestas egestas fringilla. At risus viverra integer adipiscing at in tellus nus.", image: personImage },
-    
+
     { name: "Michael T.", quote: "Amet luctus venenatis lectus magna fringilla urna porttitor. Facilisis sed odio morbi quis commodo.", image: personImage },
     { name: "Emma W.", quote: "Nisi est sit amet facilisis magna etiam. Dictum varius duis at consectetur lorem donec massa sapien.", image: personImage },
     { name: "Oliver R.", quote: "Sit amet facilisis magna etiam tempor. Velit aliquet sagittis id consectetur purus ut faucibus pulvinar.", image: personImage },
@@ -71,6 +71,13 @@ export function CoursesPage() {
 
   const displayedTestimonials = allTestimonials.slice(currentTestimonialPage * 4, currentTestimonialPage * 4 + 4);
 
+  const scrollToCollection = () => {
+    const section = document.getElementById('courses-collection');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <SEOHead
@@ -85,8 +92,8 @@ export function CoursesPage() {
             <h1 className="courses-hero-heading">Buy Courses From Here</h1>
             <p className="courses-hero-subtitle">Talk to yourself like someone you love.</p>
             <div className="courses-hero-cta">
-              <span className="cta-arrow">→</span>
-              <button className="courses-btn-primary">BUY NOW</button>
+              <span className="cta-arrow">⟶</span>
+              <button className="courses-btn-primary" onClick={scrollToCollection}>BUY NOW</button>
             </div>
           </div>
           <div className="courses-hero-image-wrapper">
@@ -109,51 +116,59 @@ export function CoursesPage() {
               <div className="quote-line"></div>
             </div>
             <h2 className="quote-text">EVERYTHING IN THIS SHOP IS SOMETHING I ACTUALLY REACH FOR — NOTHING MADE JUST TO SELL.</h2>
-            <p className="quote-signature">~ Jawedan</p>
+            <p className="quote-signature"><span className="quote-signature-dash">—</span>Jawedan</p>
           </div>
         </section>
 
         {/* COLLECTION SECTION */}
-        <section className="courses-collection">
+        <section className="courses-collection" id="courses-collection">
           <div className="collection-header">
             <span className="collection-eyebrow">SHOP THE COLLECTION</span>
             <div className="collection-divider"></div>
             <h3 className="collection-heading">Small Things That Hold Big Reminders</h3>
             <div className="collection-leaf">
               <svg xmlns="http://www.w3.org/2000/svg" width="182" height="192" viewBox="0 0 182 192" fill="none" style={{ position: 'absolute', top: 0, left: 0 }}>
-                <path d="M75.0037 190.166C56.5377 190.222 38.7251 183.346 25.0988 170.903C11.4725 158.46 3.02774 141.358 1.43945 122.988C-0.148831 104.619 5.23536 86.3251 16.5242 71.7342C27.813 57.1432 44.1818 47.3213 62.3841 44.2164C122.327 32.6664 138.101 27.2065 159.134 1.1665C169.65 22.1665 180.167 45.0564 180.167 85.1664C180.167 142.916 129.899 190.166 75.0037 190.166Z" stroke="#BC957B" stroke-opacity="0.2" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M75.0037 190.166C56.5377 190.222 38.7251 183.346 25.0988 170.903C11.4725 158.46 3.02774 141.358 1.43945 122.988C-0.148831 104.619 5.23536 86.3251 16.5242 71.7342C27.813 57.1432 44.1818 47.3213 62.3841 44.2164C122.327 32.6664 138.101 27.2065 159.134 1.1665C169.65 22.1665 180.167 45.0564 180.167 85.1664C180.167 142.916 129.899 190.166 75.0037 190.166Z" stroke="#BC957B" strokeOpacity="0.2" strokeWidth="2.33333" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="59" height="98" viewBox="0 0 119 98" fill="none" style={{ position: 'absolute', top: 30, left: 0 }}>
-                <path d="M1.1665 96.1665C1.1665 64.4998 20.6756 39.5887 54.7374 32.8332C80.2574 27.7665 106.621 11.7221 117.167 1.1665" stroke="#BC957B" stroke-opacity="0.2" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="119" height="98" viewBox="0 0 119 98" fill="none" style={{ position: 'absolute', top: 132, left: -16 }}>
+                <path d="M1.1665 96.1665C1.1665 64.4998 20.6756 39.5887 54.7374 32.8332C80.2574 27.7665 106.621 11.7221 117.167 1.1665" stroke="#BC957B" strokeOpacity="0.2" strokeWidth="2.33333" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
           </div>
 
-          <div className="collection-grid">
-            {courses.length === 0 ? (
-              <div style={{ padding: '2rem', textAlign: 'center', gridColumn: '1 / -1', color: '#888' }}>
-                No courses available at the moment.
-              </div>
-            ) : (
-              courses.map((course, idx) => (
-                <div className="collection-card" key={idx}>
-                  <div className="card-image-wrapper">
-                    <OptimizedImage src={course.thumbnail} fallback={personImage} alt={course.title} className="card-image" loading="lazy" />
-                  </div>
-                <div className="card-content">
-                  <div className="card-icon"><IconFlower /></div>
-                  <h4 className="card-category">{course.title.toUpperCase()}</h4>
-                  <p className="card-desc">{course.description || "Programs to help you Heal, Clarify and Create the Life you Desire."}</p>
-                  <div className="card-cta-container">
-                    <span className="card-cta-arrow-out">&gt;</span>
-                    <Link to={`/courses/${course.slug}`} className="card-cta-link">
-                      <button className="card-cta">WORK WITH ME <span className="card-cta-arrow-in">→</span></button>
-                    </Link>
-                  </div>
+          <div className="collection-body">
+            <div className="collection-row-divider" style={{ padding: '0 0 40px 0' }}>
+              <div className="row-divider-line"></div>
+              <div className="row-divider-heart">♡</div>
+              <div className="row-divider-line"></div>
+            </div>
+
+            <div className="collection-grid">
+              {courses.length === 0 ? (
+                <div style={{ padding: '2rem', textAlign: 'center', gridColumn: '1 / -1', color: '#888' }}>
+                  No courses available at the moment.
                 </div>
-              </div>
-              ))
-            )}
+              ) : (
+                courses.map((course, idx) => (
+                  <div className="collection-card" key={idx}>
+                    <div className="card-image-wrapper">
+                      <OptimizedImage src={course.thumbnail} fallback={personImage} alt={course.title} className="card-image" loading="lazy" />
+                    </div>
+                    <div className="card-content">
+                      <div className="card-icon"><IconFlower /></div>
+                      <h4 className="card-category">{course.title.toUpperCase()}</h4>
+                      <p className="card-desc">{course.description || "Programs to help you Heal, Clarify and Create the Life you Desire."}</p>
+                      <div className="card-cta-container">
+                        <span className="card-cta-arrow-out">&gt;</span>
+                        <Link to={`/courses/${course.slug}`} className="card-cta-link">
+                          <button className="card-cta">WORK WITH ME <span className="card-cta-arrow-in">→</span></button>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
           </div>
         </section>
 
@@ -169,7 +184,7 @@ export function CoursesPage() {
             {/* Nav Left */}
             <button className="testimonials-nav prev" onClick={handlePrevPage}>
               <svg width="60" height="12" viewBox="0 0 60 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M60 6H0M0 6L6 0M0 6L6 12" stroke="white" strokeWidth="1"/>
+                <path d="M60 6H0M0 6L6 0M0 6L6 12" stroke="white" strokeWidth="1" />
               </svg>
             </button>
 
@@ -190,7 +205,7 @@ export function CoursesPage() {
             {/* Nav Right */}
             <button className="testimonials-nav next" onClick={handleNextPage}>
               <svg width="60" height="12" viewBox="0 0 60 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 6H60M60 6L54 0M60 6L54 12" stroke="white" strokeWidth="1"/>
+                <path d="M0 6H60M60 6L54 0M60 6L54 12" stroke="white" strokeWidth="1" />
               </svg>
             </button>
           </div>
@@ -205,15 +220,15 @@ export function CoursesPage() {
         {/* NEWSLETTER SECTION */}
         <section className="courses-newsletter">
           <div className="newsletter-content">
-            <h3 className="newsletter-heading">SUBSCRIBE TO OUR NEWSLETTER</h3>
+            <h3 className="newsletter-heading">subscribe to our newsletter</h3>
             <p className="newsletter-desc">
-              Our latest product launches, interesting reads, exclusive interviews and<br />
-              more - delivered straight to your inbox every month.
+              Our Latest Product Launches, Interesting Reads, Exclusive Interviews And<br />
+              More - Delivered Straight To Your Inbox Every Month.
             </p>
           </div>
           <div className="newsletter-form">
             <input type="email" placeholder="Enter Your Email Address" className="newsletter-input" />
-            <button className="newsletter-btn">SUBMIT</button>
+            <button className="newsletter-btn">Submit</button>
           </div>
         </section>
       </main>

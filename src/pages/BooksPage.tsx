@@ -142,13 +142,20 @@ export function BooksPage() {
               <svg xmlns="http://www.w3.org/2000/svg" width="182" height="192" viewBox="0 0 182 192" fill="none" style={{ position: 'absolute', top: 0, left: 0 }}>
                 <path d="M75.0037 190.166C56.5377 190.222 38.7251 183.346 25.0988 170.903C11.4725 158.46 3.02774 141.358 1.43945 122.988C-0.148831 104.619 5.23536 86.3251 16.5242 71.7342C27.813 57.1432 44.1818 47.3213 62.3841 44.2164C122.327 32.6664 138.101 27.2065 159.134 1.1665C169.65 22.1665 180.167 45.0564 180.167 85.1664C180.167 142.916 129.899 190.166 75.0037 190.166Z" stroke="#BC957B" strokeOpacity="0.2" strokeWidth="2.33333" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="59" height="98" viewBox="0 0 119 98" fill="none" style={{ position: 'absolute', top: 30, left: 0 }}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="119" height="98" viewBox="0 0 119 98" fill="none" style={{ position: 'absolute', top: 132, left: -16 }}>
                 <path d="M1.1665 96.1665C1.1665 64.4998 20.6756 39.5887 54.7374 32.8332C80.2574 27.7665 106.621 11.7221 117.167 1.1665" stroke="#BC957B" strokeOpacity="0.2" strokeWidth="2.33333" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
           </div>
 
-          <div className="collection-grid">
+          <div className="collection-body">
+            <div className="collection-row-divider" style={{ padding: '0 0 40px 0' }}>
+              <div className="row-divider-line"></div>
+              <div className="row-divider-heart">♡</div>
+              <div className="row-divider-line"></div>
+            </div>
+
+            <div className="collection-grid">
             {loading ? (
               <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '40px', fontSize: '18px', color: '#896A56' }}>
                 Loading E-Books...
@@ -199,6 +206,7 @@ export function BooksPage() {
                 ));
               })()
             )}
+          </div>
           </div>
         </section>
 

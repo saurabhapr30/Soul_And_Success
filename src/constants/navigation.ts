@@ -8,7 +8,6 @@ export const NAV_LINKS: NavLink[] = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
-  { label: 'Courses', href: '/courses' },
   { label: 'Books', href: '/books' },
   { label: 'Merchandise', href: '/shop' },
   { label: 'Resources', href: '/blog' },
@@ -21,7 +20,6 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     links: [
       { label: 'About', href: '/about' },
       { label: 'Services', href: '/services' },
-      { label: 'Courses', href: '/courses' },
       { label: 'Books', href: '/books' },
     ],
   },
