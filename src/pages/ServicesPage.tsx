@@ -10,6 +10,11 @@ import lifeCoachingImg from '@/assets/Life-Coaching.webp';
 import ebookImg from '@/assets/service-card-ebook.webp';
 import merchImg from '@/assets/Merchandise.webp';
 
+import iconLifeCoaching from '@/assets/lifecoaching.svg';
+import iconEbook from '@/assets/ebook.svg';
+import iconMerch from '@/assets/merchandise.svg';
+
+import './HomePage.css';
 import './ServicesPage.css';
 
 export function ServicesPage() {
@@ -77,96 +82,63 @@ export function ServicesPage() {
             <div className="services-page__divider-line" />
           </div>
 
-          <div className="services-page__cards">
-            {/* Card 1: Life Coaching */}
-            <div className="services-card">
-              <div className="services-card__image-wrapper services-card__image-wrapper--blue">
-                <OptimizedImage src={lifeCoachingImg} alt="Life Coaching" className="services-card__image services-card__image--coaching" loading="lazy" />
-              </div>
-              <div className="services-card__content">
-                <div className="services-card__icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#BC957B" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="7" r="2.5"></circle>
-                    <circle cx="9.5" cy="10.5" r="2.5"></circle>
-                    <circle cx="14.5" cy="10.5" r="2.5"></circle>
-                    <path d="M12 13v8"></path>
-                    <path d="M12 17c-2 0-3-1-3-3 2 0 3 1 3 3z"></path>
-                    <path d="M12 17c2 0 3-1 3-3-2 0-3 1-3 3z"></path>
-                  </svg>
+          <div className="home-section-4__grid" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+              {/* Card 1: Life Coaching */}
+              <div className="home-section-4__card">
+                <div className="home-section-4__card-img-wrapper">
+                  <OptimizedImage src={lifeCoachingImg} alt="Life Coaching" className="home-section-4__card-img-1" loading="lazy" />
                 </div>
-                <h3 className="services-card__title" style={{ textTransform: 'uppercase' }}>Life Coaching</h3>
-                <p className="services-card__desc">Programs to help you Heal, Clarify and Create the Life you Desire.</p>
-                <div className="services-card__btn-wrapper">
-                  <span className="services-card__btn-chevron" aria-hidden="true">&gt;</span>
-                  <Link to="/courses" className="services-card__btn">
-                    <span className="services-card__btn-text">WORK WITH ME</span>
-                    <span className="services-card__btn-icon">
-                      <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 5H13M9 1L13 5L9 9" stroke="#000000" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
+                <div className="home-section-4__card-content">
+                  <img src={iconLifeCoaching} alt="Life Coaching Icon" className="home-section-4__icon" />
+                  <h3 className="home-section-4__card-title">Life Coaching</h3>
+                  <p className="home-section-4__card-desc">Programs to help you Heal, Clarify and Create the Life you Desire.</p>
+                  <Link to="/courses" className="home-section-4__cta">
+                    <span className="home-section-4__cta-chevron">&gt;</span>
+                    <span className="home-section-4__cta-pill">
+                      <span className="home-section-4__cta-text">WORK WITH ME</span>
+                      <span className="home-section-4__cta-arrow">➔</span>
                     </span>
                   </Link>
                 </div>
               </div>
-            </div>
 
-            {/* Card 2: E-Books */}
-            <div className="services-card">
-              <div className="services-card__image-wrapper services-card__image-wrapper--beige">
-                <OptimizedImage src={ebookImg} alt="E-Books" className="services-card__image services-card__image--ebook-card" loading="lazy" />
-              </div>
-              <div className="services-card__content">
-                <div className="services-card__icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#BC957B" strokeWidth="1.3">
-                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-                  </svg>
+              {/* Card 2: E-Book */}
+              <div className="home-section-4__card">
+                <div className="home-section-4__card-img-wrapper">
+                  <OptimizedImage src={ebookImg} alt="E-Book" className="home-section-4__card-img-2" loading="lazy" />
                 </div>
-                <h3 className="services-card__title" style={{ textTransform: 'uppercase' }}>E-Books</h3>
-                <p className="services-card__desc">Simple Guides and Workbooks for your Personal Growth.</p>
-                <div className="services-card__btn-wrapper">
-                  <span className="services-card__btn-chevron" aria-hidden="true">&gt;</span>
-                  <Link to="/books" className="services-card__btn">
-                    <span className="services-card__btn-text">BUY NOW</span>
-                    <span className="services-card__btn-icon">
-                      <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 5H13M9 1L13 5L9 9" stroke="#000000" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
+                <div className="home-section-4__card-content">
+                  <img src={iconEbook} alt="E-Book Icon" className="home-section-4__icon" />
+                  <h3 className="home-section-4__card-title">E-Books</h3>
+                  <p className="home-section-4__card-desc">Simple Guides and Workbooks for your Personal Growth.</p>
+                  <Link to="/books" className="home-section-4__cta">
+                    <span className="home-section-4__cta-chevron">&gt;</span>
+                    <span className="home-section-4__cta-pill">
+                      <span className="home-section-4__cta-text">BUY NOW</span>
+                      <span className="home-section-4__cta-arrow">➔</span>
                     </span>
                   </Link>
                 </div>
               </div>
-            </div>
 
-            {/* Card 3: Merchandise */}
-            <div className="services-card">
-              <div className="services-card__image-wrapper services-card__image-wrapper--grey">
-                <OptimizedImage src={merchImg} alt="Merchandise" className="services-card__image services-card__image--merch-card" loading="lazy" />
-              </div>
-              <div className="services-card__content">
-                <div className="services-card__icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#BC957B" strokeWidth="1.3">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-                    <line x1="3" y1="6" x2="21" y2="6" />
-                    <path d="M16 10a4 4 0 0 1-8 0" />
-                  </svg>
+              {/* Card 3: Merchandise */}
+              <div className="home-section-4__card">
+                <div className="home-section-4__card-img-wrapper">
+                  <OptimizedImage src={merchImg} alt="Merchandise" className="home-section-4__card-img-3" loading="lazy" />
                 </div>
-                <h3 className="services-card__title" style={{ textTransform: 'uppercase' }}>Merchandise</h3>
-                <p className="services-card__desc">Meaningful Reminders to Inspire your Daily Journey.</p>
-                <div className="services-card__btn-wrapper">
-                  <span className="services-card__btn-chevron" aria-hidden="true">&gt;</span>
-                  <Link to="/shop" className="services-card__btn">
-                    <span className="services-card__btn-text">SHOP NOW</span>
-                    <span className="services-card__btn-icon">
-                      <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 5H13M9 1L13 5L9 9" stroke="#000000" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
+                <div className="home-section-4__card-content">
+                  <img src={iconMerch} alt="Merchandise Icon" className="home-section-4__icon" />
+                  <h3 className="home-section-4__card-title">Merchandise</h3>
+                  <p className="home-section-4__card-desc">Meaningful Reminders to Inspire your Daily Journey.</p>
+                  <Link to="/shop" className="home-section-4__cta">
+                    <span className="home-section-4__cta-chevron">&gt;</span>
+                    <span className="home-section-4__cta-pill">
+                      <span className="home-section-4__cta-text">SHOP NOW</span>
+                      <span className="home-section-4__cta-arrow">➔</span>
                     </span>
                   </Link>
                 </div>
               </div>
-            </div>
-
           </div>
         </section>
       </div>

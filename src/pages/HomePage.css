@@ -643,10 +643,11 @@
   height: 100%;
   object-fit: cover;
   object-position: top;
-  padding: 6px 70px;
+  padding: 30px 70px 0 70px;
   background: #FFEEDB;
-  transform: scale(1.1);
   box-sizing: border-box;
+  transform: scale(1.15);
+  transform-origin: bottom center;
 }
 
 .home-section-4__card-img-3 {
@@ -677,13 +678,13 @@
 }
 
 .home-section-4__card-title {
-  font-family: 'Cinzel';
-  font-weight: 800;
-  font-size: 20px;
   color: #221811;
-  text-transform: uppercase;
-  margin: 0 0 12px 0;
-  letter-spacing: 1px;
+  font-family: 'Cinzel';
+  font-size: var(--width-24, 24px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: var(--line-height-32, 32px);
+  /* 133.333% */
 }
 
 .home-section-4__card-desc {

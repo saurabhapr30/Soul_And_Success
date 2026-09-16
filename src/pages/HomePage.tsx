@@ -17,6 +17,9 @@ import blogFeatured from '@/assets/blog-featured.webp';
 import whatsappIcon from '@/assets/whatsapp.png';
 import logoImg from '@/assets/logo.webp';
 import leafSvg from '@/assets/leaf.svg';
+import iconLifeCoaching from '../assets/lifecoaching.svg';
+import iconEbook from '../assets/ebook.svg';
+import iconMerch from '../assets/merchandise.svg';
 
 import './HomePage.css';
 
@@ -247,14 +250,8 @@ export function HomePage() {
                   <OptimizedImage src={serviceCoaching} alt="Life Coaching" className="home-section-4__card-img-1" loading="lazy" />
                 </div>
                 <div className="home-section-4__card-content">
-                  <svg className="home-section-4__icon" viewBox="0 0 24 24" fill="none" stroke="#C0997F" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M8 21h8" />
-                    <path d="M12 21v-7" />
-                    <path d="M12 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3" />
-                    <path d="M12 14a3 3 0 0 0 3-3 3 3 0 0 0-3-3" />
-                    <path d="M12 8a3 3 0 0 1-3-3 3 3 0 0 1 6 0 3 3 0 0 1-3 3" />
-                  </svg>
-                  <h3 className="home-section-4__card-title">LIFE COACHING</h3>
+                  <img src={iconLifeCoaching} alt="Life Coaching Icon" className="home-section-4__icon" />
+                  <h3 className="home-section-4__card-title">Life Coaching</h3>
                   <p className="home-section-4__card-desc">Programs to help you Heal, Clarify and Create the Life you Desire.</p>
                   <Link to="/services" className="home-section-4__cta">
                     <span className="home-section-4__cta-chevron">&gt;</span>
@@ -272,11 +269,8 @@ export function HomePage() {
                   <OptimizedImage src={serviceEbook} alt="E-Book" className="home-section-4__card-img-2" loading="lazy" />
                 </div>
                 <div className="home-section-4__card-content">
-                  <svg className="home-section-4__icon" viewBox="0 0 24 24" fill="none" stroke="#C0997F" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-                  </svg>
-                  <h3 className="home-section-4__card-title">E-BOOKS</h3>
+                  <img src={iconEbook} alt="E-Book Icon" className="home-section-4__icon" />
+                  <h3 className="home-section-4__card-title">E-Books</h3>
                   <p className="home-section-4__card-desc">Simple yet powerful E-Books for your Personal Growth.</p>
                   <Link to="/books" className="home-section-4__cta">
                     <span className="home-section-4__cta-chevron">&gt;</span>
@@ -294,11 +288,8 @@ export function HomePage() {
                   <OptimizedImage src={serviceProducts} alt="Merchandise" className="home-section-4__card-img-3" loading="lazy" />
                 </div>
                 <div className="home-section-4__card-content">
-                  <svg className="home-section-4__icon" viewBox="0 0 24 24" fill="none" stroke="#C0997F" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="4" y="7" width="16" height="15" rx="2" ry="2" />
-                    <path d="M8 7V4a4 4 0 0 1 8 0v3" />
-                  </svg>
-                  <h3 className="home-section-4__card-title">MERCHANDISE</h3>
+                  <img src={iconMerch} alt="Merchandise Icon" className="home-section-4__icon" />
+                  <h3 className="home-section-4__card-title">Merchandise</h3>
                   <p className="home-section-4__card-desc">Meaningful Reminders to Inspire your Daily Journey.</p>
                   <Link to="/shop" className="home-section-4__cta">
                     <span className="home-section-4__cta-chevron">&gt;</span>

@@ -197,12 +197,10 @@
 /* Image Wrapper */
 .services-card__image-wrapper {
   display: flex;
+  padding: 38px 22.835px 0 22.835px;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 294.5px;
-  position: relative;
-  overflow: hidden;
+  align-self: stretch;
 }
 
 .services-card__image-wrapper--blue {
@@ -235,8 +233,8 @@
 .services-card__image--ebook-card {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center;
+  object-fit: cover;
+  object-position: top;
 }
 
 .services-card__image--merch-card {
@@ -252,7 +250,7 @@
   width: 347px;
   height: 257px;
   left: calc(50% - 347px/2);
-  top: calc(50% - 257px/2 + 19.25px);
+  top: calc(10% - 257px/2 + 19.25px);
   border-radius: 19px;
   object-fit: cover;
 }
