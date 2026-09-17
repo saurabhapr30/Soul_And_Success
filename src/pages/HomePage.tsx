@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { SEOHead, Button, Icon, SectionHeading } from '@/components/ui';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import { useScrollReveal } from '@/hooks';
-import { cn, resolveImageUrl, resolveOptimizedImageUrl } from '@/utils';
+import { cn } from '@/utils';
 import api from '../services/api';
 
 import heroPortrait from '@/assets/hero-portrait-actual.webp';
@@ -740,8 +740,6 @@ function HomeBlogSlider() {
   const post = posts[idx];
   const prev = () => setIdx(i => (i - 1 + posts.length) % posts.length);
   const next = () => setIdx(i => (i + 1) % posts.length);
-
-  const imgSrc = resolveOptimizedImageUrl(post.featuredImage) || resolveImageUrl(post.featuredImage) || null;
   const dateStr = post.publishedAt
     ? new Date(post.publishedAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })
     : '';
