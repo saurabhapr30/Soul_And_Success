@@ -91,14 +91,32 @@
 }
 
 .home-hero__signature-subtitle {
-  font-family: 'Cinzel Bold';
-  font-size: 12px;
+  /* Your Accountability Coach */
+
+  position: absolute;
+  width: 186px;
+  height: 14px;
+  left: -2px;
+  top: 85px;
+
+  font-family: 'Cinzel';
+  font-style: normal;
   font-weight: 700;
-  line-height: 16px;
-  color: #888888;
-  margin: 4px 0 0 0;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 14px;
+  /* identical to box height, or 117% */
+  display: flex;
+  align-items: center;
+
+  color: #7B7B7B;
+
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  z-index: 2;
+
 }
 
 /* INFERRED COORDINATES FOR TEXT BLOCK */
@@ -351,9 +369,9 @@
 }
 
 .home-section-2__item-desc {
-  font-family: var(--font-display-secondary), 'Cinzel', serif;
+  font-family: 'Cinzel', serif;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 10px;
   line-height: 19.5px;
   color: #5E534A;
   text-transform: uppercase;
@@ -440,18 +458,32 @@
 }
 
 .home-section-3__script {
+  /* Hey Iam Jawedan */
+
   position: absolute;
-  width: auto;
-  height: auto;
+  width: 571px;
+  height: 58px;
   left: 80px;
-  top: 150px;
-  font-family: var(--font-signature);
-  font-size: 96px;
+  top: 185px;
+
+  font-family: 'Brother Signature';
+  font-style: normal;
   font-weight: 400;
-  line-height: 1;
+  font-size: 96px;
+  line-height: 29px;
+  /* or 30% */
+  display: flex;
+  align-items: center;
+
   color: #000000;
-  white-space: nowrap;
-  z-index: 10;
+
+
+  /* Inside auto layout */
+  flex: none;
+  order: 4;
+  flex-grow: 0;
+  z-index: 4;
+
   /* To overlay above portrait */
 }
 
@@ -506,14 +538,14 @@
   padding: 12px 24px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 8px;
   background: #C39F87;
   border-radius: 0;
-  box-shadow: 6px 6px 0px rgba(212, 211, 211, 0.4);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
   border: none;
   font-family: var(--font-button);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;
   text-transform: uppercase;

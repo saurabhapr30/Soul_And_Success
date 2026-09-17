@@ -28,7 +28,7 @@ export function AboutPage() {
               <img src={signatureImg} alt="Jawedan Sehar Signature" className="about-hero__signature" />
               <div className="about-hero__line" aria-hidden="true" />
               <h2 className="about-hero__title">Certified Life Coach</h2>
-              <p className="about-hero__subtitle">YOUR ACCOUNTABILITY COACH</p>
+              <p className="about-hero__subtitle">Your Accountability Coach</p>
             </div>
             <div className="about-hero__image-wrapper">
               <OptimizedImage src={heroPortrait} alt="Jawedan Sehar" className="about-hero__image" priority={true} decoding="async" />
@@ -83,7 +83,12 @@ export function AboutPage() {
           </div>
         </section>
 
-        <Divider />
+        {/* BROKEN DIVIDER */}
+        <div className="about-page__broken-divider" aria-hidden="true">
+          <div className="about-page__broken-divider-line" />
+          <img src={leafSvg} alt="" className="about-page__broken-divider-icon" />
+          <div className="about-page__broken-divider-line" />
+        </div>
 
         {/* MY MISSION SECTION */}
         <section className="about-mission">

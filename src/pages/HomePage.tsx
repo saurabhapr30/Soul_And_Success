@@ -62,7 +62,7 @@ export function HomePage() {
               <h2 className="home-hero__signature home-hero__signature--mobile">Jawedan Sehar</h2>
               <div className="home-hero__signature-line"></div>
               <p className="home-hero__signature-title">Certified Life Coach</p>
-              <p className="home-hero__signature-subtitle">YOUR ACCOUNTABILITY COACH</p>
+              <p className="home-hero__signature-subtitle">Your Accountability Coach</p>
             </div>
 
             <div className="home-hero__curve" aria-hidden="true">
@@ -222,7 +222,13 @@ export function HomePage() {
                   My approach is simple yet powerful to help you heal, grow and manifest the life you truly deserve. You are capable of more than you think.
                 </p>
               </div>
-              <button className="home-section-3__cta">LEARN MORE</button>
+              <button className="home-section-3__cta">
+                LEARN MORE
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </button>
             </div>
           </div>
         </section>
@@ -740,9 +746,6 @@ function HomeBlogSlider() {
   const post = posts[idx];
   const prev = () => setIdx(i => (i - 1 + posts.length) % posts.length);
   const next = () => setIdx(i => (i + 1) % posts.length);
-  const dateStr = post.publishedAt
-    ? new Date(post.publishedAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })
-    : '';
 
   return (
     <section className="home-section-blog">
@@ -763,7 +766,6 @@ function HomeBlogSlider() {
         {post.excerpt && (
           <p className="home-section-blog__panel-desc">{post.excerpt}</p>
         )}
-        {dateStr && <p className="home-section-blog__date">{dateStr}</p>}
         <Link to={`/blog/${post.slug}`} className="home-section-blog__read-more">READ MORE</Link>
       </div>
 
