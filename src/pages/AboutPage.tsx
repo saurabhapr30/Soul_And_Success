@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import './AboutPage.css';
-import { SEOHead, Divider } from '@/components/ui';
+import { SEOHead } from '@/components/ui';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import heroPortrait from '@/assets/standing.webp';
 import introPortrait from '@/assets/standing.webp';
