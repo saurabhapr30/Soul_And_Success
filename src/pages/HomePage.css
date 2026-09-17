@@ -670,27 +670,41 @@
   box-sizing: border-box;
 }
 
-.home-section-4__card-img-2 {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-  padding: 30px 70px 0 70px;
+/* E-Book wrapper: Figma "E-Books" frame bg, image is an inner 347x257 rect */
+.home-section-4__card-img-wrapper--ebook {
   background: #FFEEDB;
-  box-sizing: border-box;
-  transform: scale(1.15);
-  transform-origin: bottom center;
 }
 
-.home-section-4__card-img-3 {
-  width: 100%;
-  height: 100%;
+/* Figma "Rectangle 3": 347x257 centred horizontally, flush to wrapper bottom,
+   19px radius. The asset is the Figma export of this rect (crop + colour
+   adjustments baked in), so it's just cover-fit into the box. Sized as % of
+   the 393x294.48 wrapper so it scales with the responsive breakpoints. */
+.home-section-4__card-img-2 {
+  position: absolute;
+  width: 88.3%;
+  height: 87.27%;
+  left: 5.85%;
+  bottom: 0;
+  border-radius: 19px;
   object-fit: cover;
-  object-position: center;
-  padding: 6px 10px;
+}
+
+/* Merch wrapper: Figma frame bg */
+.home-section-4__card-img-wrapper--merch {
   background: #F0E6DA;
-  transform: scale(1.14);
-  box-sizing: border-box;
+}
+
+/* Figma rect is 338x236 at (29px, 51px) with a custom-zoomed fill; the mug +
+   coaster fill ~203px of that rect's height. The asset is transparent, so we
+   size the image itself (~260x390) centred on the rect (198, 169) instead of
+   cover-filling — cover would crop the coaster. % of the 393x294.48 wrapper. */
+.home-section-4__card-img-3 {
+  position: absolute;
+  width: 66.2%;
+  height: 132.4%;
+  left: 17.3%;
+  top: -8.8%;
+  object-fit: contain;
 }
 
 .home-section-4__card-content {
