@@ -104,7 +104,7 @@ export function ServicesPage() {
 
               {/* Card 2: E-Book */}
               <div className="home-section-4__card">
-                <div className="home-section-4__card-img-wrapper">
+                <div className="home-section-4__card-img-wrapper home-section-4__card-img-wrapper--ebook">
                   <OptimizedImage src={ebookImg} alt="E-Book" className="home-section-4__card-img-2" loading="lazy" />
                 </div>
                 <div className="home-section-4__card-content">
@@ -123,7 +123,7 @@ export function ServicesPage() {
 
               {/* Card 3: Merchandise */}
               <div className="home-section-4__card">
-                <div className="home-section-4__card-img-wrapper">
+                <div className="home-section-4__card-img-wrapper home-section-4__card-img-wrapper--merch">
                   <OptimizedImage src={merchImg} alt="Merchandise" className="home-section-4__card-img-3" loading="lazy" />
                 </div>
                 <div className="home-section-4__card-content">

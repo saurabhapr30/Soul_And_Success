@@ -11,7 +11,7 @@ import introPortrait from '@/assets/intro-portrait-actual.webp';
 import signatureImg from '@/assets/signature.png';
 import leavesImg from '@/assets/leaves.webp';
 import serviceCoaching from '../assets/Life-Coaching.webp';
-import serviceEbook from '../assets/Ebook.webp';
+import serviceEbook from '../assets/service-card-ebook.webp';
 import serviceProducts from '../assets/Merchandise.webp';
 import blogFeatured from '@/assets/blog-featured.webp';
 import whatsappIcon from '@/assets/whatsapp.png';
@@ -265,7 +265,7 @@ export function HomePage() {
 
               {/* Card 2: E-Book */}
               <div className="home-section-4__card">
-                <div className="home-section-4__card-img-wrapper">
+                <div className="home-section-4__card-img-wrapper home-section-4__card-img-wrapper--ebook">
                   <OptimizedImage src={serviceEbook} alt="E-Book" className="home-section-4__card-img-2" loading="lazy" />
                 </div>
                 <div className="home-section-4__card-content">
@@ -284,7 +284,7 @@ export function HomePage() {
 
               {/* Card 3: Merchandise */}
               <div className="home-section-4__card">
-                <div className="home-section-4__card-img-wrapper">
+                <div className="home-section-4__card-img-wrapper home-section-4__card-img-wrapper--merch">
                   <OptimizedImage src={serviceProducts} alt="Merchandise" className="home-section-4__card-img-3" loading="lazy" />
                 </div>
                 <div className="home-section-4__card-content">
