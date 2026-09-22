@@ -687,9 +687,9 @@
   }
 
   .blog-page__card-title {
-    font-family: var(--font-display-secondary);
+    font-family: 'poppins';
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 30px;
     text-transform: capitalize;
     color: #0A0A0A;
@@ -711,7 +711,7 @@
   }
 
   .blog-page__card-meta {
-    font-family: var(--font-body);
+    font-family: 'Montserrat';
     font-size: 15px;
     font-weight: 600;
     line-height: 20px;
@@ -722,7 +722,7 @@
   }
 
   .blog-page__card-excerpt {
-    font-family: var(--font-body);
+    font-family: 'Montserrat';
     font-size: 20px;
     font-weight: 500;
     line-height: 25px;
