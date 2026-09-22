@@ -4,12 +4,14 @@
   "description": "Backend for Soul and Success",
   "main": "dist/server.js",
   "scripts": {
-    "start": "node dist/server.js",
+    "postinstall": "prisma generate",
+    "start": "prisma migrate deploy && node dist/server.js",
     "dev": "tsx watch src/server.ts",
-    "build": "tsc",
+    "build": "prisma generate && tsc",
     "optimize-images": "tsx scripts/optimize-assets.ts",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
+    "db:migrate:deploy": "prisma migrate deploy",
     "db:seed": "tsx prisma/seed.ts"
   },
   "prisma": {
@@ -30,6 +32,7 @@
     "jsonwebtoken": "^9.0.2",
     "multer": "^2.2.0",
     "nodemailer": "^6.9.13",
+    "prisma": "^5.14.0",
     "razorpay": "^2.9.8",
     "sharp": "^0.35.3",
     "zod": "^3.23.8"
@@ -45,7 +48,6 @@
     "@types/nodemailer": "^6.4.15",
     "@types/supertest": "^7.2.1",
     "jest": "^30.4.2",
-    "prisma": "^5.14.0",
     "supertest": "^7.2.2",
     "ts-jest": "^29.4.12",
     "ts-node": "^10.9.2",

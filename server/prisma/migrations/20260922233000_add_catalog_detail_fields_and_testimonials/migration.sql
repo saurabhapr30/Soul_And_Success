@@ -1,0 +1,47 @@
+-- Add catalog detail fields that are already represented in schema.prisma.
+ALTER TABLE "Product"
+ADD COLUMN IF NOT EXISTS "bestOffers" TEXT[] NOT NULL DEFAULT ARRAY[]::TEXT[],
+ADD COLUMN IF NOT EXISTS "termsAndConditions" TEXT[] NOT NULL DEFAULT ARRAY[]::TEXT[],
+ADD COLUMN IF NOT EXISTS "productDetails" TEXT[] NOT NULL DEFAULT ARRAY[]::TEXT[];
+
+ALTER TABLE "Course"
+ADD COLUMN IF NOT EXISTS "images" TEXT[] NOT NULL DEFAULT ARRAY[]::TEXT[],
+ADD COLUMN IF NOT EXISTS "bestOffers" TEXT[] NOT NULL DEFAULT ARRAY[]::TEXT[],
+ADD COLUMN IF NOT EXISTS "termsAndConditions" TEXT[] NOT NULL DEFAULT ARRAY[]::TEXT[],
+ADD COLUMN IF NOT EXISTS "productDetails" TEXT[] NOT NULL DEFAULT ARRAY[]::TEXT[],
+ADD COLUMN IF NOT EXISTS "date" TEXT,
+ADD COLUMN IF NOT EXISTS "time" TEXT,
+ADD COLUMN IF NOT EXISTS "meetLink" TEXT;
+
+ALTER TABLE "Book"
+ADD COLUMN IF NOT EXISTS "shortDescription" TEXT,
+ADD COLUMN IF NOT EXISTS "images" TEXT[] NOT NULL DEFAULT ARRAY[]::TEXT[],
+ADD COLUMN IF NOT EXISTS "categoryId" TEXT,
+ADD COLUMN IF NOT EXISTS "downloadLink" TEXT,
+ADD COLUMN IF NOT EXISTS "bestOffers" TEXT[] NOT NULL DEFAULT ARRAY[]::TEXT[],
+ADD COLUMN IF NOT EXISTS "termsAndConditions" TEXT[] NOT NULL DEFAULT ARRAY[]::TEXT[],
+ADD COLUMN IF NOT EXISTS "productDetails" TEXT[] NOT NULL DEFAULT ARRAY[]::TEXT[];
+
+CREATE TABLE IF NOT EXISTS "Testimonial" (
+    "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "quote" TEXT NOT NULL,
+    "rating" INTEGER NOT NULL DEFAULT 5,
+    "avatar" TEXT,
+    "isApproved" BOOLEAN NOT NULL DEFAULT false,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "Testimonial_pkey" PRIMARY KEY ("id")
+);
+
+DO $$
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1
+        FROM pg_constraint
+        WHERE conname = 'Book_categoryId_fkey'
+    ) THEN
+        ALTER TABLE "Book" ADD CONSTRAINT "Book_categoryId_fkey" FOREIGN KEY ("categoryId") REFERENCES "Category"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+    END IF;
+END $$;
