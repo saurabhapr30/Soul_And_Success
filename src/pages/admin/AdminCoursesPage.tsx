@@ -61,7 +61,7 @@ export function AdminCoursesPage() {
 
   const fetchCategories = async () => {
     try {
-      const res = await api.get('/courses/categories').catch(() => ({ data: { data: [] } }));
+      const res = await api.get('/categories').catch(() => ({ data: { data: [] } }));
       setCategories(res.data?.data || res.data || []);
     } catch {}
   };
