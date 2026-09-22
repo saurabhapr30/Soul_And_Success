@@ -38,7 +38,6 @@ interface BookFormData {
   compareAtPrice: string;
   isbn: string;
   format: string;
-  stock: string;
   coverImage: string;
   images: string[];
   bestOffers: string[];
@@ -410,7 +409,7 @@ export const ProductFormModal: React.FC<ProductFormModalProps> = ({
   // ── Book state ───────────────────────────────────────────────────────────
   const [book, setBook] = useState<BookFormData>({
     title: '', slug: '', author: '', shortDescription: '', description: '',
-    price: '', compareAtPrice: '', isbn: '', format: '', stock: '0',
+    price: '', compareAtPrice: '', isbn: '', format: '',
     coverImage: '', images: [], isActive: true, featured: false, categoryId: '', downloadLink: '', bestOffers: [], termsAndConditions: [], productDetails: [],
   });
 
@@ -466,7 +465,6 @@ export const ProductFormModal: React.FC<ProductFormModalProps> = ({
           compareAtPrice: initialData.compareAtPrice !== undefined && initialData.compareAtPrice !== null ? String(initialData.compareAtPrice) : '',
           isbn: initialData.isbn ?? '',
           format: initialData.format ?? '',
-          stock: String(initialData.stock ?? 0),
           coverImage: rawImgs[0] || initialData.coverImage || '',
           images: rawImgs,
           isActive: initialData.isActive !== false,
@@ -502,7 +500,7 @@ export const ProductFormModal: React.FC<ProductFormModalProps> = ({
       }
     } else {
       setCourse({ title: '', slug: '', shortDescription: '', description: '', price: '', compareAtPrice: '', duration: '', level: '', thumbnail: '', images: [], isPublished: false, isFeatured: false, date: '', time: '', categoryId: '', meetLink: '', bestOffers: [], termsAndConditions: [], productDetails: [] });
-      setBook({ title: '', slug: '', author: '', shortDescription: '', description: '', price: '', compareAtPrice: '', isbn: '', format: '', stock: '0', coverImage: '', images: [], isActive: true, featured: false, categoryId: '', downloadLink: '', bestOffers: [], termsAndConditions: [], productDetails: [] });
+      setBook({ title: '', slug: '', author: '', shortDescription: '', description: '', price: '', compareAtPrice: '', isbn: '', format: '', coverImage: '', images: [], isActive: true, featured: false, categoryId: '', downloadLink: '', bestOffers: [], termsAndConditions: [], productDetails: [] });
       setMerch({ name: '', slug: '', shortDescription: '', description: '', price: '', compareAtPrice: '', sku: '', stock: '0', categoryId: categories && Array.isArray(categories) ? (categories[0]?.id ?? '') : '', image: '', images: [], isActive: true, isFeatured: false, bestOffers: [], termsAndConditions: [], productDetails: [] });
     }
   }, [isOpen, mode, type, initialData]);
@@ -539,7 +537,6 @@ export const ProductFormModal: React.FC<ProductFormModalProps> = ({
           images: book.images,
           price: Number(book.price),
           compareAtPrice: book.compareAtPrice ? Number(book.compareAtPrice) : null,
-          stock: Number(book.stock),
           categoryId: book.categoryId || null,
           downloadLink: book.downloadLink || null,
         };
@@ -818,18 +815,15 @@ export const ProductFormModal: React.FC<ProductFormModalProps> = ({
                   ) : null;
                 })()}
 
-                {(type === 'book' || type === 'merchandise') && (
+                {type === 'merchandise' && (
                   <div className="pf-field-group">
                     <label className="pf-label">Stock Quantity</label>
                     <input
                       type="number" min="0"
                       className="pf-input"
                       placeholder="0"
-                      value={type === 'book' ? book.stock : merch.stock}
-                      onChange={e => {
-                        if (type === 'book') setBook(p => ({ ...p, stock: e.target.value }));
-                        else setMerch(p => ({ ...p, stock: e.target.value }));
-                      }}
+                      value={merch.stock}
+                      onChange={e => setMerch(p => ({ ...p, stock: e.target.value }))}
                     />
                   </div>
                 )}
