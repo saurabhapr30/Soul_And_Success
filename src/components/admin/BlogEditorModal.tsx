@@ -33,7 +33,6 @@ export function BlogEditorModal({ onClose, onSuccess, existingPost }: BlogEditor
     slug: existingPost?.slug || '',
     excerpt: existingPost?.excerpt || '',
     content: existingPost?.content || '',
-    status: existingPost?.status || 'DRAFT',
     categoryId: existingPost?.categoryId || existingPost?.category?.id || existingPost?.category?.name || '',
     featuredImage: existingPost?.featuredImage || '',
     galleryImages: existingPost?.galleryImages || [],
@@ -303,32 +302,22 @@ export function BlogEditorModal({ onClose, onSuccess, existingPost }: BlogEditor
                 </div>
               </div>
 
-              <div className="editor-two-column" style={{ gap: '1rem', marginTop: '1rem' }}>
-                <div className="form-group">
-                  <label className="form-label">Status</label>
-                  <select name="status" value={formData.status} onChange={handleTextChange} className="form-select">
-                    <option value="DRAFT">Draft</option>
-                    <option value="PUBLISHED">Published</option>
-                  </select>
-                </div>
-
-                <div className="form-group">
-                  <label className="form-label">Tags</label>
-                  <div className="tags-container">
-                    {tags.map((t, i) => (
-                      <span key={i} className="tag-pill">
-                        {t} <button type="button" onClick={() => removeArrayItem('tag', i)}><X size={12} /></button>
-                      </span>
-                    ))}
-                    <input
-                      type="text"
-                      value={tagInput}
-                      onChange={e => setTagInput(e.target.value)}
-                      onKeyDown={e => handleKeyDown(e, 'tag')}
-                      className="tag-input"
-                      placeholder="Add tags and press Enter..."
-                    />
-                  </div>
+              <div className="form-group" style={{ marginTop: '1rem' }}>
+                <label className="form-label">Tags</label>
+                <div className="tags-container">
+                  {tags.map((t, i) => (
+                    <span key={i} className="tag-pill">
+                      {t} <button type="button" onClick={() => removeArrayItem('tag', i)}><X size={12} /></button>
+                    </span>
+                  ))}
+                  <input
+                    type="text"
+                    value={tagInput}
+                    onChange={e => setTagInput(e.target.value)}
+                    onKeyDown={e => handleKeyDown(e, 'tag')}
+                    className="tag-input"
+                    placeholder="Add tags and press Enter..."
+                  />
                 </div>
               </div>
             </div>
