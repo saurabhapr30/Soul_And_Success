@@ -51,7 +51,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   // Auto derive responsive srcset if not explicitly provided and it's an uploaded asset in optimized mode
   const derivedSrcSet =
     !hasError && !useOriginal
-      ? srcSet || (initialUrl.startsWith('/uploads/') ? resolveSrcSet(rawUrl) : undefined)
+      ? srcSet || resolveSrcSet(rawUrl)
       : undefined;
 
   const combinedStyle: React.CSSProperties = {
