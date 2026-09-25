@@ -13,6 +13,13 @@ export const errorHandler = (
 
   // Normalize known errors
   if (err.name === 'MulterError') error = handleMulterError(err);
+  else if (err.code === 'P2022') {
+    console.error('Prisma schema mismatch:', err);
+    error = new AppError(
+      'The database schema is out of date. Restart the backend with its migration step enabled, then try again.',
+      503
+    );
+  }
   else if (err.code === 'P2002') error = handleDuplicateFieldsDB(err);
   else if (err.code === 'P2025') error = handleRecordNotFoundDB(err);
   else if (err instanceof ZodError || err.name === 'ZodError') error = handleValidationError(err);
