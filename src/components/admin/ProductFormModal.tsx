@@ -119,8 +119,9 @@ const MultiImageUploadField: React.FC<{
       if (uploadedUrls.length > 0) {
         onChange([...images, ...uploadedUrls]);
       }
-    } catch {
-      alert('One or more image uploads failed');
+    } catch (error: any) {
+      const message = error.response?.data?.message || error.message;
+      alert(`Image upload failed: ${message}`);
     } finally {
       setUploading(false);
       if (fileRef.current) fileRef.current.value = '';

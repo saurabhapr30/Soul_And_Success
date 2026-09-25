@@ -1,6 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import sharp from 'sharp';
+import { optimizedUploadsDir, uploadsDir } from '../utils/uploadPaths';
 
 export interface ImageVariant {
   width: number;
@@ -24,8 +25,8 @@ export class ImageOptimizationService {
   private optimizedDir: string;
 
   constructor() {
-    this.uploadsDir = path.join(process.cwd(), 'uploads');
-    this.optimizedDir = path.join(this.uploadsDir, 'optimized');
+    this.uploadsDir = uploadsDir;
+    this.optimizedDir = optimizedUploadsDir;
     this.ensureDirectory(this.optimizedDir);
   }
 

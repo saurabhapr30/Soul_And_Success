@@ -7,6 +7,7 @@ import rateLimit from 'express-rate-limit';
 import { env } from './config/env';
 import { errorHandler } from './middleware/errorHandler';
 import { NotFoundError } from './utils/errors';
+import { optimizedUploadsDir, uploadsDir } from './utils/uploadPaths';
 
 import userRoutes from './routes/userRoutes';
 import addressRoutes from './routes/addressRoutes';
@@ -100,9 +101,7 @@ app.use('/api', limiter);
 
 // Serve uploads folder with  caching headers and intelligent variant fallback
 app.use('/uploads/optimized', (req: Request, res: Response, next: NextFunction) => {
-  const optimizedDir = path.join(process.cwd(), 'uploads', 'optimized');
-  const uploadsDir = path.join(process.cwd(), 'uploads');
-  const filePath = path.join(optimizedDir, req.path);
+  const filePath = path.join(optimizedUploadsDir, req.path);
 
   // 1. Direct file match
   if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
@@ -115,15 +114,15 @@ app.use('/uploads/optimized', (req: Request, res: Response, next: NextFunction) 
   const baseName = widthMatch ? parsed.name.replace(/-(?:400|800|1200|1600|1920)$/, '') : parsed.name;
 
   // 2. Master WebP file: ${baseName}.webp
-  const masterWebpPath = path.join(optimizedDir, `${baseName}.webp`);
+  const masterWebpPath = path.join(optimizedUploadsDir, `${baseName}.webp`);
   if (fs.existsSync(masterWebpPath) && fs.statSync(masterWebpPath).isFile()) {
     res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
     return res.sendFile(masterWebpPath);
   }
 
   // 3. Intelligent prefix search in optimized directory (handles truncated or legacy URLs)
-  if (fs.existsSync(optimizedDir)) {
-    const optFiles = fs.readdirSync(optimizedDir);
+  if (fs.existsSync(optimizedUploadsDir)) {
+    const optFiles = fs.readdirSync(optimizedUploadsDir);
     const prefix = parsed.name.replace(/-\d+$/, '');
     const widthSuffix = widthMatch ? widthMatch[0] : '';
 
@@ -132,7 +131,7 @@ app.use('/uploads/optimized', (req: Request, res: Response, next: NextFunction) 
         (f) => f.startsWith(`${prefix}-`) && f.endsWith(`${widthSuffix}.webp`)
       );
       if (variantMatch) {
-        const variantPath = path.join(optimizedDir, variantMatch);
+        const variantPath = path.join(optimizedUploadsDir, variantMatch);
         if (fs.statSync(variantPath).isFile()) {
           res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
           return res.sendFile(variantPath);
@@ -145,7 +144,7 @@ app.use('/uploads/optimized', (req: Request, res: Response, next: NextFunction) 
     ) || optFiles.find((f) => f.startsWith(prefix) && f.endsWith('.webp'));
 
     if (masterMatch) {
-      const matchedPath = path.join(optimizedDir, masterMatch);
+      const matchedPath = path.join(optimizedUploadsDir, masterMatch);
       if (fs.statSync(matchedPath).isFile()) {
         res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
         return res.sendFile(matchedPath);
@@ -174,7 +173,7 @@ app.use('/uploads/optimized', (req: Request, res: Response, next: NextFunction) 
 
 app.use(
   '/uploads',
-  express.static(path.join(process.cwd(), 'uploads'), {
+  express.static(uploadsDir, {
     maxAge: '1d',
     setHeaders: (res, filePath) => {
       if (filePath.includes('optimized')) {
